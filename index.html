@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 01 [A01713854]</title>
+</head>
+<body>
+    <header>
+        <h1>Laboratorio 1 - Rodrigo Hurtado</h1>
+    </header>
+    
+    <nav>
+        <p>Datos de contacto:</p>
+        <ul>
+            <li>Nombre: Rodrigo Alejandro Hurtado Cortés</li>
+            <li>Matricula: A01713854</li>
+            <li>Correo electrónico escolar: a01713854@tec.mx</li>
+            <li>Correo electrónico personal: hurtadorodrigo00@gmail.com</li>
+        </ul>
+    </nav>
+
+    <!--Interest and Skills-->
+    <section>
+
+        <p>
+            Bienvenidos a la practica del laboratorio 1 de la materia de <strong>Construcción de Software y Toma de Decisiones.</strong>
+        </p>
+
+        <article>
+            <header><h2>Intereses Personales</h2></header>
+            <p>
+                Disfruto del aprendizaje, de los retos intelectuales y últimamente tambien de los hermosos momentos de la vida.
+            </p>
+            <p>
+                Me encanta pasar el tiempo con mi hermosa novia, con mis amigos y aprender un poco de todo en realidad; de escuchar musicales y música de todo tipo, sobre todo <a href="https://www.youtube.com/watch?v=MivPd9m5NvI">música pirata</a>. Disfruto mucho de mi carrera y tengo muchas ganas de desarrollar un producto que vaya más alla de pequeños programas para consola.
+            </p>
+            <img src="images/love.jpeg" alt="El amor de mi vida y yo." style="width: 500px;"> 
+        </article>
+
+        <article>
+            <header>
+                <h2>Habilidades</h2>
+            </header>
+            <ul>
+                <li>Lennguajes de programacion: C++, Java y Python.</li>
+                <li>Conocimiento básico: R, MATLAB, Flutter, SQL.</li>
+                <li>Manejo de control de versiones: GitHub.</li>
+                <li>Planeación de requisitos de software.</li>
+                <li>Organización y planeación de bases de datos relacionales.</li>
+                <li>Comunicación con el cliente.</li>
+            </ul>
+        </article>
+
+
+        <article>
+            <header>
+                <h2>
+                    Parte Adicional: Musicales
+                </h2>
+                <p>
+                    Hace unos años encontre mi pasión por los músicales cuando escuche Hamilton por primera vez. A partir de ese momento a pesar de que no conozca muchos músicales me he vuelto un fan enpedernido de muchos de ellos llegando a memorizarme casi todas las canciones de los mismos. A continuación presento una tabla con mis musicales preferidos hasta la fecha. 
+                </p>
+
+                <table border="1">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Imagen</th>
+                    </tr>
+                    <tr>
+                        <td><p>Hamilton</p></td>
+                        <td><img src="images/hamilton.jpg" style="width: 150px;"></td>
+                    </tr>
+                    <tr>
+                        <td><p>EPIC</p></td>
+                        <td><img src="images/EPIC.jpg" style="width: 150px;"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Sweeney Todd. The demon barber of Fleet Street</p></td>
+                        <td><img src="images/sweeny.jpeg" style="width: 150px;"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Wicked</p></td>
+                        <td><img src="images/wicked.jpeg" style="width: 150px;"></td>
+                    </tr>
+                </table>
+
+            </header>
+
+
+        </article>
+
+    </section>
+
+    <!--Answers to Questions-->
+    <section>
+        <h2>Preguntas a Responder</h2>
+
+        <!--Q.1-->
+        <article>
+            <header>
+                <strong>
+                    ¿Cuál es la diferencia entre Internet y la World Wide Web?
+                </strong>
+            </header>
+            <p>
+                El <strong>Internet</strong> es la red global de sistemas interconectados, la cual es dependiente del hardware, sobre la cual funciona la WWW . 
+            </p>
+            <p>
+                La <strong>WWW (World Wide Web)</strong> es la colección de información que puede ser accesada a través del Internet; su enfoque es más software que el Internet.
+            </p>
+        </article>
+
+    <br>
+
+        <!--Q.2-->
+        <article>
+            <header>
+                <strong>
+                    ¿Cuáles son las partes de un URL?
+                </strong>
+            </header>
+            <p>
+                Las partes de un URL (Uniform Resource Locator) son:
+            </p>
+            <ol>
+                <li>Protocol: Usualmente HTTP o HTTPS, tambien puede ser FTP (File Transfer Protocol) o SMTP (Simple Mail Transfer Protocol )</li>
+                <li>Domain: Nombre empleado para identificar uno o mas direcciones IP donde esta almancenado el recurso a obtener.</li>
+                <li>Path: Ubicación concreta del recurso dentro del servidor.</li>
+                <li>Parameters: Información adicional para identificar o filtrar información del servidor.</li>
+            </ol>
+        </article>
+    <br>
+
+        <!--Q.3-->
+        <article>
+            <header>
+                <strong>
+                    ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?
+                </strong>
+            </header>
+            <p>
+                <ol>
+                <li>GET: Solicita información al servidor para su lectura y/o uso.</li>
+                <li>HEAD: Se emplea antes de un método GET para comprobar que el recurso a comprobar esta presente.</li>
+                <li>POST: Envia datos para crear un recurso en el servidor.</li>
+                <li>PUT: Envia datos para modificar un recurso en el servidor.</li>
+                <li>PATCH: Envia datos y aplica modificaciones parciales a un recurso en el servidor</li>
+                <li>DELETE: Elimina un recurso del servidor.</li>
+            </ol>
+            </p>
+        </article>
+    <br>
+
+        <!--Q.4-->
+        <article>
+            <header>
+                <strong>
+                    ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?
+                </strong>
+            </header>
+            <p>
+                POST seria el método adecuado, ya que de esta forma la información debe estar en el cuerpo de la petición y no seria visible ni se guardaria dentro del historial de los navegadores; haciendo mas seguro el envio de datos tan restringidos.
+            </p>
+        </article>
+    <br>
+
+        <!--Q.5-->
+        <article>
+            <header>
+                <strong>
+                    ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?
+                </strong>
+            </header>
+            <p>
+                GET, ya que la solicitud se realiza para obtener los archivos y recursos propios de la página cuya URL ha sido utilizada.
+            </p>
+        </article>
+    <br>
+
+        <!--Q.6-->
+        <article>
+            <header>
+                <strong>
+                    Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?
+                </strong>
+            </header>
+            <p>
+                Significa que la petición ha sido exitosa, de modo que no ha ocurrido ningun error.
+            </p>
+        </article>
+    <br>
+
+        <!--Q.7-->
+        <article>
+            <header>
+                <strong>
+                    ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?
+                </strong>
+            </header>
+            <p>
+                Si, ya que la respuesta 404 indica una petición incorrecta hecha por el usuario al servidor; de modo que es responsabilidad del desarrollador formular correctamente la petición al servidor solicitado para que esta sea exitosa.
+            </p>
+        </article>
+    <br>
+
+        <!--Q.8-->
+        <article>
+            <header>
+                <strong>
+                    ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?
+                </strong>
+            </header>
+            <p>
+                No, ya que una respuesta 500 indica que ocurrio un error dentro del servidor. Dado que el servidor fue el que tuvo el error y no el sitio web el desarrollador no tiene responsabilidad en ello.
+            </p>
+        </article>
+    <br>
+
+        <!--Q.9-->
+        <article>
+            <header>
+                <strong>
+                    ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.
+                </strong>
+            </header>
+            <p>
+                Significa que las funciones de dicho atributo o etiqueta han sido substituidas por herramientas mejores (generalmente estilos de CSS o nuevas etiquetas de HTML) y que el soporte oficial sera descontinuado sobre las mismas.
+            </p>
+            <p>Algunos de estos atributos son:</p>
+            <ul>
+                <li>&lt;acronym&gt;</li>
+                <li>&lt;bgsound&gt;</li>
+                <li>&lt;big&gt;</li>
+                <li>&lt;center&gt;</li>
+            </ul>
+        </article>
+    <br>
+
+        <!--Q.10-->
+        <article>
+            <header>
+                <strong>
+                    ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?
+                </strong>
+            </header>
+            <p>
+                HTML4 era aun una version del HTML original expandida (1997) ; sin embargo, HTML5 es una compilación de HTML, APIs y estandares como WebGL y SVG (2019).
+            </p>
+            <p>
+                Entre las ventajas del HTML5 incluye nuevas etiquetas, mejor compatibilidad con navegadores actuales, soporte de contenido multimedia, formularios mejorados y conexión con nuevas APIs.
+            </p>
+        </article>
+    <br>
+
+        <!--Q.11-->
+        <article>
+            <header>
+                <strong>
+                    ¿Qué componentes de estructura y estilo tiene una tabla?
+                </strong>
+            </header>
+            <p>
+                La tabla es inicializada con la etiqueta &lt;table&gt;. Posteriormente se definen las filas de la tabla como &lt;tr&gt; dentro de las cuales se deben definir cada una de las columnas con sus datos concretos dentro de &lt;td&gt;.
+            </p>
+            <p>
+                En caso de querer resaltar ciertas celdas, estas se puede colocar como encabezados con la etiqueta &lt;th&gt;.
+            </p>
+            <p>
+                Etiquetas de estilo adicionales:
+            </p>
+            <ul>
+                <li>border: [1px black] Establece un borde del ancho y color establecidos dentro de cada celda de la tabla.</li>
+                <li>border-collapse: 
+                    <ul>
+                        <li>[separate] Establece bordes por cada celda.</li>
+                        <li>[collapse] Une los bordes de las celdas contiguas.</li>
+                    </ul>
+                </li>
+                <li>background-color: Color dentro de las celdas.</li>
+                <li>border-radius: Radio del borde dentro de las celdas.</li>
+                <li>border-style: Estilo de los bordes los cuales pueden ser:
+                    <ul>
+                        <li>dotted</li>
+                        <li>dashed</li>
+                        <li>solid</li>
+                        <li>double</li>
+                        <li>groove</li>
+                        <li>ridge</li>
+                    </ul>
+                </li>
+                <li>border-color: Color de los bordes.</li>
+
+            </ul>
+        </article>
+    <br>
+
+        <!--Q.12-->
+        <article>
+            <header>
+                <strong>
+                    ¿Cuáles son los principales controles de una forma HTML5?
+                </strong>
+            </header>
+            <p>
+                Los controles o elementos que permiten al usuario interactuar con la página web dentro de HTML5 son generalmente los elementos &lt;center&gt; con diferentes tipos, entre los cuales se encuentran:
+            </p>
+            <ul>
+                <li>text</li>
+                <li>email</li>
+                <li>password</li>
+                <li>number</li>
+                <li>date</li>
+                <li>time</li>
+                <li>checkbox</li>
+                <li>color</li>
+                <li>file</li>
+            </ul>
+        </article>
+    <br>
+
+        <!--Q.13-->
+        <article>
+            <header>
+                <strong>
+                    ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)
+                </strong>
+            </header>
+            <p>Google Chrome</p>
+            <p>Puntaje 526/555</p>
+        </article>
+    <br>
+
+        <!--Q.14-->
+        <article>
+            <header>
+                <strong>
+                    ¿Cuál es el ciclo de vida de los sistemas de información?
+                </strong>
+            </header>
+            <p>
+                El ciclo de vida de un sistema informático corresponde al proceso completo desde el cual un sistema es planificado hasta que es desechado. Sus fases principales corresponden a:
+            </p>
+            <ol>
+                <li>Planificación</li>
+                <aside>Identificación de nuestras necesidades, presupuesto y tiempo disponible.</aside>
+                <li>Implementación / Diseño</li>
+                <aside>Configuración del sistema y despliege inicial.</aside>
+                <li>Operación / Ejecución</li>
+                <aside>Uso de los sistemas, mantenimiento preventivo y soporte técnico.</aside>
+                <li>Actualización / Optimización</li>
+                <aside>Sustitución de componentes, mejoras de software y ampliación de capacidades.</aside>
+                <li>Retiro / Finalización</li>
+                <aside>Retirada de los equipos y software.</aside>
+            </ol>
+        </article>
+    <br>
+
+        <!--Q.15-->
+        <article>
+            <header>
+                <strong>
+                    ¿Cuál es el ciclo de desarrollo de sistemas de información?
+                </strong>
+            </header>
+            <p>
+                Es el proceso empleado por los equipos de desarrollo para diseñar y crear software dentro del tiempo, presupuesto y cumpliendo con las expectativas de uso del cliente. Este se compone de:
+            </p>
+            <ol>
+                <li>Planificación</li>
+                <aside></aside>
+                <li>Diseño</li>
+                <aside></aside>
+                <li>Implementación</li>
+                <aside></aside>
+                <li>Pruebas</li>
+                <aside></aside>
+                <li>Despliegue</li>
+                <aside></aside>
+                <li>Mantenimiento</li>
+                <aside></aside>
+            </ol>
+        </article>
+
+    </section>
+
+    <br>
+
+    <!--Resources-->
+    <section>
+        <h2>Recursos consultados: </h2>
+        <ul>
+            <li>https://www.geeksforgeeks.org/computer-networks/difference-between-internet-and-www/</li>
+            <li>https://lenguajehtml.com/html/documento/etiquetas-html-obsoletas/</li>
+            <li>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status</li>
+            <li>https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/</li>
+            <li>https://www.freecodecamp.org/news/http-request-methods-explained/</li>
+            <li>https://desarrolladoraweb.com/blog/html5-vs-html4-cual-es-la-diferencia</li>
+            <li>https://www.freecodecamp.org/news/the-html-handbook/#heading-tables</li>
+            <li>https://www.w3schools.com/html/html_table_borders.asp</li>
+            <li>https://www.w3schools.com/html/html_tables.asp</li>
+            <li>https://evernex.com/es/guia-del-mercado/ciclo-de-vida-informatico/#:~:text=El%20ciclo%20de%20vida%20de%20un%20sistema%20inform%C3%A1tico%20se%20refiere,mantenimiento%2C%20actualizaci%C3%B3n%20y%20disposici%C3%B3n%20final.</li>
+            <li>https://aws.amazon.com/es/what-is/sdlc/</li>
+
+
+
+        </ul>
+    </section>
+
+
+    <footer>
+        <p> Editor de HTML empleado: <a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+    </footer>
+
+</body>
+</html>
