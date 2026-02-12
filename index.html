@@ -17,13 +17,20 @@
         <h1 class="typey">Laboratorio 1 - Rodrigo Hurtado </h1>
 
         <nav>
-            <p>Datos de contacto:</p>
-            <ul>
-                <li>Nombre: Rodrigo Alejandro Hurtado Cortés</li>
-                <li>Matricula: A01713854</li>
-                <li>Correo electrónico escolar: a01713854@tec.mx</li>
-                <li>Correo electrónico personal: hurtadorodrigo00@gmail.com</li>
-            </ul>
+            <p><strong>Datos de contacto:</strong></p>
+            <div class="element">
+                <p>Nombre: Rodrigo Alejandro Hurtado Cortés</p>
+            </div>
+            <div class="element">
+                <p>Matricula: A01713854</p>
+            </div>
+            <div class="element">
+                <p>Correo electrónico escolar: a01713854@tec.mx</p>
+            </div>
+            <div class="element">
+                <p id="last_email">Correo electrónico personal: hurtadorodrigo00@gmail.com</p>
+            </div>
+            
         </nav>
 
         <p>
@@ -126,10 +133,12 @@
                 Las partes de un URL (Uniform Resource Locator) son:
             </p>
             <ol>
-                <li>Protocol: Usualmente HTTP o HTTPS, tambien puede ser FTP (File Transfer Protocol) o SMTP (Simple Mail Transfer Protocol )</li>
+                <li>Protocol: Usualmente HTTP o HTTPS, tambien puede ser FTP (File Transfer Protocol) o SMTP (Simple Mail Transfer Protocol ). </li>
+                <p> Es seguro (HTTPS) ya que las requests son completamente cifradas.</p>
                 <li>Domain: Nombre empleado para identificar uno o mas direcciones IP donde esta almancenado el recurso a obtener.</li>
                 <li>Path: Ubicación concreta del recurso dentro del servidor.</li>
                 <li>Parameters: Información adicional para identificar o filtrar información del servidor.</li>
+                <p>Anteriormente era posible añadir un puerto PORT el cual hacia referencia al puerto a traves del cual se entrega o recibe información. Actualmente son lógicas y no físicas.</p>
             </ol>
         </article>
     <br>
@@ -142,15 +151,16 @@
                 </strong>
             </header>
             <p>
+                HTTP es un protocolo de comunicación.
+            </p>
                 <ol>
                 <li>GET: Solicita información al servidor para su lectura y/o uso.</li>
                 <li>HEAD: Se emplea antes de un método GET para comprobar que el recurso a comprobar esta presente.</li>
-                <li>POST: Envia datos para crear un recurso en el servidor.</li>
+                <li>POST: Envia datos para crear un recurso en el servidor de forma cifrada.</li>
                 <li>PUT: Envia datos para modificar un recurso en el servidor.</li>
                 <li>PATCH: Envia datos y aplica modificaciones parciales a un recurso en el servidor</li>
                 <li>DELETE: Elimina un recurso del servidor.</li>
             </ol>
-            </p>
         </article>
     <br>
 
@@ -201,8 +211,9 @@
                 </strong>
             </header>
             <p>
-                Si, ya que la respuesta 404 indica una petición incorrecta hecha por el usuario al servidor; de modo que es responsabilidad del desarrollador formular correctamente la petición al servidor solicitado para que esta sea exitosa.
+                Si, ya que la respuesta 404 indica una petición incorrecta hecha por el usuario al servidor o bien la informacion solicitada no existe; de modo que es responsabilidad del desarrollador formular correctamente la petición al servidor solicitado para que esta sea exitosa.
             </p>
+            <p>De forma adicional, el error 403 se refiere a un intento de acceder a un contenido prohibido o protegido.</p>
         </article>
     <br>
 
@@ -214,7 +225,7 @@
                 </strong>
             </header>
             <p>
-                No, ya que una respuesta 500 indica que ocurrio un error dentro del servidor. Dado que el servidor fue el que tuvo el error y no el sitio web el desarrollador no tiene responsabilidad en ello.
+                No, ya que una respuesta 500 indica que ocurrio un error dentro del servidor. Dado que el servidor fue el que tuvo el error,el desarrollador tiene responsabilidad en ello. El proyecto debe estar libre de errores 500.
             </p>
         </article>
     <br>
@@ -399,6 +410,7 @@
                     Se recomienda evitar el uso de !important ya que a pesar de su gran utilidad para generar excepciones en el estilo de cierto elemento; este rompe el esquema de cascada de la hoja de estilos en CSS haciendo más dificil una posterior detección de errores o correcciones.
                 </p>
         </article>
+        <br>
 
         <!--Q.2-->
         <article>
@@ -421,6 +433,7 @@
                 <li>El tiempo de carga de la página.</li>
             </ul>
         </article>
+        <br>
 
         <!--Q.3-->
         <article>
@@ -436,6 +449,7 @@
                 <li><strong>pt:</strong> No se recomienda ya que es una medida propia de medios impresos.</li>
             </ul>
         </article>
+        <br>
 
         <!--Q.4-->
         <article>
@@ -449,6 +463,7 @@
                 La minimización del una hoja de estilos implica la eliminación de espacios y comentarios dentro del CSS lo que implica una lectura más rapida del código por parte del navegador, reduciendo el tiempo de carga a coste de hacer este código menos legible al ojo humano.
             </p>
         </article>
+        <br>
     </section>
 
 

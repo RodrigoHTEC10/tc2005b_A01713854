@@ -8,7 +8,8 @@ body {
     line-height: 1.5;
     padding: 0em 1em 4em 1em;
     background-color: #1E1E1E;
-    color: #FFFAFB
+    color: #FFFAFB;
+    text-align: justify;
 }
 
 h2,h1 {
@@ -25,6 +26,11 @@ h2,h1 {
     z-index: 10;
     color: white;
 }
+
+h1:hover,h2:hover{
+    background-color: red;
+}
+
 
 img{
     border-radius: 70px;
@@ -48,6 +54,34 @@ td,th{
 td{
     font-weight: 900;
     padding: 10px;
+}
+
+a{
+    color: #FFD400;
+}
+
+nav{
+    background-color: #FFD400;
+    color:#1E1E1E;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 10px 80px;
+    border-radius: 25px;
+}
+
+nav:hover{
+    background-color: orange;
+}
+
+article header{
+    text-align: center;
+    margin-top: 20px;
+    background-color: #B8B3BE;
+    border-radius: 25px;
+    color:#1E1E1E;
+    margin: 10px 60px;
+    padding: 5px 20px;
+    width: auto;
 }
 
 .references{
@@ -75,6 +109,11 @@ td{
     position: sticky;
 }
 
+
+#last_email{
+    margin-bottom: 20px;
+}
+
 .musicals{
     position: absolute;
     width: 200px;
@@ -91,6 +130,11 @@ td{
     height: 200px;
     width: 200px;
 
+}
+
+.element p{
+    margin: 0px 0px;
+    padding: 0px 0px;
 }
 
 .typey::after{
