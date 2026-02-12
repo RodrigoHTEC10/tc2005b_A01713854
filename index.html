@@ -4,99 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <title>Lab 01 [A01713854]</title>
 
 </head>
 <body>
-    <header>
-        <h1>Laboratorio 1 - Rodrigo Hurtado</h1>
-    </header>
-    
-    <nav>
-        <p>Datos de contacto:</p>
-        <ul>
-            <li>Nombre: Rodrigo Alejandro Hurtado Cortés</li>
-            <li>Matricula: A01713854</li>
-            <li>Correo electrónico escolar: a01713854@tec.mx</li>
-            <li>Correo electrónico personal: hurtadorodrigo00@gmail.com</li>
-        </ul>
-    </nav>
+    <img src="images/header.png" id="header">
 
-    <!--Interest and Skills-->
     <section>
+        <h1 class="typey">Laboratorio 1 - Rodrigo Hurtado </h1>
+
+        <nav>
+            <p>Datos de contacto:</p>
+            <ul>
+                <li>Nombre: Rodrigo Alejandro Hurtado Cortés</li>
+                <li>Matricula: A01713854</li>
+                <li>Correo electrónico escolar: a01713854@tec.mx</li>
+                <li>Correo electrónico personal: hurtadorodrigo00@gmail.com</li>
+            </ul>
+        </nav>
 
         <p>
             Bienvenidos a la practica del laboratorio 1 de la materia de <strong>Construcción de Software y Toma de Decisiones.</strong>
         </p>
 
-        <article>
-            <header><h2>Intereses Personales</h2></header>
+    </section>
+
+    <!--Interest and Skills-->
+    <section>
+        <h2 class="typey">Intereses Personales </h2>
+        <p>
+            Disfruto del aprendizaje, de los retos intelectuales y últimamente tambien de los hermosos momentos de la vida.
+        </p>
+        <p>
+            Me encanta pasar el tiempo con mi hermosa novia, con mis amigos y aprender un poco de todo en realidad; de escuchar musicales y música de todo tipo, sobre todo <a href="https://www.youtube.com/watch?v=MivPd9m5NvI">música pirata</a>. Disfruto mucho de mi carrera y tengo muchas ganas de desarrollar un producto que vaya más alla de pequeños programas para consola.
+        </p>
+
+        <div id="image_love">
+            <img src="images/love.jpeg" alt="El amor de mi vida y yo." id="love"> 
+        </div>
+    </section>
+
+    <section>
+        <header>
+            <h2 class="typey">Habilidades </h2>
+        </header>
+        <ul>
+            <li>Lenguajes de programacion: C++, Java y Python.</li>
+            <li>Conocimiento básico: R, MATLAB, Flutter, SQL.</li>
+            <li>Manejo de control de versiones: GitHub.</li>
+            <li>Planeación de requisitos de software.</li>
+            <li>Organización y planeación de bases de datos relacionales.</li>
+            <li>Comunicación con el cliente.</li>
+        </ul>
+    </section>
+
+
+        <section>
+            <h2 class="typey">
+                Parte Adicional: Musicales 
+            </h2>
             <p>
-                Disfruto del aprendizaje, de los retos intelectuales y últimamente tambien de los hermosos momentos de la vida.
+                Hace unos años encontre mi pasión por los músicales cuando escuche Hamilton por primera vez. A partir de ese momento a pesar de que no conozca muchos músicales me he vuelto un fan enpedernido de muchos de ellos llegando a memorizarme casi todas las canciones de los mismos. A continuación presento una tabla con mis musicales preferidos hasta la fecha. 
             </p>
-            <p>
-                Me encanta pasar el tiempo con mi hermosa novia, con mis amigos y aprender un poco de todo en realidad; de escuchar musicales y música de todo tipo, sobre todo <a href="https://www.youtube.com/watch?v=MivPd9m5NvI">música pirata</a>. Disfruto mucho de mi carrera y tengo muchas ganas de desarrollar un producto que vaya más alla de pequeños programas para consola.
-            </p>
-            <img src="images/love.jpeg" alt="El amor de mi vida y yo." style="width: 500px;"> 
-        </article>
 
-        <article>
-            <header>
-                <h2>Habilidades</h2>
-            </header>
-            <ul>
-                <li>Lennguajes de programacion: C++, Java y Python.</li>
-                <li>Conocimiento básico: R, MATLAB, Flutter, SQL.</li>
-                <li>Manejo de control de versiones: GitHub.</li>
-                <li>Planeación de requisitos de software.</li>
-                <li>Organización y planeación de bases de datos relacionales.</li>
-                <li>Comunicación con el cliente.</li>
-            </ul>
-        </article>
-
-
-        <article>
-            <header>
-                <h2>
-                    Parte Adicional: Musicales
-                </h2>
-                <p>
-                    Hace unos años encontre mi pasión por los músicales cuando escuche Hamilton por primera vez. A partir de ese momento a pesar de que no conozca muchos músicales me he vuelto un fan enpedernido de muchos de ellos llegando a memorizarme casi todas las canciones de los mismos. A continuación presento una tabla con mis musicales preferidos hasta la fecha. 
-                </p>
-
-                <table border="1">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Imagen</th>
-                    </tr>
-                    <tr>
-                        <td><p>Hamilton</p></td>
-                        <td><img src="images/hamilton.jpg" style="width: 150px;"></td>
-                    </tr>
-                    <tr>
-                        <td><p>EPIC</p></td>
-                        <td><img src="images/EPIC.jpg" style="width: 150px;"></td>
-                    </tr>
-                    <tr>
-                        <td><p>Sweeney Todd. The demon barber of Fleet Street</p></td>
-                        <td><img src="images/sweeny.jpeg" style="width: 150px;"></td>
-                    </tr>
-                    <tr>
-                        <td><p>Wicked</p></td>
-                        <td><img src="images/wicked.jpeg" style="width: 150px;"></td>
-                    </tr>
-                </table>
-
-            </header>
-
-
-        </article>
-
+            <table border=""> 
+                <tr>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                </tr>
+                <tr>
+                    <td><p>Hamilton</p></td>
+                    <td class="image_music"><img src="images/hamilton.jpg" class="musicals"></td>
+                </tr>
+                <tr>
+                    <td><p>EPIC</p></td>
+                    <td class="image_music"><img src="images/EPIC.jpg" class="musicals"></td>
+                </tr>
+                <tr>
+                    <td><p>Sweeney Todd</p><p> The demon barber of Fleet Street</p></td>
+                    <td class="image_music"><img src="images/sweeny.jpeg" class="musicals"></td>
+                </tr>
+                <tr>
+                    <td><p>Wicked</p></td>
+                    <td class="image_music"><img src="images/wicked.jpeg" class="musicals"></td>
+                </tr>
+            </table>
     </section>
 
     <!--Answers to Questions from Lab. 01-->
     <section>
-        <h2>Preguntas Laboratorio 1</h2>
+        <h2 class="typey">Preguntas Laboratorio 1 </h2>
 
         <!--Q.1-->
         <article>
@@ -388,7 +388,7 @@
 
     <!--Answers to Questions from Lab. 01-->
     <section>
-        <h2>Preguntas Laboratorio 3</h2>
+        <h2 class="typey">Preguntas Laboratorio 3 </h2>
 
         <!--Q.1-->
         <article>
@@ -456,8 +456,8 @@
 
     <!--Resources-->
     <section>
-        <h2>Recursos consultados: </h2>
-        <ul>
+        <h2 class="typey">Recursos consultados </h2>
+        <ul class="references">
             <li>Copes, F. (2019, julio 23). The HTML handbook – learn HTML for beginners. Freecodecamp.org. https://www.freecodecamp.org/news/the-html-handbook/</li>
 
             <li>Difference between internet and WWW. (2020, octubre 25).    GeeksforGeeks. https://www.geeksforgeeks.org/computer-networks/difference-between-internet-and-www/</li>
