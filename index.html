@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Lab 01 [A01713854]</title>
+
 </head>
 <body>
     <header>
@@ -92,9 +94,9 @@
 
     </section>
 
-    <!--Answers to Questions-->
+    <!--Answers to Questions from Lab. 01-->
     <section>
-        <h2>Preguntas a Responder</h2>
+        <h2>Preguntas Laboratorio 1</h2>
 
         <!--Q.1-->
         <article>
@@ -381,8 +383,74 @@
                 <aside>Corrección de errores, resolución de problemas de los clientes y administración de cambios hechos al software.</aside>
             </ol>
         </article>
-
     </section>
+
+
+    <!--Answers to Questions from Lab. 01-->
+    <section>
+        <h2>Preguntas Laboratorio 3</h2>
+
+        <!--Q.1-->
+        <article>
+            <header>
+                <strong>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </strong>
+            </header>
+                <p>
+                    Se recomienda evitar el uso de !important ya que a pesar de su gran utilidad para generar excepciones en el estilo de cierto elemento; este rompe el esquema de cascada de la hoja de estilos en CSS haciendo más dificil una posterior detección de errores o correcciones.
+                </p>
+        </article>
+
+        <!--Q.2-->
+        <article>
+            <header>
+                <strong>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</strong>
+            </header>
+            <p>
+                Ya que la selección de la imagen correcta debido a su tamaño (número de pixeles) afecta tanto a su visualización como a el tiempo de carga de la página.
+            </p>
+            <p>
+                Cuanto mas grande sea la imagen mejor se vera (indepenedientemente del espacio en el que sea mostrada); sin embargo, esto hace que la página sea más lenta al cargar.
+            </p>
+            <p>
+                Por el otro lado, si la imagen es muy pequeña y se distribuye en un area mayor, esta se vera borrosa y pixeleada; a pesar de que pueda cargar más rapido.
+            </p>
+            <p>De modo que para la selección de una imagen como fondo de pantalla hay que considerar:</p>
+            <ul>
+                <li>El espacio donde se mostrara esta imagen.</li>
+                <li>El tamaño de la imagen.</li>
+                <li>El tiempo de carga de la página.</li>
+            </ul>
+        </article>
+
+        <!--Q.3-->
+        <article>
+            <header>
+                <strong>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</strong>
+            </header>
+            <p>
+                Depende de la propiedad misma a la cual se desea definir dimensiones o proporciones, ya que actualmente las recomendaciones en el diseño de paginas web sugieren los siguientes usos para las unidades antes mencionadas:
+            </p>
+            <ul>
+                <li><strong>%:</strong> Uso para elementos que se adapten segun el tamaño del padre.</li>
+                <li><strong>px:</strong> Uso para bordes, sombras pequeñas y detalles que no necesitan escalarse indepenedientemente del dispositivo donde sean mostrados.</li>
+                <li><strong>pt:</strong> No se recomienda ya que es una medida propia de medios impresos.</li>
+            </ul>
+        </article>
+
+        <!--Q.4-->
+        <article>
+            <header>
+                <strong>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</strong>
+            </header>
+            <p>
+                Esto se debe a la forma en la que una página carga dentro de un navegador, ya que es necesario que el navegador interprete tanto los archivos HTML como las hojas de estilos CSS con el fin de mostrar la página al usuario.
+            </p>
+            <p>
+                La minimización del una hoja de estilos implica la eliminación de espacios y comentarios dentro del CSS lo que implica una lectura más rapida del código por parte del navegador, reduciendo el tiempo de carga a coste de hacer este código menos legible al ojo humano.
+            </p>
+        </article>
+    </section>
+
 
     <br>
 
@@ -411,9 +479,10 @@
             <li>Loire, C. (2024, noviembre 24). Ciclo de Vida Informático: Etapas y Mejores Prácticas. Evernex. https://evernex.com/es/guia-del-mercado/ciclo-de-vida-informatico/</li>
 
             <li>(S/f). Amazon.com. Recuperado el 10 de febrero de 2026, de https://aws.amazon.com/es/what-is/sdlc/</li>
+
+            <li>(N.d.-b). Cloudflare.com. Retrieved February 12, 2026, from https://www.cloudflare.com/learning/performance/how-to-minify-css/</li>
         </ul>
     </section>
-
 
     <footer>
         <p> Editor de HTML empleado: <a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
