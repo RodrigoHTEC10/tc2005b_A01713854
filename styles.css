@@ -91,17 +91,19 @@ article header{
 
 
 #image_love{
-    position: relative;
-    height: 550px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
 }
 
 #love{
-    position: absolute;
     width:50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 0;
+    transition: width 0.5s ease;
+}
+
+#love:hover{
+    width: 60%;
 }
 
 #header{
@@ -135,6 +137,7 @@ article header{
 .element p{
     margin: 0px 0px;
     padding: 0px 0px;
+    text-align: center;
 }
 
 .typey::after{

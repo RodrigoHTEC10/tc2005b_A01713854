@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="min_styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -14,21 +14,21 @@
     <img src="images/header.png" id="header">
 
     <section>
-        <h1 class="typey">Laboratorio 1 - Rodrigo Hurtado </h1>
+        <h1 class="typey">Laboratorios - Rodrigo Hurtado </h1>
 
         <nav>
             <p><strong>Datos de contacto:</strong></p>
             <div class="element">
-                <p>Nombre: Rodrigo Alejandro Hurtado Cortés</p>
+                <p><strong>Nombre:</strong> Rodrigo Alejandro Hurtado Cortés</p>
             </div>
             <div class="element">
-                <p>Matricula: A01713854</p>
+                <p><strong> Matricula:</strong> A01713854</p>
             </div>
             <div class="element">
-                <p>Correo electrónico escolar: a01713854@tec.mx</p>
+                <p><strong>Correo electrónico escolar:</strong> a01713854@tec.mx</p>
             </div>
             <div class="element">
-                <p id="last_email">Correo electrónico personal: hurtadorodrigo00@gmail.com</p>
+                <p id="last_email"> <strong>Correo electrónico personal:</strong> hurtadorodrigo00@gmail.com</p>
             </div>
             
         </nav>
@@ -58,14 +58,14 @@
         <header>
             <h2 class="typey">Habilidades </h2>
         </header>
-        <ul>
-            <li>Lenguajes de programacion: C++, Java y Python.</li>
-            <li>Conocimiento básico: R, MATLAB, Flutter, SQL.</li>
-            <li>Manejo de control de versiones: GitHub.</li>
-            <li>Planeación de requisitos de software.</li>
-            <li>Organización y planeación de bases de datos relacionales.</li>
-            <li>Comunicación con el cliente.</li>
-        </ul>
+        <div class="element">
+            <p>Lenguajes de programacion: C++, Java y Python.</p>
+            <p>Conocimiento básico: R, MATLAB, Flutter, SQL.</p>
+            <p>Manejo de control de versiones: GitHub.</p>
+            <p>Planeación de requisitos de software.</p>
+            <p>Organización y planeación de bases de datos relacionales.</p>
+            <p>Comunicación con el cliente.</p>
+        </div>
     </section>
 
 
@@ -105,295 +105,297 @@
     <section>
         <h2 class="typey">Preguntas Laboratorio 1 </h2>
 
-        <!--Q.1-->
-        <article>
-            <header>
-                <strong>
-                    ¿Cuál es la diferencia entre Internet y la World Wide Web?
-                </strong>
-            </header>
-            <p>
-                El <strong>Internet</strong> es la red global de sistemas interconectados, la cual es dependiente del hardware, sobre la cual funciona la WWW . 
-            </p>
-            <p>
-                La <strong>WWW (World Wide Web)</strong> es la colección de información que puede ser accesada a través del Internet; su enfoque es más software que el Internet.
-            </p>
-        </article>
+        <div class="container_lab1">
+            <!--Q.1-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Cuál es la diferencia entre Internet y la World Wide Web?
+                    </strong>
+                </header>
+                <p>
+                    El <strong>Internet</strong> es la red global de sistemas interconectados, la cual es dependiente del hardware, sobre la cual funciona la WWW . 
+                </p>
+                <p>
+                    La <strong>WWW (World Wide Web)</strong> es la colección de información que puede ser accesada a través del Internet; su enfoque es más software que el Internet.
+                </p>
+            </article>
 
-    <br>
+        <br>
 
-        <!--Q.2-->
-        <article>
-            <header>
-                <strong>
-                    ¿Cuáles son las partes de un URL?
-                </strong>
-            </header>
-            <p>
-                Las partes de un URL (Uniform Resource Locator) son:
-            </p>
-            <ol>
-                <li>Protocol: Usualmente HTTP o HTTPS, tambien puede ser FTP (File Transfer Protocol) o SMTP (Simple Mail Transfer Protocol ). </li>
-                <p> Es seguro (HTTPS) ya que las requests son completamente cifradas.</p>
-                <li>Domain: Nombre empleado para identificar uno o mas direcciones IP donde esta almancenado el recurso a obtener.</li>
-                <li>Path: Ubicación concreta del recurso dentro del servidor.</li>
-                <li>Parameters: Información adicional para identificar o filtrar información del servidor.</li>
-                <p>Anteriormente era posible añadir un puerto PORT el cual hacia referencia al puerto a traves del cual se entrega o recibe información. Actualmente son lógicas y no físicas.</p>
-            </ol>
-        </article>
-    <br>
-
-        <!--Q.3-->
-        <article>
-            <header>
-                <strong>
-                    ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?
-                </strong>
-            </header>
-            <p>
-                HTTP es un protocolo de comunicación.
-            </p>
+            <!--Q.2-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Cuáles son las partes de un URL?
+                    </strong>
+                </header>
+                <p>
+                    Las partes de un URL (Uniform Resource Locator) son:
+                </p>
                 <ol>
-                <li>GET: Solicita información al servidor para su lectura y/o uso.</li>
-                <li>HEAD: Se emplea antes de un método GET para comprobar que el recurso a comprobar esta presente.</li>
-                <li>POST: Envia datos para crear un recurso en el servidor de forma cifrada.</li>
-                <li>PUT: Envia datos para modificar un recurso en el servidor.</li>
-                <li>PATCH: Envia datos y aplica modificaciones parciales a un recurso en el servidor</li>
-                <li>DELETE: Elimina un recurso del servidor.</li>
-            </ol>
-        </article>
-    <br>
+                    <li>Protocol: Usualmente HTTP o HTTPS, tambien puede ser FTP (File Transfer Protocol) o SMTP (Simple Mail Transfer Protocol ). </li>
+                    <p> Es seguro (HTTPS) ya que las requests son completamente cifradas.</p>
+                    <li>Domain: Nombre empleado para identificar uno o mas direcciones IP donde esta almancenado el recurso a obtener.</li>
+                    <li>Path: Ubicación concreta del recurso dentro del servidor.</li>
+                    <li>Parameters: Información adicional para identificar o filtrar información del servidor.</li>
+                    <p>Anteriormente era posible añadir un puerto PORT el cual hacia referencia al puerto a traves del cual se entrega o recibe información. Actualmente son lógicas y no físicas.</p>
+                </ol>
+            </article>
+        <br>
 
-        <!--Q.4-->
-        <article>
-            <header>
-                <strong>
-                    ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?
-                </strong>
-            </header>
-            <p>
-                POST seria el método adecuado, ya que de esta forma la información debe estar en el cuerpo de la petición y no seria visible ni se guardaria dentro del historial de los navegadores; haciendo mas seguro el envio de datos tan restringidos.
-            </p>
-        </article>
-    <br>
+            <!--Q.3-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?
+                    </strong>
+                </header>
+                <p>
+                    HTTP es un protocolo de comunicación.
+                </p>
+                    <ol>
+                    <li>GET: Solicita información al servidor para su lectura y/o uso.</li>
+                    <li>HEAD: Se emplea antes de un método GET para comprobar que el recurso a comprobar esta presente.</li>
+                    <li>POST: Envia datos para crear un recurso en el servidor de forma cifrada.</li>
+                    <li>PUT: Envia datos para modificar un recurso en el servidor.</li>
+                    <li>PATCH: Envia datos y aplica modificaciones parciales a un recurso en el servidor</li>
+                    <li>DELETE: Elimina un recurso del servidor.</li>
+                </ol>
+            </article>
+        <br>
 
-        <!--Q.5-->
-        <article>
-            <header>
-                <strong>
-                    ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?
-                </strong>
-            </header>
-            <p>
-                GET, ya que la solicitud se realiza para obtener los archivos y recursos propios de la página cuya URL ha sido utilizada.
-            </p>
-        </article>
-    <br>
+            <!--Q.4-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?
+                    </strong>
+                </header>
+                <p>
+                    POST seria el método adecuado, ya que de esta forma la información debe estar en el cuerpo de la petición y no seria visible ni se guardaria dentro del historial de los navegadores; haciendo mas seguro el envio de datos tan restringidos.
+                </p>
+            </article>
+        <br>
 
-        <!--Q.6-->
-        <article>
-            <header>
-                <strong>
-                    Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?
-                </strong>
-            </header>
-            <p>
-                Significa que la petición ha sido exitosa, de modo que no ha ocurrido ningun error.
-            </p>
-        </article>
-    <br>
+            <!--Q.5-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?
+                    </strong>
+                </header>
+                <p>
+                    GET, ya que la solicitud se realiza para obtener los archivos y recursos propios de la página cuya URL ha sido utilizada.
+                </p>
+            </article>
+        <br>
 
-        <!--Q.7-->
-        <article>
-            <header>
-                <strong>
-                    ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?
-                </strong>
-            </header>
-            <p>
-                Si, ya que la respuesta 404 indica una petición incorrecta hecha por el usuario al servidor o bien la informacion solicitada no existe; de modo que es responsabilidad del desarrollador formular correctamente la petición al servidor solicitado para que esta sea exitosa.
-            </p>
-            <p>De forma adicional, el error 403 se refiere a un intento de acceder a un contenido prohibido o protegido.</p>
-        </article>
-    <br>
+            <!--Q.6-->
+            <article>
+                <header>
+                    <strong>
+                        Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?
+                    </strong>
+                </header>
+                <p>
+                    Significa que la petición ha sido exitosa, de modo que no ha ocurrido ningun error.
+                </p>
+            </article>
+        <br>
 
-        <!--Q.8-->
-        <article>
-            <header>
-                <strong>
-                    ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?
-                </strong>
-            </header>
-            <p>
-                No, ya que una respuesta 500 indica que ocurrio un error dentro del servidor. Dado que el servidor fue el que tuvo el error,el desarrollador tiene responsabilidad en ello. El proyecto debe estar libre de errores 500.
-            </p>
-        </article>
-    <br>
+            <!--Q.7-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?
+                    </strong>
+                </header>
+                <p>
+                    Si, ya que la respuesta 404 indica una petición incorrecta hecha por el usuario al servidor o bien la informacion solicitada no existe; de modo que es responsabilidad del desarrollador formular correctamente la petición al servidor solicitado para que esta sea exitosa.
+                </p>
+                <p>De forma adicional, el error 403 se refiere a un intento de acceder a un contenido prohibido o protegido.</p>
+            </article>
+        <br>
 
-        <!--Q.9-->
-        <article>
-            <header>
-                <strong>
-                    ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.
-                </strong>
-            </header>
-            <p>
-                Significa que las funciones de dicho atributo o etiqueta han sido substituidas por herramientas mejores (generalmente estilos de CSS o nuevas etiquetas de HTML) y que el soporte oficial sera descontinuado sobre las mismas.
-            </p>
-            <p>Algunos de estos atributos son:</p>
-            <ul>
-                <li>&lt;acronym&gt;</li>
-                <li>&lt;bgsound&gt;</li>
-                <li>&lt;big&gt;</li>
-                <li>&lt;center&gt;</li>
-            </ul>
-        </article>
-    <br>
+            <!--Q.8-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?
+                    </strong>
+                </header>
+                <p>
+                    No, ya que una respuesta 500 indica que ocurrio un error dentro del servidor. Dado que el servidor fue el que tuvo el error,el desarrollador tiene responsabilidad en ello. El proyecto debe estar libre de errores 500.
+                </p>
+            </article>
+        <br>
 
-        <!--Q.10-->
-        <article>
-            <header>
-                <strong>
-                    ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?
-                </strong>
-            </header>
-            <p>
-                HTML4 era aun una version del HTML original expandida (1997) ; sin embargo, HTML5 es una compilación de HTML, APIs y estandares como WebGL y SVG (2019).
-            </p>
-            <p>
-                Entre las ventajas del HTML5 incluye nuevas etiquetas, mejor compatibilidad con navegadores actuales, soporte de contenido multimedia, formularios mejorados y conexión con nuevas APIs.
-            </p>
-        </article>
-    <br>
+            <!--Q.9-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.
+                    </strong>
+                </header>
+                <p>
+                    Significa que las funciones de dicho atributo o etiqueta han sido substituidas por herramientas mejores (generalmente estilos de CSS o nuevas etiquetas de HTML) y que el soporte oficial sera descontinuado sobre las mismas.
+                </p>
+                <p>Algunos de estos atributos son:</p>
+                <ul>
+                    <li>&lt;acronym&gt;</li>
+                    <li>&lt;bgsound&gt;</li>
+                    <li>&lt;big&gt;</li>
+                    <li>&lt;center&gt;</li>
+                </ul>
+            </article>
+        <br>
 
-        <!--Q.11-->
-        <article>
-            <header>
-                <strong>
-                    ¿Qué componentes de estructura y estilo tiene una tabla?
-                </strong>
-            </header>
-            <p>
-                La tabla es inicializada con la etiqueta &lt;table&gt;. Posteriormente se definen las filas de la tabla como &lt;tr&gt; dentro de las cuales se deben definir cada una de las columnas con sus datos concretos dentro de &lt;td&gt;.
-            </p>
-            <p>
-                En caso de querer resaltar ciertas celdas, estas se puede colocar como encabezados con la etiqueta &lt;th&gt;.
-            </p>
-            <p>
-                Etiquetas de estilo adicionales:
-            </p>
-            <ul>
-                <li>border: [1px black] Establece un borde del ancho y color establecidos dentro de cada celda de la tabla.</li>
-                <li>border-collapse: 
-                    <ul>
-                        <li>[separate] Establece bordes por cada celda.</li>
-                        <li>[collapse] Une los bordes de las celdas contiguas.</li>
-                    </ul>
-                </li>
-                <li>background-color: Color dentro de las celdas.</li>
-                <li>border-radius: Radio del borde dentro de las celdas.</li>
-                <li>border-style: Estilo de los bordes los cuales pueden ser:
-                    <ul>
-                        <li>dotted</li>
-                        <li>dashed</li>
-                        <li>solid</li>
-                        <li>double</li>
-                        <li>groove</li>
-                        <li>ridge</li>
-                    </ul>
-                </li>
-                <li>border-color: Color de los bordes.</li>
+            <!--Q.10-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?
+                    </strong>
+                </header>
+                <p>
+                    HTML4 era aun una version del HTML original expandida (1997) ; sin embargo, HTML5 es una compilación de HTML, APIs y estandares como WebGL y SVG (2019).
+                </p>
+                <p>
+                    Entre las ventajas del HTML5 incluye nuevas etiquetas, mejor compatibilidad con navegadores actuales, soporte de contenido multimedia, formularios mejorados y conexión con nuevas APIs.
+                </p>
+            </article>
+        <br>
 
-            </ul>
-        </article>
-    <br>
+            <!--Q.11-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Qué componentes de estructura y estilo tiene una tabla?
+                    </strong>
+                </header>
+                <p>
+                    La tabla es inicializada con la etiqueta &lt;table&gt;. Posteriormente se definen las filas de la tabla como &lt;tr&gt; dentro de las cuales se deben definir cada una de las columnas con sus datos concretos dentro de &lt;td&gt;.
+                </p>
+                <p>
+                    En caso de querer resaltar ciertas celdas, estas se puede colocar como encabezados con la etiqueta &lt;th&gt;.
+                </p>
+                <p>
+                    Etiquetas de estilo adicionales:
+                </p>
+                <ul>
+                    <li>border: [1px black] Establece un borde del ancho y color establecidos dentro de cada celda de la tabla.</li>
+                    <li>border-collapse: 
+                        <ul>
+                            <li>[separate] Establece bordes por cada celda.</li>
+                            <li>[collapse] Une los bordes de las celdas contiguas.</li>
+                        </ul>
+                    </li>
+                    <li>background-color: Color dentro de las celdas.</li>
+                    <li>border-radius: Radio del borde dentro de las celdas.</li>
+                    <li>border-style: Estilo de los bordes los cuales pueden ser:
+                        <ul>
+                            <li>dotted</li>
+                            <li>dashed</li>
+                            <li>solid</li>
+                            <li>double</li>
+                            <li>groove</li>
+                            <li>ridge</li>
+                        </ul>
+                    </li>
+                    <li>border-color: Color de los bordes.</li>
 
-        <!--Q.12-->
-        <article>
-            <header>
-                <strong>
-                    ¿Cuáles son los principales controles de una forma HTML5?
-                </strong>
-            </header>
-            <p>
-                Los controles o elementos que permiten al usuario interactuar con la página web dentro de HTML5 son generalmente los elementos &lt;center&gt; con diferentes tipos, entre los cuales se encuentran:
-            </p>
-            <ul>
-                <li>text</li>
-                <li>email</li>
-                <li>password</li>
-                <li>number</li>
-                <li>date</li>
-                <li>time</li>
-                <li>checkbox</li>
-                <li>color</li>
-                <li>file</li>
-            </ul>
-        </article>
-    <br>
+                </ul>
+            </article>
+        <br>
 
-        <!--Q.13-->
-        <article>
-            <header>
-                <strong>
-                    ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)
-                </strong>
-            </header>
-            <p>Google Chrome</p>
-            <p>Puntaje 526/555</p>
-        </article>
-    <br>
+            <!--Q.12-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Cuáles son los principales controles de una forma HTML5?
+                    </strong>
+                </header>
+                <p>
+                    Los controles o elementos que permiten al usuario interactuar con la página web dentro de HTML5 son generalmente los elementos &lt;center&gt; con diferentes tipos, entre los cuales se encuentran:
+                </p>
+                <ul>
+                    <li>text</li>
+                    <li>email</li>
+                    <li>password</li>
+                    <li>number</li>
+                    <li>date</li>
+                    <li>time</li>
+                    <li>checkbox</li>
+                    <li>color</li>
+                    <li>file</li>
+                </ul>
+            </article>
+        <br>
 
-        <!--Q.14-->
-        <article>
-            <header>
-                <strong>
-                    ¿Cuál es el ciclo de vida de los sistemas de información?
-                </strong>
-            </header>
-            <p>
-                El ciclo de vida de un sistema informático corresponde al proceso completo desde el cual un sistema es planificado hasta que es desechado. Sus fases principales corresponden a:
-            </p>
-            <ol>
-                <li>Planificación</li>
-                <aside>Identificación de nuestras necesidades, presupuesto y tiempo disponible.</aside>
-                <li>Implementación / Diseño</li>
-                <aside>Configuración del sistema y despliege inicial.</aside>
-                <li>Operación / Ejecución</li>
-                <aside>Uso de los sistemas, mantenimiento preventivo y soporte técnico.</aside>
-                <li>Actualización / Optimización</li>
-                <aside>Sustitución de componentes, mejoras de software y ampliación de capacidades.</aside>
-                <li>Retiro / Finalización</li>
-                <aside>Retirada de los equipos y software.</aside>
-            </ol>
-        </article>
-    <br>
+            <!--Q.13-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)
+                    </strong>
+                </header>
+                <p>Google Chrome</p>
+                <p>Puntaje 526/555</p>
+            </article>
+        <br>
 
-        <!--Q.15-->
-        <article>
-            <header>
-                <strong>
-                    ¿Cuál es el ciclo de desarrollo de sistemas de información?
-                </strong>
-            </header>
-            <p>
-                Es el proceso empleado por los equipos de desarrollo para diseñar y crear software dentro del tiempo, presupuesto y cumpliendo con las expectativas de uso del cliente. Este se compone de:
-            </p>
-            <ol>
-                <li>Planificación</li>
-                <aside>Consiste en el análisis de los costos, actividades a realizar, recursos disponibles,  asignación de los mismos y beneficios a obtener con el fin de declararlos en un documento de requisitos de software.</aside>
-                <li>Diseño</li>
-                <aside>Análisis de requisitos e identificación de las mejores soluciones para crear el software.</aside>
-                <li>Implementación</li>
-                <aside>Codificación del producto por el equipo de desarrollo.</aside>
-                <li>Pruebas</li>
-                <aside>Combinación de pruebas manuales y automáticas para comprobar si el software tiene errores y si cumple con los requerimientos del cliente.</aside>
-                <li>Despliegue</li>
-                <aside>Llevar el software a un entorno de compilación y entorno de producción diferenciados para garantizar que el cliente tendra acceso al producto.</aside>
-                <li>Mantenimiento</li>
-                <aside>Corrección de errores, resolución de problemas de los clientes y administración de cambios hechos al software.</aside>
-            </ol>
-        </article>
+            <!--Q.14-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Cuál es el ciclo de vida de los sistemas de información?
+                    </strong>
+                </header>
+                <p>
+                    El ciclo de vida de un sistema informático corresponde al proceso completo desde el cual un sistema es planificado hasta que es desechado. Sus fases principales corresponden a:
+                </p>
+                <ol>
+                    <li>Planificación</li>
+                    <aside>Identificación de nuestras necesidades, presupuesto y tiempo disponible.</aside>
+                    <li>Implementación / Diseño</li>
+                    <aside>Configuración del sistema y despliege inicial.</aside>
+                    <li>Operación / Ejecución</li>
+                    <aside>Uso de los sistemas, mantenimiento preventivo y soporte técnico.</aside>
+                    <li>Actualización / Optimización</li>
+                    <aside>Sustitución de componentes, mejoras de software y ampliación de capacidades.</aside>
+                    <li>Retiro / Finalización</li>
+                    <aside>Retirada de los equipos y software.</aside>
+                </ol>
+            </article>
+        <br>
+
+            <!--Q.15-->
+            <article>
+                <header>
+                    <strong>
+                        ¿Cuál es el ciclo de desarrollo de sistemas de información?
+                    </strong>
+                </header>
+                <p>
+                    Es el proceso empleado por los equipos de desarrollo para diseñar y crear software dentro del tiempo, presupuesto y cumpliendo con las expectativas de uso del cliente. Este se compone de:
+                </p>
+                <ol>
+                    <li>Planificación</li>
+                    <aside>Consiste en el análisis de los costos, actividades a realizar, recursos disponibles,  asignación de los mismos y beneficios a obtener con el fin de declararlos en un documento de requisitos de software.</aside>
+                    <li>Diseño</li>
+                    <aside>Análisis de requisitos e identificación de las mejores soluciones para crear el software.</aside>
+                    <li>Implementación</li>
+                    <aside>Codificación del producto por el equipo de desarrollo.</aside>
+                    <li>Pruebas</li>
+                    <aside>Combinación de pruebas manuales y automáticas para comprobar si el software tiene errores y si cumple con los requerimientos del cliente.</aside>
+                    <li>Despliegue</li>
+                    <aside>Llevar el software a un entorno de compilación y entorno de producción diferenciados para garantizar que el cliente tendra acceso al producto.</aside>
+                    <li>Mantenimiento</li>
+                    <aside>Corrección de errores, resolución de problemas de los clientes y administración de cambios hechos al software.</aside>
+                </ol>
+            </article>
+        </div>
     </section>
 
 
@@ -401,69 +403,71 @@
     <section>
         <h2 class="typey">Preguntas Laboratorio 3 </h2>
 
+        <div class="container">
         <!--Q.1-->
-        <article>
-            <header>
-                <strong>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </strong>
-            </header>
+            <article>
+                <header>
+                    <strong>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </strong>
+                </header>
+                    <p>
+                        Se recomienda evitar el uso de !important ya que a pesar de su gran utilidad para generar excepciones en el estilo de cierto elemento; este rompe el esquema de cascada de la hoja de estilos en CSS haciendo más dificil una posterior detección de errores o correcciones.
+                    </p>
+            </article>
+            <br>
+
+            <!--Q.2-->
+            <article>
+                <header>
+                    <strong>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</strong>
+                </header>
                 <p>
-                    Se recomienda evitar el uso de !important ya que a pesar de su gran utilidad para generar excepciones en el estilo de cierto elemento; este rompe el esquema de cascada de la hoja de estilos en CSS haciendo más dificil una posterior detección de errores o correcciones.
+                    Ya que la selección de la imagen correcta debido a su tamaño (número de pixeles) afecta tanto a su visualización como a el tiempo de carga de la página.
                 </p>
-        </article>
-        <br>
+                <p>
+                    Cuanto mas grande sea la imagen mejor se vera (indepenedientemente del espacio en el que sea mostrada); sin embargo, esto hace que la página sea más lenta al cargar.
+                </p>
+                <p>
+                    Por el otro lado, si la imagen es muy pequeña y se distribuye en un area mayor, esta se vera borrosa y pixeleada; a pesar de que pueda cargar más rapido.
+                </p>
+                <p>De modo que para la selección de una imagen como fondo de pantalla hay que considerar:</p>
+                <ul>
+                    <li>El espacio donde se mostrara esta imagen.</li>
+                    <li>El tamaño de la imagen.</li>
+                    <li>El tiempo de carga de la página.</li>
+                </ul>
+            </article>
+            <br>
 
-        <!--Q.2-->
-        <article>
-            <header>
-                <strong>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</strong>
-            </header>
-            <p>
-                Ya que la selección de la imagen correcta debido a su tamaño (número de pixeles) afecta tanto a su visualización como a el tiempo de carga de la página.
-            </p>
-            <p>
-                Cuanto mas grande sea la imagen mejor se vera (indepenedientemente del espacio en el que sea mostrada); sin embargo, esto hace que la página sea más lenta al cargar.
-            </p>
-            <p>
-                Por el otro lado, si la imagen es muy pequeña y se distribuye en un area mayor, esta se vera borrosa y pixeleada; a pesar de que pueda cargar más rapido.
-            </p>
-            <p>De modo que para la selección de una imagen como fondo de pantalla hay que considerar:</p>
-            <ul>
-                <li>El espacio donde se mostrara esta imagen.</li>
-                <li>El tamaño de la imagen.</li>
-                <li>El tiempo de carga de la página.</li>
-            </ul>
-        </article>
-        <br>
+            <!--Q.3-->
+            <article>
+                <header>
+                    <strong>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</strong>
+                </header>
+                <p>
+                    Depende de la propiedad misma a la cual se desea definir dimensiones o proporciones, ya que actualmente las recomendaciones en el diseño de paginas web sugieren los siguientes usos para las unidades antes mencionadas:
+                </p>
+                <ul>
+                    <li><strong>%:</strong> Uso para elementos que se adapten segun el tamaño del padre.</li>
+                    <li><strong>px:</strong> Uso para bordes, sombras pequeñas y detalles que no necesitan escalarse indepenedientemente del dispositivo donde sean mostrados.</li>
+                    <li><strong>pt:</strong> No se recomienda ya que es una medida propia de medios impresos.</li>
+                </ul>
+            </article>
+            <br>
 
-        <!--Q.3-->
-        <article>
-            <header>
-                <strong>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</strong>
-            </header>
-            <p>
-                Depende de la propiedad misma a la cual se desea definir dimensiones o proporciones, ya que actualmente las recomendaciones en el diseño de paginas web sugieren los siguientes usos para las unidades antes mencionadas:
-            </p>
-            <ul>
-                <li><strong>%:</strong> Uso para elementos que se adapten segun el tamaño del padre.</li>
-                <li><strong>px:</strong> Uso para bordes, sombras pequeñas y detalles que no necesitan escalarse indepenedientemente del dispositivo donde sean mostrados.</li>
-                <li><strong>pt:</strong> No se recomienda ya que es una medida propia de medios impresos.</li>
-            </ul>
-        </article>
-        <br>
-
-        <!--Q.4-->
-        <article>
-            <header>
-                <strong>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</strong>
-            </header>
-            <p>
-                Esto se debe a la forma en la que una página carga dentro de un navegador, ya que es necesario que el navegador interprete tanto los archivos HTML como las hojas de estilos CSS con el fin de mostrar la página al usuario.
-            </p>
-            <p>
-                La minimización del una hoja de estilos implica la eliminación de espacios y comentarios dentro del CSS lo que implica una lectura más rapida del código por parte del navegador, reduciendo el tiempo de carga a coste de hacer este código menos legible al ojo humano.
-            </p>
-        </article>
-        <br>
+            <!--Q.4-->
+            <article>
+                <header>
+                    <strong>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</strong>
+                </header>
+                <p>
+                    Esto se debe a la forma en la que una página carga dentro de un navegador, ya que es necesario que el navegador interprete tanto los archivos HTML como las hojas de estilos CSS con el fin de mostrar la página al usuario.
+                </p>
+                <p>
+                    La minimización del una hoja de estilos implica la eliminación de espacios y comentarios dentro del CSS lo que implica una lectura más rapida del código por parte del navegador, reduciendo el tiempo de carga a coste de hacer este código menos legible al ojo humano.
+                </p>
+            </article>
+            <br>
+        </div>
     </section>
 
 
@@ -503,5 +507,6 @@
         <p> Editor de HTML empleado: <a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
     </footer>
 
+    <script src="intro.js"></script>
 </body>
 </html>
