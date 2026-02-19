@@ -1,0 +1,19 @@
+button{
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
+
+.preguntas{
+    font-weight: 700;
+}
+
+.bank_buttons{
+    display: flex;
+    gap: 2em;
+    padding: 1em;
+}
+
+#bank_info{
+    padding: 1em;
+    padding-top: -1em;
+}

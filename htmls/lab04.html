@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="sp" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../styles/styles04.css">
+
+    <title>Lab 04 [A01713854]</title>
+</head>
+<body>
+    <div class="container">
+        <div class="block is-large">
+            <h1 class="title has-text-centered">Laboratorio 04 - Rodrigo Hurtado </h1>
+        </div>
+    </div>
+
+    <div class="container is-max-desktop">
+        <div class="block">
+            <h2 class="subtitle">
+                Ejercicios
+            </h2>    
+        </div>
+    
+        <div class="block">
+            <p class="block">Ejercicio 1</p>
+            <div class="content">
+                <p><strong>Entrada:</strong> un número pedido con un prompt.</p>
+                <p><strong>Salida:</strong> Una tabla con los números del 1 al número dado con sus cuadrados y cubos. Utiliza document.write para producir la salida.</p>
+            </div>
+
+            <div class="has-text-centered">
+                <button class="button is-danger is-centered"  onclick="exercise1()">Ejecutar</button>
+            </div>
+            
+            <div id="ejercicio1" class="is-flex is-justify-content-center">
+
+            </div>
+            
+            <div class="is-flex is-justify-content-center">
+                <button id="dis1" class="button is-info is-centered" onclick="exercise1dis()" style="display: none;">Desaparecer</button>
+            </div>
+
+        </div>
+        
+        <div class="block">
+            <p class="block">Ejercicio 2</p>
+            <div class="content">
+                <p><strong>Entrada:</strong> Usando un prompt se pide el resultado de la suma de 2 números generados de manera aleatoria. </p>
+                <p><strong>Salida:</strong> La página debe indicar si el resultado fue correcto o incorrecto, y el tiempo que tardó el usuario en escribir la respuesta.</p>
+            </div>
+
+            <div class="has-text-centered">
+                <button class="button is-danger" onclick="exercise2()">Ejecutar</button>
+            </div>
+
+            <div id="ejercicio2" class="has-text-centered">
+            
+            </div>
+
+            <div class="is-flex is-justify-content-center">
+                <button id="dis2" class="button is-info is-centered" onclick="exercise2dis()" style="display: none;">Desaparecer</button>
+            </div>
+
+        </div>
+
+        <div class="block">
+            <p class="block">Ejercicio 3</p>
+            <div class="content">
+                <p><strong>Función: </strong>contador.</p> 
+                <p><strong>Parámetros:</strong> Un arreglo de números.</p>
+                <p><strong>Regresa:</strong> La cantidad de números negativos en el arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo.</p>
+            </div>
+            <div class="has-text-centered">
+                <button class="button is-danger" onclick="exercise3()">Ejecutar</button>
+            </div>            
+            <div id="ejercicio3" class="has-text-centered">
+                
+            </div>
+
+            <div class="is-flex is-justify-content-center">
+                <button id="dis3" class="button is-info is-centered" onclick="exercise3dis()" style="display: none;">Desaparecer</button>
+            </div>
+
+        </div>
+
+        <div class="block">
+            <p class="block">Ejercicio 4</p>
+            <div class="content">
+                <p><strong>Función:</strong> promedios.</p>
+                <p><strong>Parámetros:</strong> Un arreglo de arreglos de números.</p>
+                <p><strong>Regresa:</strong> Un arreglo con los promedios de cada uno de los renglones de la matriz.</p>
+            </div>
+            <div class="has-text-centered">
+                <button class="button is-danger" onclick="exercise4()">Ejecutar</button>
+            </div> 
+            <div id="ejercicio4" class="has-text-centered">
+                
+            </div>
+
+            <div class="is-flex is-justify-content-center">
+                <button id="dis4" class="button is-info is-centered" onclick="exercise4dis()" style="display: none;">Desaparecer</button>
+            </div>
+
+        </div>
+
+
+        <div class="block">
+            <p class="block">Ejercicio 5</p>
+            <div class="content">
+                <p><strong>Función:</strong> inverso.</p>
+                <p><strong>Parámetros:</strong> Un número.</p>
+                <p><strong>Regresa:</strong> El número con sus dígitos en orden inverso.</p> 
+            </div>
+            <div class="has-text-centered">
+                <button class="button is-danger" onclick="exercise5()">Ejecutar</button>
+            </div>
+            
+            <div id="ejercicio5" class="has-text-centered">
+                
+            </div>
+
+            <div class="is-flex is-justify-content-center">
+                <button id="dis5" class="button is-info is-centered" onclick="exercise5dis()" style="display: none;">Desaparecer</button>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="block">
+            <p class="block">Ejercicio 6</p>
+            <p class="content">
+                A continuación se muestra un sistema bancario creado como un objeto en si mismo con los siguientes métodos:
+            </p>
+            <ul class="content">
+                <li><strong>deposito(val):</strong> Ingresa $ val al dinero de la cuenta.</li>
+                <li><strong>retiro(val):</strong> Retira $ val del dinero de la cuenta.</li>
+                <li><strong>getInfo():</strong> Regresa la información de la cuenta bancaria y la muestra en pantalla como un aviso.</li>
+            </ul>
+
+            <div class="has-text-centered">
+                <button class="button is-danger" onclick="exercise6()">Ejecutar</button>
+            </div> 
+            <div id="ejercicio6" class="has-text-centered">
+
+                <p class="container"> Balance: $<span id="balance">00.00</span></p>
+                
+                <div class="is-flex is-justify-content-center">
+                    <div class="bank_buttons block">
+                        <div>
+                            <label for="depositar">Cantidad a depositar:</label>
+                            <input class="input is-success is-small" type="number" id="deposito">
+                        </div>
+                        
+                        <button class="button is-success" onclick="depositar()">Depositar</button>
+
+                    </div>
+                    <div class="bank_buttons block">
+                            <div>
+                                <label for="retirar">Cantidad a retirar:</label>
+                                <input class="input is-danger is-small" type="number" id="retiro">
+                            </div>
+                            
+                            <button class="button is-danger" onclick="retirar()">Retirar</button>
+
+                    </div>
+                </div>
+
+                <div class="is-flex is-justify-content-center">
+                    <button class="button is-warning is-centered" onclick="info()">Obtener Informacion Bancaria</button>
+                </div>
+                
+                <div id="bank_info" class="has-text-centered"></div>
+
+                <div class="is-flex is-justify-content-center">
+                    <button class="button is-info is-centered" onclick="exercise6dis()">Desaparecer</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container is-max-desktop">
+        <div class="block">
+            <h2 class="subtitle">
+                Preguntas
+            </h2>    
+        </div>
+
+        <div class="is-flex is-justify-content-center">
+            <button id="revelar" class="button is-warning is-centered" onclick="revelar()">Revelar Respuestas</button>
+        </div>
+    
+        <div class="block">
+            <p class="block preguntas">¿Qué diferencias y semejanzas hay entre Java y JavaScript</p>
+            <div class="respuesta content" style="display: none;">
+                <p>Similitudes: </p>
+                <ul>
+                    <li>Ambos poseen sntaxis inspiradas en C.</li>
+                    <li>Son lenguages que soportan el paradigma de programación orientada a objetos (Aunque Java es creado enteramente para ello).</li>
+                    <li>Ambos soportan el paradigma funcional (Más notorio en JS).</li>
+                    <li>Ambos son multiplataformas.</li>
+                </ul>
+                <p>Diferencias: </p>
+                <ul>
+                    <p>Java:</p>
+                    <ul>
+                        <li>Tipado estático.</li>
+                        <li>Requiere compilación.</li>
+                        <li>Empleado en backend y desarrollo de aplicaciones.</li>
+                    </ul>
+                    <p>JavaScript:</p>
+                    <ul>
+                        <li>Tipado dinámico.</li>
+                        <li>No requiere compilación, es interpretado.</li>
+                        <li>Empleado para desarrollo web.</li>
+                    </ul>
+                </ul>
+            </div>  
+            
+        </div>
+
+        <div class="block">
+            <p class="block preguntas">
+                ¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)
+            </p>
+            <div class="respuesta content" style="display: none;">
+                <ul>
+                    <li>Date(): Cuando es llamado como una función, retorna una cadena que representa la fecha y hora actual, exactamente como lo hace new Date().toString().</li>
+                    <li>now(): Devuelve el valor númerico correspondiente al actual número de milisegundos transcurridos desde el 1 de Enero de 1970, 00:00:00 UTC, ignorando los segundos intercalares.</li>
+                    <li>prototype.getDate(): Retorna el día del mes (1–31) para la fecha especificada acorde a la hora local.</li>
+                    <p>Se plantea mismo uso para getDay(), getHours(), getMonth(), getFullYear(),etc.</p>
+                    <li>prototype.toDateString(): Retona la "fecha" del objeto Date como una cadena facil de leer por humanos 'Thu Apr 12 2018'.</li>
+                    <li>Date.prototype.toJSON(): Retorna una cadena representando el objeto Date usando toISOString(). Destinado a ser usado por JSON.stringify().</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="block">
+            <p class="block preguntas">
+                ¿Qué métodos tienen los arreglos? (Menciona al menos 5*)
+            </p>
+            <div class="respuesta content" style="display: none;">
+                <ul>
+                    <li>length(): Devuelve el numero de elementos o espacios reservados dentro del Array.</li>
+                    <li>pop(): Elimina el ultimo elemento del Array.</li>
+                    <li>slice(): Genera una copia del array.</li>
+                    <li>prototype.join(): Concatena en un string todos los elementos de un array.</li>
+                    <li>prototype.reverse(): Invierte el orden de los elementos de un array en el propio array. Este método modifica el array.</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="block">
+            <p class="block preguntas">
+                ¿Cómo se declara una variable con alcance local dentro de una función?
+            </p>
+            <div class="respuesta content" style="display: none;">
+                <p>Se declara como <code>let</code>.</p>
+            </div>
+        </div>
+
+        <div class="block">
+            <p class="block preguntas">
+                ¿Qué implicaciones tiene utilizar variables globales dentro de funciones?
+            </p>
+            <div class="respuesta content" style="display: none;">
+                <p>Que estas variables seguiran existiendo fuera de su alcance (las ultimas llaves en donde fue creado {}). Esto puede llevar a la modificación de las mismas por parte de usuarios en la consola si estas no han sido declaradas como constantes, poniendo el riesgo el funcionamiento del script.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="is-flex is-justify-content-center">
+        <button id="ocultar" class="button is-info is-centered" onclick="ocultar()" style="display: none;">Ocultar Respuestas</button>
+    </div>
+
+    <script src="../js/lab04.js"></script>
+</body>
+</html>
