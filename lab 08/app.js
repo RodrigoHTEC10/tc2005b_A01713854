@@ -10,3 +10,20 @@ Cuando se desea acceder al sistema de archivo conviene que eso se ejecute de for
 
 fylesystem.writeFileSync('hola.txt','Hola desde node');
 
+setTimeout(()=>{
+    console.log("Juanito se fue a la guerra, que dolor, que dolor, que pena");
+},1000)
+
+const arreglo = [1000, 60, 70, 80, 200, 589, 700, 350];
+
+for(let item of arreglo){
+    setTimeout(()=> {
+        console.log(item);
+    }, item);
+}
+
+const imprimir = (valor) =>{
+    console.log(valor);
+}
+
+
