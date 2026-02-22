@@ -1,3 +1,24 @@
 .description_box{
     padding-top: 1em;
 }
+
+.cajon{
+    padding: 1em;
+}
+
+.cajon-button{
+    width: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-image{
+    object-fit: cover;
+    height: 250px;
+    width: 250px;
+}
+
+.preguntas{
+    font-weight: 500;
+}
