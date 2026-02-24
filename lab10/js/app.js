@@ -132,6 +132,7 @@ const musicals = [
 //-----------------------------------------------------------------
 //Maneja de las rutas a traves del servidor
 
+const fylesystem = require('fs');
 const http = require('http');
 
 const server = http.createServer((request,response) => {
@@ -175,6 +176,9 @@ const server = http.createServer((request,response) => {
                             <th>Imagen</th>
                         </tr>`
 
+        fylesystem.writeFileSync('Musicals.txt',"");
+        const file = fylesystem.createWriteStream('Musicals.txt',{flags: 'a'});
+
         for(let i =0; i<musicals.length; i++){
             html_interests+=`<tr>
                 <td><p>${musicals[i].name}</p></td>
@@ -184,7 +188,10 @@ const server = http.createServer((request,response) => {
                     </figure>
                 </td>
             </tr>`
-        }                        
+            
+            file.write("Name="+musicals[i].name+"&Image="+musicals[i].image+"\n");
+        }
+        file.end();                        
                         
         html_interests+=`</tr>
                     </table>
@@ -222,7 +229,7 @@ const server = http.createServer((request,response) => {
 
             //decodeURIComponent helps to obtain the correct symbols after being processed by the browser.
 
-            const name =decodeURIComponent(string_datos_completos.split("&")[0].split("=")[1]);
+            const name =decodeURIComponent(string_datos_completos.split("&")[0].split("=")[1].replace(/\+/g, ' '));
             const image = decodeURIComponent(string_datos_completos.split("&")[1].split("=")[1]);
             const newMusical = {
                 name: name,
