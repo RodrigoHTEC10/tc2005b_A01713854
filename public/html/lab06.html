@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/styles06.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+    <title>Lab 06 [A01713854]</title>
+</head>
+<body>
+    <section class="section is-small">
+
+        <div class="block is-flex is-justify-content-center">
+            <figure class="image">
+                <img src="../media/hamburgesas.png">
+            </figure>
+        </div>
+
+    <!--Functional Part of the Website-->
+    <div class="container is-max-desktop block">
+
+        <div class="columns">
+
+            <!--Hamburger Bun-->
+            <div class="column is-flex">
+                <div class="box is-flex is-flex-direction-column is-flex-grow-1">
+                    <figure class="box-image is-square">
+                        <img src="../media/bun.png">
+                    </figure>
+
+                    <div class="container description_box">
+                        <p class="is-medium content">Hamburger Bun</p>
+                        <p class="content is-small">A delicious, soft, recently baked hamburger bun.</p>
+                    </div>
+
+                    <div class="block is-flex is-justify-content-space-around is-medium cajon mt-auto">
+                        <!--Boton de - -->
+                        <button id="less_bun" class="button is-success cajon-button is-flex is-align-items-center" onclick="bun.decreaseAmount(); store.getProductList()" disabled>
+                            <span class="material-symbols-outlined icon is-small">check_indeterminate_small</span>
+                        </button>
+
+                        <!--Precio del Producto-->
+                        <div class="has-text-centered cajon-button center-input">
+                            <p>$<span class="is-medium">13.00</span></p>
+                        </div>
+
+                        <!--Boton de + -->
+                        <button id="add_bun" class="button is-success cajon-button is-flex is-align-items-center">
+                            <span class="material-symbols-outlined icon is-small">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Hamburger Patty-->
+            <div class="column is-flex">
+                <div class="box is-flex is-flex-direction-column is-flex-grow-1">
+                    <figure class="box-image is-square">
+                        <img src="../media/patty.jpeg" style="object-fit: cover; width: 250px; height: 250px;">
+                    </figure>
+
+                    <div class="container description_box">
+                        <p class="is-medium content">Hamburger Patty</p>
+                        <p class="content is-small">100% Angus - Crunchy, fresh and juicy burger patty. </p>
+                    </div>
+
+                    <div class="block is-flex is-justify-content-space-around is-medium cajon mt-auto">
+                        <!--Boton de - -->
+                        <button id="less_patty" class="button is-success cajon-button is-flex is-align-items-center" onclick="patty.decreaseAmount(); store.getProductList()" disabled>
+                            <span class="material-symbols-outlined icon is-small">check_indeterminate_small</span>
+                        </button>
+
+                        <!--Precio del Producto-->
+                        <div class="has-text-centered cajon-button center-input">
+                            <p>$<span class="is-medium">17.00</span></p>
+                        </div>
+
+                        <!--Boton de + -->
+                        <button id="add_patty" class="button is-success cajon-button is-flex is-align-items-center">
+                            <span class="material-symbols-outlined icon is-small">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Hamburger Complements-->
+            <div class="column is-flex">
+                <div class="box is-flex is-flex-direction-column is-flex-grow-1">
+                    <figure class="box-image is-square">
+                        <img src="../media/vegetable.png" style="object-fit: cover;">
+                    </figure>
+
+                    <div class="container description_box">
+                        <p class="is-medium content">Hamburger Vegetables</p>
+                        <p class="content is-small">Freshly cut vegetables: tomato, lettuce & onion.</p>
+                    </div>
+
+                    <div class="block is-flex is-justify-content-space-around is-medium cajon mt-auto">
+                        <!--Boton de - -->
+                        <button id="less_veg" class="button is-success cajon-button is-flex is-align-items-center" onclick="veg.decreaseAmount(); store.getProductList()" disabled>
+                            <span class="material-symbols-outlined icon is-small">check_indeterminate_small</span>
+                        </button>
+
+                        <!--Precio del Producto-->
+                        <div class="has-text-centered cajon-button center-input">
+                            <p>$<span class="is-medium">10.00</span></p>
+                        </div>
+
+                        <!--Boton de + -->
+                        <button id="add_veg" class="button is-success cajon-button is-flex is-align-items-center">
+                            <span class="material-symbols-outlined icon is-small">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Balance de la compra y lista de compras-->
+        <!--Header de la seccion-->
+        <div>
+
+        </div>
+
+        <hr>
+
+
+        <!--List + Balance--> 
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <p class="content is-large">
+                    Shopping List:
+                    <ul id="list" class="content is-medium">
+                        <li>Nada en el carrito de compras.</li>
+                    </ul>
+                </p>
+            </div>
+
+            <!--Texts-->
+            <div class="column is-one-third">
+                <div class="content is-large">
+                    <p>Balance: </p>
+                    <div style="text-align: right;">
+                        <p>Cost:  $<span id="balance">0.00</span></p>
+                        <p>Taxes: + $<span id="tax">0.00</span></p>
+                        <p>Total: $<span id="total">0.00</span></p>
+                    </div>
+
+                </div>
+                
+                <div class="columns">
+                    <!--Buttons Buy and Cancel-->
+                    <div class="column is-flex is-align-items-center">
+                        <button id="cancel" class="button is-success  is-flex is-align-items-center is-justify-content-center" style="width: 90%;" onclick="store.reset()">
+                            <span class="material-symbols-outlined icon is-small">cancel</span>
+                        </button>
+                    </div>
+
+                    <div class="column is-flex is-align-items-center">
+                        <button id="buy" class="button is-success is-flex is-align-items-center is-justify-content-center"  style="width: 90%;" onclick="buy()">
+                            <span class="material-symbols-outlined icon is-small">shopping_cart_checkout</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+            
+
+    </div>
+
+
+    <!--Lab Questions-->
+    <div class="container is-max-desktop">
+        <div class="block">
+            <h2 class="subtitle">
+                Preguntas
+            </h2>    
+        </div>
+
+        <div class="is-flex is-justify-content-center">
+            <button id="revelar" class="button is-warning is-centered" onclick="revelar()">Revelar Respuestas</button>
+        </div>
+
+        <div style="height: 3em;"></div>
+    
+        <div class="block">
+            <p class="block preguntas">¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</p>
+            <div class="respuesta content" style="display: none;">
+                <ul>
+                    <li>Experiencia de usuario: Ya que la validacion es instantanea el usuario recibe una respuesta inmediatamente en caso de que el input sea valido o no.</li>
+                    <li>Se evitan peticiones innecesarias al servidor.</li>
+                    <li>El tiempo de respuesta es menor.</li>
+                    <li>Se puede configurar de mejor forma los mensajes de error obtenidos.</li>
+                </ul>
+            </div>  
+            
+        </div>
+
+        <div class="block">
+            <p class="block preguntas">¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</p>
+            <div class="respuesta content" style="display: none;">
+                <p>Existen diferentes formas de desabilitarlo:</p>
+                <ul>
+                    <li>Desabilitar JavaScript completamente del navegador.</li>
+                    <li>Modificar el DOM a través de las herramientas del desarrollador (DevTools).</li>
+                    <li>Enviando la petición directamente.</li>
+                    <li>Interceptando y modificando la petición.</li>
+                    <li>Manipulando al sobreescribir las funciones directamente sobre la consola del navegador.</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="block">
+            <p class="block preguntas">Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</p>
+            <div class="respuesta content" style="display: none;">
+                <p>Por que estas verificaciones se mantienes correctas y beneficiosas para la gran mayoria de los usuarios de la aplicación. Además, estos mejoran la experiencia del usuario en terminos generales, independientemente de la seguridad que estos puedan o no generar.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 3em;"></div>
+
+    <div class="is-flex is-justify-content-center">
+        <button id="ocultar" class="button is-info is-centered" onclick="ocultar()" style="display: none;">Ocultar Respuestas</button>
+    </div>
+
+    <script src="../js/lab06.js"></script>
+</body>
+</html>

@@ -9,6 +9,20 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
+/* Hacer una carpeta estatica*/
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('view_engine','ejs'); //Establece el motor de visualizacion
+app.set('views','views');     //Establece el directorio del motor de visualizacion.
+
+/*
+EJS son archivos que contienen codigo HTML per permite escribir codigo JS, usando %.
+Para desplegar el template de EJS, lo hacemos con el metodo render, y como argumento podemos el nombre del archivo ejs.
+Dentro de este archivo se puede definir codigo JS que se puede ejecutar en el servidor o en el cliente.
+En este caso sera unicamente del servidor.
+*/
+
 const {html_footer, html_header} = require('./html/parts.js');
 
 /*
@@ -35,11 +49,15 @@ Available routes:
 */
 app.use('/abilities', require('./routes/abilities.js'));
 
+
+//Lab 12
+app.use('/old', require('./routes/sendFile.js'));
+
 /* 
 Any other route
 */
 app.use((request,respose,next)=>{
-    respose.send(html_header+"Error 404"+html_footer);
+    respose.status(404).send(html_header+"Error 404"+html_footer);
     respose.end();
 })
 

@@ -82,8 +82,7 @@ router.get('/list', (request, response, next) => {
 });
 
 router.get('/form',(request,response,next)=>{
-    response.send(html_header+html_form+html_footer);
-    response.end()
+    response.render('form.ejs');
 })
 
 router.post('/form',(request,response,next)=>{

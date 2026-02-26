@@ -15,11 +15,12 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "node --watch ./lab11/app.js",
+    "start": "node --watch ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "body-parser": "^2.2.2",
+    "ejs": "^4.0.1",
     "express": "^5.2.1"
   }
 }
