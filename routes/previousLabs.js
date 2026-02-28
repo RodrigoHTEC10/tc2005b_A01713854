@@ -11,12 +11,16 @@ router.get('/lab01',(request,response,next)=>{
     response.sendFile(path.join(__dirname,'..','public','html','lab01-02-03.html'));
 })
 
-router.get('/lab02',(request,response,next)=>{
+router.get('/lab03',(request,response,next)=>{
     response.sendFile(path.join(__dirname,'..','public','html','lab01-02-03.html'));
 })
 
-router.get('/lab03',(request,response,next)=>{
-    response.sendFile(path.join(__dirname,'..','public','html','lab01-02-03.html'));
+router.get('/lab04',(request,response,next)=>{
+    response.sendFile(path.join(__dirname,'..','public','html','lab04.html'));
+})
+
+router.get('/lab05',(request,response,next)=>{
+    response.sendFile(path.join(__dirname,'..','public','html','lab05.html'));
 })
 
 router.get('/lab06',(request,response,next)=>{

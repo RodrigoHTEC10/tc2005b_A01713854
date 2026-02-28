@@ -1,10 +1,4 @@
-/*
-Author: Rodrigo Alejandro Hurtado Cortes
-Date: February 24th, 2026
-Title: Parts of HTML used during the Lab 11: Express - Main file.
-*/
-
-const html_header =`<!DOCTYPE html>
+<!DOCTYPE html>
 <html data-theme="dark">
         <head>
         <meta charset="utf-8">
@@ -12,7 +6,14 @@ const html_header =`<!DOCTYPE html>
         <title>Lab 05 [A01713854]</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     </head>
-    <body>
+
+
+  <body>
+    <div class="has-text-centered">
+        <img src="../media/header.png">
+    </div>
+    
+
     <div class="container">
         <div class="block">
             <h1 class="title has-text-centered">Laboratorios - Rodrigo Hurtado </h1>
@@ -32,24 +33,6 @@ const html_header =`<!DOCTYPE html>
             <div class="element">
                 <p id="last_email"> <strong>Correo electrónico personal:</strong> hurtadorodrigo00@gmail.com</p>
             </div> 
-    </div>
-        `;
-
-
-const html_footer = `    
-<footer>
-        <p> Editor de HTML empleado: <a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
-    </footer>
-    </body>
-</html>`;
-
-
-const html_index = `
-    <section>    
-    <div>
-        
-        <div class="block is-flex is-justify-content-center"> 
-            <a href="/musicals/form"><button class="button is-primary">Nuevo Boton</button></a>
         </div>
 
         <div class="block">
@@ -57,11 +40,113 @@ const html_index = `
                 Bienvenidos a la practica del laboratorio 1 de la materia de <strong>Construcción de Software y Toma de Decisiones.</strong>
             </p>
         </div>
+        
     </div>
-    </section>`;
 
+    </section>
 
-const html_q_lab01 = `<!--Answers to Questions from Lab. 01-->
+    <!--Interest and Skills-->
+    <section class="section">
+        <div class="container">
+            <h2 class=" subtitle">Intereses Personales </h2>
+            <div class="block">
+                <p>
+                    Disfruto del aprendizaje, de los retos intelectuales y últimamente tambien de los hermosos momentos de la vida.
+                </p>
+                <p>
+                    Me encanta pasar el tiempo con mi hermosa novia, con mis amigos y aprender un poco de todo en realidad; de escuchar musicales y música de todo tipo, sobre todo <a href="https://www.youtube.com/watch?v=MivPd9m5NvI">música pirata</a>. Disfruto mucho de mi carrera y tengo muchas ganas de desarrollar un producto que vaya más alla de pequeños programas para consola.
+                </p>
+                <br>
+            </div>
+            
+        </div>
+            <div class="columns is-centered">
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="image">
+                            <figure class="image is-4by5">
+                <img src="../media/love.jpeg" alt="El amor de mi vida y yo.">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <header>
+                <h2 class=" subtitle">Habilidades </h2>
+            </header>
+            <div class="element">
+                <p>Lenguajes de programacion: C++, Java y Python.</p>
+                <p>Conocimiento básico: R, MATLAB, Flutter, SQL.</p>
+                <p>Manejo de control de versiones: GitHub.</p>
+                <p>Planeación de requisitos de software.</p>
+                <p>Organización y planeación de bases de datos relacionales.</p>
+                <p>Comunicación con el cliente.</p>
+            </div>
+        </div>
+    </section>
+    
+
+        <section class="section">
+            <div class="container">
+                <h2 class=" subtitle">
+                    Parte Adicional: Musicales 
+                </h2>
+                <div class="block">
+                    <p>
+                        Hace unos años encontre mi pasión por los músicales cuando escuche Hamilton por primera vez. A partir de ese momento a pesar de que no conozca muchos músicales me he vuelto un fan enpedernido de muchos de ellos llegando a memorizarme casi todas las canciones de los mismos. A continuación presento una tabla con mis musicales preferidos hasta la fecha. 
+                    </p>
+                </div>
+
+                <div class="is-flex is-justify-content-center">
+                    <table border="" class="table"> 
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Imagen</th>
+                    </tr>
+                    <tr>
+                        <td><p>Hamilton</p></td>
+                        <td class="image_music">
+                            <figure class="image is-square ">
+                                <img src="../media/hamilton.jpg">
+                            </figure>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p>EPIC</p></td>
+                        <td class="image_music">
+                            <figure class="image is-square ">
+                                <img src="../media/EPIC.jpg">
+                            </figure>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p>Sweeney Todd</p><p> The demon barber of Fleet Street</p></td>
+                        <td class="image_music">
+                            <figure class="image is-square ">
+                                <img src="../media/sweeny.jpeg">
+                            </figure>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><p>Wicked</p></td>
+                        <td class="image_music">
+                            <figure class="image is-square ">
+                                <img src="../media/wicked.jpeg">
+                            </figure>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+
+                
+            </div>
+    </section>
+
+    <!--Answers to Questions from Lab. 01-->
     <section class="section">
         <div class="container content">
             <h2 class="subtitle has-text-centered">Preguntas Laboratorio 1 </h2>
@@ -392,9 +477,9 @@ const html_q_lab01 = `<!--Answers to Questions from Lab. 01-->
                 </div>
             </div>
         </div>
-    </section>`
+    </section>
 
-const html_q_lab03=`
+
     <!--Answers to Questions from Lab. 03-->
     <section class="section">
         <div class="container content">
@@ -471,9 +556,9 @@ const html_q_lab03=`
                 <br>
             </div>
         </div>
-    </section>`
+    </section>
 
-    const html_q_lab05 = `
+
     <!--Answers to Questions from Lab. 05-->
     <section class="section">
         <div class="container content">
@@ -495,10 +580,10 @@ const html_q_lab03=`
             </div>
         </div>
     </section>
-`
 
-const html_ref = `
+
     <br>
+
     <!--Resources-->
     <section class="section">
         <div class="container content">
@@ -532,59 +617,12 @@ const html_ref = `
             </ul>
         </div>
     </section>
-`
-const html_form = `
-    <form action="/musicals/form" method="POST">
-    <div class="field">
-        <label for="name" class="label">Name</label>
-        <div class="control">
-        <input id="name" name="name" class="input" type="text" placeholder="e.g Ride the Cyclone: The Musical">
-        </div>
-    </div>
 
-    <div class="field">
-        <label for="image" class="label">Image</label>
-        <div class="control">
-        <input id="image" name="image" class="input" type="text" placeholder="e.g. https://static.wikia.nocookie.net/testthecyclone/images/c/cf/RTC_Poster.jpg/revision/latest?cb=20250429112304">
-        </div>
-    </div>
+    <footer>
+        <p> Editor de HTML empleado: <a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+    </footer>
 
-    <input class="button is-primary" type="submit" value="Save & Sent">
-    </form>`;
+    <script src="../js/comportamiento.js"></script>
 
-const html_abilities = `    
-    <section class="section">
-        <div class="container">
-            <header>
-                <h2 class=" subtitle">Habilidades </h2>
-            </header>
-            <div class="element">
-                <p>Lenguajes de programacion: C++, Java y Python.</p>
-                <p>Conocimiento básico: R, MATLAB, Flutter, SQL.</p>
-                <p>Manejo de control de versiones: GitHub.</p>
-                <p>Planeación de requisitos de software.</p>
-                <p>Organización y planeación de bases de datos relacionales.</p>
-                <p>Comunicación con el cliente.</p>
-            </div>
-        </div>
-    </section>`
-
-const html_interest =`
-            <!--Interest and Skills-->
-            <section class="section">
-                <div class="container">
-                    <h2 class=" subtitle">Intereses Personales </h2>
-                    <div class="block">
-                        <p>
-                            Disfruto del aprendizaje, de los retos intelectuales y últimamente tambien de los hermosos momentos de la vida.
-                        </p>
-                        <p>
-                            Me encanta pasar el tiempo con mi hermosa novia, con mis amigos y aprender un poco de todo en realidad; de escuchar musicales y música de todo tipo, sobre todo música pirata. Disfruto mucho de mi carrera y tengo muchas ganas de desarrollar un producto que vaya más alla de pequeños programas para consola.
-                        </p>
-                        <br>
-                    </div>
-                    
-                </div>
-            </section>`
-
-module.exports = {html_abilities, html_form, html_ref, html_q_lab05, html_q_lab03, html_q_lab01, html_index, html_footer, html_header, html_interest};
+    </body>
+</html>

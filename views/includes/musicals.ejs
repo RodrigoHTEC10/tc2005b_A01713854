@@ -1,0 +1,33 @@
+<section class="section">
+        <div class="container">
+            <h2 class=" subtitle">
+                Parte Adicional: Musicales 
+            </h2>
+            <div class="block">
+                <p>
+                    Hace unos años encontre mi pasión por los músicales cuando escuche Hamilton por primera vez. A partir de ese momento a pesar de que no conozca muchos músicales me he vuelto un fan enpedernido de muchos de ellos llegando a memorizarme casi todas las canciones de los mismos. A continuación presento una tabla con mis musicales preferidos hasta la fecha. 
+                </p>
+            </div>
+
+            <div class="is-flex is-justify-content-center">
+                <table border="" class="table"> 
+                <tr>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                </tr>
+    
+    <% for(let i =0; i<musicals.length; i++){ %>
+        <tr>
+            <td><p><%- musicals[i].name %></p></td>
+            <td class="image_music">
+                <figure class="image is-square ">
+                    <img src="<%= musicals[i].image %>">
+                </figure>
+            </td>
+        </tr>
+    <% } %>
+        </tr>
+            </table>
+            </div>
+        </div>
+</section>

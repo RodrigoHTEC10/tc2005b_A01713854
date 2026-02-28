@@ -2,3 +2,4 @@ Name=Hamilton&Image=https://tse4.mm.bing.net/th/id/OIP.wKjelyRrowRDjBDLAmmMbAHaH
 Name=EPIC&Image=https://m.media-amazon.com/images/M/MV5BYjViOTY5MGEtOTVmYS00ODc0LTgyZjktZjU1MmZjZjRlZjBiXkEyXkFqcGc@._V1_.jpg
 Name=Sweeney Todd. The demon barber of Fleet Street&Image=https://i.scdn.co/image/ab67616d0000b273bca2a67b5ca9d790c55299e3
 Name=Wicked&Image=https://m.media-amazon.com/images/I/61KnhHzI8eL._UF1000,1000_QL80_.jpg
+Name=Ryde The Cyclone&Image=https://tse3.mm.bing.net/th/id/OIP.rU8HMBxmUoM3Gpxr9SuExQHaEK?pid=Api&P=0&h=220

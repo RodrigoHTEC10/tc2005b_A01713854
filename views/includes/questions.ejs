@@ -1,0 +1,41 @@
+
+
+    <!--Answers to Questions from Lab. 01-->
+    <section class="section">
+        <div class="container content">
+            <h2 class="subtitle has-text-centered">Preguntas <%= title %></h2>
+                <!--Q.1-->
+
+                <% for(let i = 0; i<questions.length; i++){ %>
+                    <% if(label == "all"){ %>
+
+                <article class="block">
+                    <header>
+                        <strong>
+                            <%= questions[i].question %> 
+                        </strong> <code><%= questions[i].label %></code>
+                    <div class="content">
+                    <%- questions[i].answer %>
+                    </div>
+                </article>
+                <br>
+                    <%}else if(questions[i].label == label){ %>
+
+                <article class="block">
+                    <header>
+                        <strong>
+                            <%= questions[i].question %>
+                        </strong>
+                    </header>
+                    <div class="content">
+                    <%- questions[i].answer %>
+                    </div>
+                </article>
+                <br>
+
+                    <% } %>
+                <% } %>
+
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,152 @@
+[
+  {
+    "label": "lab01",
+    "question": "¿Cuál es la diferencia entre Internet y la World Wide Web?",
+    "answer": "<p>El <strong>Internet</strong> es la red global de sistemas interconectados, la cual es dependiente del hardware, sobre la cual funciona la WWW.</p><p>La <strong>WWW (World Wide Web)</strong> es la colección de información que puede ser accesada a través del Internet; su enfoque es más software que el Internet.</p>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Cuáles son las partes de un URL?",
+    "answer": "<p>Las partes de un URL (Uniform Resource Locator) son:</p><ol><li>Protocol: Usualmente HTTP o HTTPS, tambien puede ser FTP (File Transfer Protocol) o SMTP (Simple Mail Transfer Protocol).</li><p>Es seguro (HTTPS) ya que las requests son completamente cifradas.</p><li>Domain: Nombre empleado para identificar uno o mas direcciones IP donde esta almancenado el recurso a obtener.</li><li>Path: Ubicación concreta del recurso dentro del servidor.</li><li>Parameters: Información adicional para identificar o filtrar información del servidor.</li><p>Anteriormente era posible añadir un puerto PORT el cual hacia referencia al puerto a traves del cual se entrega o recibe información. Actualmente son lógicas y no físicas.</p></ol>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?",
+    "answer": "<p>HTTP es un protocolo de comunicación.</p><ol><li>GET: Solicita información al servidor para su lectura y/o uso.</li><li>HEAD: Se emplea antes de un método GET para comprobar que el recurso a comprobar esta presente.</li><li>POST: Envia datos para crear un recurso en el servidor de forma cifrada.</li><li>PUT: Envia datos para modificar un recurso en el servidor.</li><li>PATCH: Envia datos y aplica modificaciones parciales a un recurso en el servidor.</li><li>DELETE: Elimina un recurso del servidor.</li></ol>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?",
+    "answer": "<p>POST seria el método adecuado, ya que de esta forma la información debe estar en el cuerpo de la petición y no seria visible ni se guardaria dentro del historial de los navegadores; haciendo mas seguro el envio de datos tan restringidos.</p>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?",
+    "answer": "<p>GET, ya que la solicitud se realiza para obtener los archivos y recursos propios de la página cuya URL ha sido utilizada.</p>"
+  },
+  {
+    "label": "lab01",
+    "question": "Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?",
+    "answer": "<p>Significa que la petición ha sido exitosa, de modo que no ha ocurrido ningun error.</p>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?",
+    "answer": "<p>Si, ya que la respuesta 404 indica una petición incorrecta hecha por el usuario al servidor o bien la informacion solicitada no existe; de modo que es responsabilidad del desarrollador formular correctamente la petición al servidor solicitado para que esta sea exitosa.</p><p>De forma adicional, el error 403 se refiere a un intento de acceder a un contenido prohibido o protegido.</p>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?",
+    "answer": "<p>No, ya que una respuesta 500 indica que ocurrio un error dentro del servidor. Dado que el servidor fue el que tuvo el error, el desarrollador tiene responsabilidad en ello. El proyecto debe estar libre de errores 500.</p>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.",
+    "answer": "<p>Significa que las funciones de dicho atributo o etiqueta han sido substituidas por herramientas mejores (generalmente estilos de CSS o nuevas etiquetas de HTML) y que el soporte oficial sera descontinuado sobre las mismas.</p><p>Algunos de estos atributos son:</p><ul><li>&lt;acronym&gt;</li><li>&lt;bgsound&gt;</li><li>&lt;big&gt;</li><li>&lt;center&gt;</li></ul>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Cuáles son las diferencias principales entre HTML 4 y HTML5?",
+    "answer": "<p>HTML4 era aun una version del HTML original expandida (1997); sin embargo, HTML5 es una compilación de HTML, APIs y estandares como WebGL y SVG (2019).</p><p>Entre las ventajas del HTML5 incluye nuevas etiquetas, mejor compatibilidad con navegadores actuales, soporte de contenido multimedia, formularios mejorados y conexión con nuevas APIs.</p>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Qué componentes de estructura y estilo tiene una tabla?",
+    "answer": "<p>La tabla es inicializada con la etiqueta &lt;table&gt;. Posteriormente se definen las filas de la tabla como &lt;tr&gt; dentro de las cuales se deben definir cada una de las columnas con sus datos concretos dentro de &lt;td&gt;.</p><p>En caso de querer resaltar ciertas celdas, estas se puede colocar como encabezados con la etiqueta &lt;th&gt;.</p><p>Etiquetas de estilo adicionales:</p><ul><li>border: [1px black] Establece un borde del ancho y color establecidos dentro de cada celda de la tabla.</li><li>border-collapse: <ul><li>[separate] Establece bordes por cada celda.</li><li>[collapse] Une los bordes de las celdas contiguas.</li></ul></li><li>background-color: Color dentro de las celdas.</li><li>border-radius: Radio del borde dentro de las celdas.</li><li>border-style: Estilo de los bordes los cuales pueden ser: <ul><li>dotted</li><li>dashed</li><li>solid</li><li>double</li><li>groove</li><li>ridge</li></ul></li><li>border-color: Color de los bordes.</li></ul>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Cuáles son los principales controles de una forma HTML5?",
+    "answer": "<p>Los controles o elementos que permiten al usuario interactuar con la página web dentro de HTML5 son generalmente los elementos &lt;input&gt; con diferentes tipos, entre los cuales se encuentran:</p><ul><li>text</li><li>email</li><li>password</li><li>number</li><li>date</li><li>time</li><li>checkbox</li><li>color</li><li>file</li></ul>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Qué tanto soporte HTML5 tiene el navegador que utilizas?",
+    "answer": "<p>Google Chrome</p><p>Puntaje 526/555</p>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Cuál es el ciclo de vida de los sistemas de información?",
+    "answer": "<p>El ciclo de vida de un sistema informático corresponde al proceso completo desde el cual un sistema es planificado hasta que es desechado. Sus fases principales corresponden a:</p><ol><li>Planificación</li><aside>Identificación de nuestras necesidades, presupuesto y tiempo disponible.</aside><li>Implementación / Diseño</li><aside>Configuración del sistema y despliege inicial.</aside><li>Operación / Ejecución</li><aside>Uso de los sistemas, mantenimiento preventivo y soporte técnico.</aside><li>Actualización / Optimización</li><aside>Sustitución de componentes, mejoras de software y ampliación de capacidades.</aside><li>Retiro / Finalización</li><aside>Retirada de los equipos y software.</aside></ol>"
+  },
+  {
+    "label": "lab01",
+    "question": "¿Cuál es el ciclo de desarrollo de sistemas de información?",
+    "answer": "<p>Es el proceso empleado por los equipos de desarrollo para diseñar y crear software dentro del tiempo, presupuesto y cumpliendo con las expectativas de uso del cliente. Este se compone de:</p><ol><li>Planificación</li><aside>Consiste en el análisis de los costos, actividades a realizar, recursos disponibles, asignación de los mismos y beneficios a obtener con el fin de declararlos en un documento de requisitos de software.</aside><li>Diseño</li><aside>Análisis de requisitos e identificación de las mejores soluciones para crear el software.</aside><li>Implementación</li><aside>Codificación del producto por el equipo de desarrollo.</aside><li>Pruebas</li><aside>Combinación de pruebas manuales y automáticas para comprobar si el software tiene errores y si cumple con los requerimientos del cliente.</aside><li>Despliegue</li><aside>Llevar el software a un entorno de compilación y entorno de producción diferenciados para garantizar que el cliente tendra acceso al producto.</aside><li>Mantenimiento</li><aside>Corrección de errores, resolución de problemas de los clientes y administración de cambios hechos al software.</aside></ol>"
+  },
+  {
+    "label": "lab03",
+    "question": "Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS?",
+    "answer": "<p>Se recomienda evitar el uso de !important ya que a pesar de su gran utilidad para generar excepciones en el estilo de cierto elemento; este rompe el esquema de cascada de la hoja de estilos en CSS haciendo más dificil una posterior detección de errores o correcciones.</p>"
+  },
+  {
+    "label": "lab03",
+    "question": "Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?",
+    "answer": "<p>Ya que la selección de la imagen correcta debido a su tamaño (número de pixeles) afecta tanto a su visualización como a el tiempo de carga de la página.</p><p>Cuanto mas grande sea la imagen mejor se vera (indepenedientemente del espacio en el que sea mostrada); sin embargo, esto hace que la página sea más lenta al cargar.</p><p>Por el otro lado, si la imagen es muy pequeña y se distribuye en un area mayor, esta se vera borrosa y pixeleada; a pesar de que pueda cargar más rapido.</p><p>De modo que para la selección de una imagen como fondo de pantalla hay que considerar:</p><ul><li>El espacio donde se mostrara esta imagen.</li><li>El tamaño de la imagen.</li><li>El tiempo de carga de la página.</li></ul>"
+  },
+  {
+    "label": "lab03",
+    "question": "Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?",
+    "answer": "<p>Depende de la propiedad misma a la cual se desea definir dimensiones o proporciones, ya que actualmente las recomendaciones en el diseño de paginas web sugieren los siguientes usos para las unidades antes mencionadas:</p><ul><li><strong>%:</strong> Uso para elementos que se adapten segun el tamaño del padre.</li><li><strong>px:</strong> Uso para bordes, sombras pequeñas y detalles que no necesitan escalarse indepenedientemente del dispositivo donde sean mostrados.</li><li><strong>pt:</strong> No se recomienda ya que es una medida propia de medios impresos.</li></ul>"
+  },
+  {
+    "label": "lab03",
+    "question": "¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?",
+    "answer": "<p>Esto se debe a la forma en la que una página carga dentro de un navegador, ya que es necesario que el navegador interprete tanto los archivos HTML como las hojas de estilos CSS con el fin de mostrar la página al usuario.</p><p>La minimización del una hoja de estilos implica la eliminación de espacios y comentarios dentro del CSS lo que implica una lectura más rapida del código por parte del navegador, reduciendo el tiempo de carga a coste de hacer este código menos legible al ojo humano.</p>"
+  },
+  {
+    "label": "lab05",
+    "question": "Describe Material Design.",
+    "answer": "<p>Es un sistema de diseño abierto al público (open-sourced) diseñado por Google para dar un lenguaje de consistencia y especificidad a sus productos; formado por una combinación de reglas, estandares y componentes que forman el orden de diseño de cualquier aplicación.</p><p>La última versión de este sistema es el m3 y puede ser consultada en este <a href=\"https://m3.material.io/\">link.</a></p>"
+  },
+  {
+    "label": "lab04",
+    "question": "¿Qué diferencias y semejanzas hay entre Java y JavaScript?",
+    "answer": "<p>Similitudes:</p><ul><li>Ambos poseen sintaxis inspiradas en C.</li><li>Son lenguages que soportan el paradigma de programación orientada a objetos (Aunque Java es creado enteramente para ello).</li><li>Ambos soportan el paradigma funcional (Más notorio en JS).</li><li>Ambos son multiplataformas.</li></ul><p>Diferencias:</p><ul><p>Java:</p><ul><li>Tipado estático.</li><li>Requiere compilación.</li><li>Empleado en backend y desarrollo de aplicaciones.</li></ul><p>JavaScript:</p><ul><li>Tipado dinámico.</li><li>No requiere compilación, es interpretado.</li><li>Empleado para desarrollo web.</li></ul></ul>"
+  },
+  {
+    "label": "lab04",
+    "question": "¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)",
+    "answer": "<ul><li>Date(): Cuando es llamado como una función, retorna una cadena que representa la fecha y hora actual, exactamente como lo hace new Date().toString().</li><li>now(): Devuelve el valor númerico correspondiente al actual número de milisegundos transcurridos desde el 1 de Enero de 1970, 00:00:00 UTC, ignorando los segundos intercalares.</li><li>prototype.getDate(): Retorna el día del mes (1–31) para la fecha especificada acorde a la hora local.</li><p>Se plantea mismo uso para getDay(), getHours(), getMonth(), getFullYear(), etc.</p><li>prototype.toDateString(): Retorna la \"fecha\" del objeto Date como una cadena facil de leer por humanos 'Thu Apr 12 2018'.</li><li>Date.prototype.toJSON(): Retorna una cadena representando el objeto Date usando toISOString(). Destinado a ser usado por JSON.stringify().</li></ul>"
+  },
+  {
+    "label": "lab04",
+    "question": "¿Qué métodos tienen los arreglos? (Menciona al menos 5*)",
+    "answer": "<ul><li>length(): Devuelve el numero de elementos o espacios reservados dentro del Array.</li><li>pop(): Elimina el ultimo elemento del Array.</li><li>slice(): Genera una copia del array.</li><li>prototype.join(): Concatena en un string todos los elementos de un array.</li><li>prototype.reverse(): Invierte el orden de los elementos de un array en el propio array. Este método modifica el array.</li></ul>"
+  },
+  {
+    "label": "lab04",
+    "question": "¿Cómo se declara una variable con alcance local dentro de una función?",
+    "answer": "<p>Se declara como <code>let</code>.</p>"
+  },
+  {
+    "label": "lab04",
+    "question": "¿Qué implicaciones tiene utilizar variables globales dentro de funciones?",
+    "answer": "<p>Que estas variables seguiran existiendo fuera de su alcance (las ultimas llaves en donde fue creado {}). Esto puede llevar a la modificación de las mismas por parte de usuarios en la consola si estas no han sido declaradas como constantes, poniendo el riesgo el funcionamiento del script.</p>"
+  },
+  {
+    "label": "lab06",
+    "question": "¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?",
+    "answer": "<ul><li>Experiencia de usuario: Ya que la validacion es instantanea el usuario recibe una respuesta inmediatamente en caso de que el input sea valido o no.</li><li>Se evitan peticiones innecesarias al servidor.</li><li>El tiempo de respuesta es menor.</li><li>Se puede configurar de mejor forma los mensajes de error obtenidos.</li></ul>"
+  },
+  {
+    "label": "lab06",
+    "question": "¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?",
+    "answer": "<p>Existen diferentes formas de desabilitarlo:</p><ul><li>Desabilitar JavaScript completamente del navegador.</li><li>Modificar el DOM a través de las herramientas del desarrollador (DevTools).</li><li>Enviando la petición directamente.</li><li>Interceptando y modificando la petición.</li><li>Manipulando al sobreescribir las funciones directamente sobre la consola del navegador.</li></ul>"
+  },
+  {
+    "label": "lab06",
+    "question": "Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?",
+    "answer": "<p>Por que estas verificaciones se mantienes correctas y beneficiosas para la gran mayoria de los usuarios de la aplicación. Además, estos mejoran la experiencia del usuario en terminos generales, independientemente de la seguridad que estos puedan o no generar.</p>"
+  },
+  {
+    "question": "Describe el archivo package.json",
+    "answer": "<p>Es un archivo de configuración central de cualquier proyecto. Este describe que es, que necesita para funcionar y como ejecutarse. Cuando es leido por una computadora diferente, esta descarga todas las dependencias necesarias para su funcionamiento. Esta compuesto de:</p><ul><li>name</li><li>version</li><li>description</li><li>main: Archivo de entrada que es ejecutado primero</li><li>scripts: Comandos personalizados</li><li>dependencies</li><li>devDependencies</li>",
+    "label": "lab11"
+  },
+  {
+    "question": "¿Qué otros templating engines existen para node?",
+    "answer": "<ul><li>Pug: sintaxis propia</li><li>Handlebard: Usa {{ }} y limita la lógica dentro del HTML</li><li>Nunjucks:Desarrollado por Mozilla y bueno para proyectos grandes.</li><li>Mustache</li></ul>",
+    "label": "lab12"
+  }
+]
