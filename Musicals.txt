@@ -3,3 +3,4 @@ Name=EPIC&Image=https://m.media-amazon.com/images/M/MV5BYjViOTY5MGEtOTVmYS00ODc0
 Name=Sweeney Todd. The demon barber of Fleet Street&Image=https://i.scdn.co/image/ab67616d0000b273bca2a67b5ca9d790c55299e3
 Name=Wicked&Image=https://m.media-amazon.com/images/I/61KnhHzI8eL._UF1000,1000_QL80_.jpg
 Name=Ryde The Cyclone&Image=https://tse3.mm.bing.net/th/id/OIP.rU8HMBxmUoM3Gpxr9SuExQHaEK?pid=Api&P=0&h=220
+Name=The Greatests Showman&Image=https://upload.wikimedia.org/wikipedia/en/1/10/The_Greatest_Showman_poster.png

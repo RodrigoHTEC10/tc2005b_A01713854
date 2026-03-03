@@ -10,13 +10,8 @@ Se genera un controlador por cada una de las rutas.
 
 const fylesystem = require('fs');
 const path = require('path');
-const { readData, writeData } = require('../helpers/jsonStorage');
+const Musical = require('../models/musicals.model')
 
-//Camino a los datos de musicales
-const MUSICALS_PATH = path.join(__dirname, '..','data','musicals.json');
-
-//Array contenedor de musicales
-const musicals = readData(MUSICALS_PATH);
 
 //-----------------------------------------------------------------------------
 //Metodos del controlador
@@ -25,8 +20,9 @@ exports.getMusicalsList = (request, response, next) => {
     fylesystem.writeFileSync('Musicals.txt',"");
     const file = fylesystem.createWriteStream('Musicals.txt',{flags: 'a'});
     
-    response.render('musicals.ejs', {musicals: musicals});
-    
+    const musicals = Musical.fetchAll();
+    response.render('musicals.ejs', {musicals:musicals});
+
     for(let i = 0; i<musicals.length; i++){
         file.write("Name="+musicals[i].name+"&Image="+musicals[i].image+"\n");
     }
@@ -43,8 +39,9 @@ exports.getMusicalsForm = (request,response,next)=>{
 //post musicals/form
 exports.postMusicalsForm = (request,response,next)=>{
     console.log(request.body);
-    musicals.push(request.body);
-    writeData(MUSICALS_PATH,musicals);
+
+    const musical = new Musical(request.body);
+    musical.save();    
     response.redirect(303,'/musicals/list');
     response.end();
 };

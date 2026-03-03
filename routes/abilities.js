@@ -1,15 +1,13 @@
 /*
 Author: Rodrigo Alejandro Hurtado Cortes
-Date: February 24th, 2026
-Title: Abilities module.
+Date: March 2nd, 2026
+Title: Abilities routes.
 */
 
 const express = require('express');
 const router = express.Router();
+const abilitiesController = require('../controllers/controller.abilities');
 
-router.get(`/list`,(request,response,next)=>{
-    response.render('abilities.ejs');
-    response.end;
-})
+router.get(`/list`, abilitiesController.getAbilitiesList);
 
 module.exports = router;

@@ -95,11 +95,6 @@
     "answer": "<p>Esto se debe a la forma en la que una página carga dentro de un navegador, ya que es necesario que el navegador interprete tanto los archivos HTML como las hojas de estilos CSS con el fin de mostrar la página al usuario.</p><p>La minimización del una hoja de estilos implica la eliminación de espacios y comentarios dentro del CSS lo que implica una lectura más rapida del código por parte del navegador, reduciendo el tiempo de carga a coste de hacer este código menos legible al ojo humano.</p>"
   },
   {
-    "label": "lab05",
-    "question": "Describe Material Design.",
-    "answer": "<p>Es un sistema de diseño abierto al público (open-sourced) diseñado por Google para dar un lenguaje de consistencia y especificidad a sus productos; formado por una combinación de reglas, estandares y componentes que forman el orden de diseño de cualquier aplicación.</p><p>La última versión de este sistema es el m3 y puede ser consultada en este <a href=\"https://m3.material.io/\">link.</a></p>"
-  },
-  {
     "label": "lab04",
     "question": "¿Qué diferencias y semejanzas hay entre Java y JavaScript?",
     "answer": "<p>Similitudes:</p><ul><li>Ambos poseen sintaxis inspiradas en C.</li><li>Son lenguages que soportan el paradigma de programación orientada a objetos (Aunque Java es creado enteramente para ello).</li><li>Ambos soportan el paradigma funcional (Más notorio en JS).</li><li>Ambos son multiplataformas.</li></ul><p>Diferencias:</p><ul><p>Java:</p><ul><li>Tipado estático.</li><li>Requiere compilación.</li><li>Empleado en backend y desarrollo de aplicaciones.</li></ul><p>JavaScript:</p><ul><li>Tipado dinámico.</li><li>No requiere compilación, es interpretado.</li><li>Empleado para desarrollo web.</li></ul></ul>"
@@ -123,6 +118,11 @@
     "label": "lab04",
     "question": "¿Qué implicaciones tiene utilizar variables globales dentro de funciones?",
     "answer": "<p>Que estas variables seguiran existiendo fuera de su alcance (las ultimas llaves en donde fue creado {}). Esto puede llevar a la modificación de las mismas por parte de usuarios en la consola si estas no han sido declaradas como constantes, poniendo el riesgo el funcionamiento del script.</p>"
+  },
+  {
+    "label": "lab05",
+    "question": "Describe Material Design.",
+    "answer": "<p>Es un sistema de diseño abierto al público (open-sourced) diseñado por Google para dar un lenguaje de consistencia y especificidad a sus productos; formado por una combinación de reglas, estandares y componentes que forman el orden de diseño de cualquier aplicación.</p><p>La última versión de este sistema es el m3 y puede ser consultada en este <a href=\"https://m3.material.io/\">link.</a></p>"
   },
   {
     "label": "lab06",

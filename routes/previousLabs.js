@@ -1,30 +1,18 @@
 /*
 Author: Rodrigo Alejandro Hurtado Cortes
-Date: February 24th, 2026
-Title: Preguntas module.
+Date: March 2nd, 2026
+Title: Previous Labs routes.
 */
+
 const express = require('express');
 const path = require('path');
 const router = express.Router();
+const prevLabsController = require('../controllers/controller.previousLabs');
 
-router.get('/lab01',(request,response,next)=>{
-    response.sendFile(path.join(__dirname,'..','public','html','lab01-02-03.html'));
-})
-
-router.get('/lab03',(request,response,next)=>{
-    response.sendFile(path.join(__dirname,'..','public','html','lab01-02-03.html'));
-})
-
-router.get('/lab04',(request,response,next)=>{
-    response.sendFile(path.join(__dirname,'..','public','html','lab04.html'));
-})
-
-router.get('/lab05',(request,response,next)=>{
-    response.sendFile(path.join(__dirname,'..','public','html','lab05.html'));
-})
-
-router.get('/lab06',(request,response,next)=>{
-    response.sendFile(path.join(__dirname,'..','public','html','lab06.html'));
-})
+router.get('/lab01',prevLabsController.getLab01);
+router.get('/lab03',prevLabsController.getLab03);
+router.get('/lab04',prevLabsController.getLab04);
+router.get('/lab05',prevLabsController.getLab05);
+router.get('/lab06',prevLabsController.getLab06);
 
 module.exports = router;

@@ -1,16 +1,14 @@
 /*
 Author: Rodrigo Alejandro Hurtado Cortes
-Date: February 24th, 2026
-Title: Interests module.
+Date: March 2nd, 2026
+Title: Interests routes.
 */
 
 const express = require('express');
 const router = express.Router();
+const interestController = require('../controllers/controller.interests');
 
-router.get(`/text`,(request,response,next)=>{
-    response.render('interest.ejs');
-    response.end;
-})
+router.get(`/text`,interestController.getInterestText);
 
 
 module.exports = router;
