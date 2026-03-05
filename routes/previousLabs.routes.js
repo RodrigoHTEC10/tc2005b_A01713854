@@ -5,9 +5,8 @@ Title: Previous Labs routes.
 */
 
 const express = require('express');
-const path = require('path');
 const router = express.Router();
-const prevLabsController = require('../controllers/controller.previousLabs');
+const prevLabsController = require('../controllers/previousLabs.controller');
 
 router.get('/lab01',prevLabsController.getLab01);
 router.get('/lab03',prevLabsController.getLab03);

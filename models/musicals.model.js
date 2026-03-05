@@ -4,7 +4,6 @@ Date: March 2nd, 2026
 Title: Previous Labs model.
 */
 
-const fylesystem = require('fs');
 const path = require('path');
 const { readData, writeData } = require('../helpers/jsonStorage');
 

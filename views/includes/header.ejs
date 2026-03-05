@@ -3,16 +3,75 @@
         <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lab 05 [A01713854]</title>
+        <title>Labs [A01713854]</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     </head>
     <body>
+
+    <!--Navigation bar-->
+        <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+            <a class="navbar-item" href="/all">
+                Home
+            </a>
+
+            <a class="navbar-item" href="/interest/text">
+                Intereses
+            </a>
+
+            <a class="navbar-item" href="/abilities/list">
+                Habilidades
+            </a>
+
+            <a class="navbar-item" href="/musicals/list">
+                Musicales
+            </a>
+
+            <!--Incorporar funcionalidad de dropdown-->
+            <!-- <a class="navbar-item">
+                Laboratorios previos
+            </a> -->
+
+            <!--Incorporar funcionalidad de dropdown-->
+            <a class="navbar-item" href="/questions/all">
+                Preguntas
+            </a>
+
+            </div>
+
+            <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                
+                <!--De momento se desabilitara el registro de usuarios hasta el laboratorio de implementacion de un RBAC-->
+                <!-- <a class="button is-dark">
+                    <strong>Sign up</strong>
+                </a> -->
+
+                <% if(username == "") {%>
+                <a class="button is-dark" href='/users/login'>
+                    Log in
+                </a>
+                <% } else { %>
+                <a class="button is-dark" href='/users/logout'>
+                    Log out
+                </a>
+                <% } %>
+                </div>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--Header-->
     <div class="container">
-        <div class="block">
+        <div class="block" style="padding-top: 2em; margin-bottom: 2em;">
             <h1 class="title has-text-centered">Laboratorios - Rodrigo Hurtado </h1>
         </div>
         
-    <div class="box has-text-centered">
+    <div class="box has-text-centered" style="border: 2px solid white;  max-width: 40em;  margin: 0 auto; margin-bottom: 2em;"> 
             <p><strong>Datos de contacto:</strong></p>
             <div class="element">
                 <p><strong>Nombre:</strong> Rodrigo Alejandro Hurtado Cortés</p>
@@ -27,3 +86,9 @@
                 <p id="last_email"> <strong>Correo electrónico personal:</strong> hurtadorodrigo00@gmail.com</p>
             </div> 
     </div>
+
+    <% if(username != "") {%>
+    <div class="box has-text-centered">
+            <p><strong>Bienvenidx <%= username %></strong></p>
+    </div>
+    <% } %>

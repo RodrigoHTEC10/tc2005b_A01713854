@@ -5,6 +5,8 @@ Title: Interests controller.
 */
 
 exports.getInterestText = (request,response,next)=>{
-    response.render('interest.ejs');
+    response.render('interest.ejs', {
+        username: request.session.username || '',
+    });
     response.end;
 };

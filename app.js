@@ -16,50 +16,75 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view_engine','ejs'); //Establece el motor de visualizacion
 app.set('views','views');     //Establece el directorio del motor de visualizacion.
 
+/*Instalacion de express-session*/
+const session = require('express-session');
+app.use(session({
+    secret: 'mi string secreto que debe ser un string aleatorio muy largo, no como éste', 
+    resave: false,              //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false,   //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
+
+
+/*Instalacion del connect-flash*/
+const flash = require('connect-flash');
+app.use(flash());
+
+
+/*Instalacion del cookie-parser*/
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 
 /* Importacion de musicales y preguntas */
 const { readData} = require('./helpers/jsonStorage');
 const MUSICALS_PATH = path.join(__dirname,'data','musicals.json');
 const QUESTIONS_PATH = path.join(__dirname,'data','questions.json');
 
+
 //Array contenedor de musicales
 const musicals = readData(MUSICALS_PATH);
 const questions = readData(QUESTIONS_PATH);
 
-/*
-EJS son archivos que contienen codigo HTML per permite escribir codigo JS, usando %.
+
+/*EJS son archivos que contienen codigo HTML per permite escribir codigo JS, usando %.
 Para desplegar el template de EJS, lo hacemos con el metodo render, y como argumento podemos el nombre del archivo ejs.
 Dentro de este archivo se puede definir codigo JS que se puede ejecutar en el servidor o en el cliente.
-En este caso sera unicamente del servidor.
+En este caso sera unicamente del servidor.*/
+
+/*
+Available routes:
+/users/login
+/users/logout
 */
+app.use('/users',require('./routes/user.routes.js'));
 
 /*
 Available routes:
 /musicals/list
 /musicals/form (GET & POST)
 */
-app.use('/musicals', require('./routes/musicals.js'));
+app.use('/musicals', require('./routes/musicals.routes.js'));
 /*
 Available routes:
 /questions/lab01
 /questions/lab03
 /questions/lab05
 */
-app.use('/questions', require('./routes/questions.js'));
+app.use('/questions', require('./routes/questions.routes.js'));
 /*
 Available routes:
 /interest/text
 */
-app.use('/interest', require('./routes/interest.js'));
+app.use('/interest', require('./routes/interest.routes.js'));
 /*
 Available routes:
 /abilities/list
 */
-app.use('/abilities', require('./routes/abilities.js'));
+app.use('/abilities', require('./routes/abilities.routes.js'));
 
 
 //Lab 12
-app.use('/prev', require('./routes/previousLabs.js'));
+app.use('/prev', require('./routes/previousLabs.routes.js'));
 
 /* 
 Any other route
@@ -70,7 +95,15 @@ app.use('/all',(request, response, next)=>{
         musicals:musicals,
         title: "Laboratorios",
         label:"all",
+        username: request.session.username || '',
+        success: request.flash('success'),
     });
+
+    let visits = parseInt(request.cookies.visits) || 0;
+    visits = visits+1;
+    response.setHeader('Set-Cookie',`visits=${visits}; {httpOnly:true, secure:true}`);
+    console.log(`You have accesed the main webpage: ${visits} time(s).`)
+
 })
 
 

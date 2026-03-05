@@ -148,5 +148,15 @@
     "question": "¿Qué otros templating engines existen para node?",
     "answer": "<ul><li>Pug: sintaxis propia</li><li>Handlebard: Usa {{ }} y limita la lógica dentro del HTML</li><li>Nunjucks:Desarrollado por Mozilla y bueno para proyectos grandes.</li><li>Mustache</li></ul>",
     "label": "lab12"
+  },
+  {
+    "question": "¿Qué beneficios encuentras en el estilo MVC?",
+    "answer": "<ul><li>Separación de responsabilidades: Cada cada es responsable de un funcionamiento en concreto; dirección, vista generada para el usuario y lógica.</li><li>Mantenibilidad: Ante la separación de capas hay una mayor facilidad para cambiar o mejorar ciertas areas sin afectar al resto de las funcionalidades.</li><li>Reutilización de código: Más evidente en las vistas y los componentes en los que estas se pueden dividir.</li><li>Desarrollo en conjunto: La separación de las capas permite a desarrolladores trabajar en distintas áreas a la vez.</li>     <li>Escalabilidad: Ya que cada capa puede evolucionar de forma independiente a las otras.</li> </ul>",
+    "label": "lab14"
+  },
+  {
+    "question": "¿Encuentras alguna desventaja en el estilo arquitectónico MVC?",
+    "answer": "<p>A pesar de las ventajas antes mencionadas, a través de la investigación del modelo se pueden encontrar las siguientes desventajas o puntos débiles a considerar durnate su uso:</p> <ul>     <li>Complejidad innecesaria en proyectos pequeños.</li>     <li>Si la lógica detras de una capa aumenta es posible tener una sobrecarga de código en los controllers, lo que va en contra del principio de la responsabilidad única que delega su separación inicial.</li>     <li>Problemas de rendimiento ya que las capas intermedias del modelo pueden inducir latencia conforme la complejidad aumente.</li> </ul>",
+    "label": "lab14"
   }
 ]

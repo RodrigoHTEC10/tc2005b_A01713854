@@ -19,9 +19,13 @@ const Musical = require('../models/musicals.model')
 exports.getMusicalsList = (request, response, next) => {
     fylesystem.writeFileSync('Musicals.txt',"");
     const file = fylesystem.createWriteStream('Musicals.txt',{flags: 'a'});
-    
+    console.log(request.get('Cookie'));
+
     const musicals = Musical.fetchAll();
-    response.render('musicals.ejs', {musicals:musicals});
+    response.render('musicals.ejs', {
+        musicals:musicals,
+        username: request.session.username || '',
+    });
 
     for(let i = 0; i<musicals.length; i++){
         file.write("Name="+musicals[i].name+"&Image="+musicals[i].image+"\n");
@@ -32,16 +36,18 @@ exports.getMusicalsList = (request, response, next) => {
 //*************************************************************/
 //get musicals/form
 exports.getMusicalsForm = (request,response,next)=>{
-    response.render('form_musical.ejs');
+    response.render('form_musical.ejs', {
+        username: request.session.username || '',
+    });
 };
 
 //*************************************************************/
 //post musicals/form
 exports.postMusicalsForm = (request,response,next)=>{
     console.log(request.body);
-
     const musical = new Musical(request.body);
     musical.save();    
+    response.setHeader('Set-Cookie',`ultimo_musical=${musical.name}; Secure`);
     response.redirect(303,'/musicals/list');
     response.end();
 };

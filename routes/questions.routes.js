@@ -6,7 +6,7 @@ Title: Questions routes.
 
 const express = require('express');
 const router = express.Router();
-const questionsController = require('../controllers/controller.questions');
+const questionsController = require('../controllers/questions.controller');
 
 router.get('/form',questionsController.getQuestionsForm);
 router.post('/form',questionsController.postQuestionsForm);
@@ -18,6 +18,6 @@ router.get('/lab05',questionsController.getQuestionsLab05);
 router.get('/lab06',questionsController.getQuestionsLab06);
 router.get('/lab11',questionsController.getQuestionsLab11);
 router.get('/lab12',questionsController.getQuestionsLab12);
-router.get('/lab13',questionsController.getQuestionsLab13);
+router.get('/lab14',questionsController.getQuestionsLab14);
 
 module.exports =router;

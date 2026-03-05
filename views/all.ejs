@@ -1,6 +1,19 @@
 <%- include('./includes/header.ejs') %>
-<%- include('./includes/button_form_musical.ejs') %>
-<%- include('./includes/button_form_question.ejs') %>
+
+<% if (success.length > 0) { %>
+    <div class="notification block is-flex is-justify-content-center" style="border: 2px solid green;">
+        <button class="delete"></button>
+        <%= success[0] %>
+    </div>
+<% } %>
+<% if(username == "") { %>
+    <div class="notification block is-flex is-justify-content-center" style="border: 2px solid red;">
+        <button class="delete"></button>
+        El usuario ha salido correctamente.
+    </div>
+<% } %>
+
+<%- include('./includes/both_buttons.ejs') %>
 
 <%- include('./includes/interest.ejs') %>
 <%- include('./includes/abilities.ejs') %>

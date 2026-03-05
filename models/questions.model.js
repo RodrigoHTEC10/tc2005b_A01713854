@@ -3,7 +3,6 @@ Author: Rodrigo Alejandro Hurtado Cortes
 Date: March 2nd, 2026
 Title: Previous Labs model.
 */
-const fylesystem = require('fs');
 const path = require('path');
 const { readData, writeData } = require('../helpers/jsonStorage');
 
@@ -13,9 +12,9 @@ const questions = readData(QUESTIONS_PATH);
 module.exports = class Question{
 
     constructor(object){
-        this.label = object.label;
         this.question = object.question;
         this.answer = object.answer;
+        this.label = object.label;
     }
 
     save(){

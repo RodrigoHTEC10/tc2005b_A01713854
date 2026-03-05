@@ -6,7 +6,7 @@ Title: Musicals routes.
 
 const express = require('express');
 const router = express.Router();
-const musicalsController = require('../controllers/controller.musicals');
+const musicalsController = require('../controllers/musicals.controller');
 
 router.get('/list', musicalsController.getMusicalsList);
 router.get('/form', musicalsController.getMusicalsForm);

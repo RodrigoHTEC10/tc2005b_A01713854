@@ -1,13 +1,14 @@
 /*
 Author: Rodrigo Alejandro Hurtado Cortes
 Date: March 2nd, 2026
-Title: Abilities routes.
+Title: Interests routes.
 */
 
 const express = require('express');
 const router = express.Router();
-const abilitiesController = require('../controllers/controller.abilities');
+const interestController = require('../controllers/interests.controller');
 
-router.get(`/list`, abilitiesController.getAbilitiesList);
+router.get(`/text`,interestController.getInterestText);
+
 
 module.exports = router;
