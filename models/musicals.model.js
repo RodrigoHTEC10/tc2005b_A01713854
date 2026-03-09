@@ -1,31 +1,35 @@
 /*
 Author: Rodrigo Alejandro Hurtado Cortes
-Date: March 2nd, 2026
+Date: March 8th, 2026
 Title: Previous Labs model.
 */
-
-const path = require('path');
-const { readData, writeData } = require('../helpers/jsonStorage');
-
-//Camino a los datos de musicales
-const MUSICALS_PATH = path.join(__dirname, '..','data','musicals.json');
-
-//Array contenedor de musicales
-const musicals = readData(MUSICALS_PATH);
+const db = require('../util/database');
 
 module.exports = class Musical{
 
-    constructor(object){
-        this.name = object.name;
-        this.image = object.image;
+    constructor(m_name, m_image){
+        this.name = m_name;
+        this.image = m_image;
     }
 
     save(){
-        musicals.push(this);
-        writeData(MUSICALS_PATH,musicals);
+        return db.execute('INSERT INTO musicals(username,name,image,NOW()) VALUES(?,?)', [this.name, this.image]);
     }
 
     static fetchAll(){
-        return musicals;
+        return db.execute('SELECT M.name,M.image FROM musicals as M');
+    }
+
+    static fetchOne(musical_id){
+        return db.execute('SELECT M.name,M.image FROM musicals as M WHERE M.musical_id=?',[musical_id]);
+    }
+
+    static fetch(musical_id){
+        if(musical_id){
+            return this.fetchOne(musical_id);
+        }
+        else{
+            return this.fetchAll();
+        }
     }
 }

@@ -1,6 +1,6 @@
 /*
 Author: Rodrigo Alejandro Hurtado Cortes
-Date: February 24th, 2026
+Date: March 8th, 2026
 Title: Lab 11: Express - Main file.
 */
 const express = require('express');
@@ -34,17 +34,9 @@ app.use(flash());
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-
-/* Importacion de musicales y preguntas */
-const { readData} = require('./helpers/jsonStorage');
-const MUSICALS_PATH = path.join(__dirname,'data','musicals.json');
-const QUESTIONS_PATH = path.join(__dirname,'data','questions.json');
-
-
-//Array contenedor de musicales
-const musicals = readData(MUSICALS_PATH);
-const questions = readData(QUESTIONS_PATH);
-
+/*Import of the database models*/
+const Musical = require('./models/musicals.model.js');
+const Question = require('./models/questions.model.js');
 
 /*EJS son archivos que contienen codigo HTML per permite escribir codigo JS, usando %.
 Para desplegar el template de EJS, lo hacemos con el metodo render, y como argumento podemos el nombre del archivo ejs.
@@ -83,20 +75,42 @@ Available routes:
 app.use('/abilities', require('./routes/abilities.routes.js'));
 
 
-//Lab 12
+/*
+Available routes:
+/prev/lab01
+/prev/lab03
+/prev/lab04
+/prev/lab05
+/prev/lab06
+*/
 app.use('/prev', require('./routes/previousLabs.routes.js'));
 
 /* 
 Any other route
 */
 app.use('/all',(request, response, next)=>{
-    response.render('all.ejs',{
-        questions:questions,
-        musicals:musicals,
-        title: "Laboratorios",
-        label:"all",
-        username: request.session.username || '',
-        success: request.flash('success'),
+    
+    Promise.all([
+        Musical.fetchAll(),
+        Question.fetchAll(),
+    ])
+    .then((results) => {
+
+        const musicals = results[0][0];
+        const questions = results[1][0];
+
+        return response.render('all.ejs',{
+            questions:questions,
+            musicals:musicals,
+            title: "Laboratorios",
+            label:"all",
+            username: request.session.username || '',
+            success: request.flash('success'),
+        });
+    })
+    .catch((error) => {
+        console.log(error);
+        response.redirect('/');
     });
 
     let visits = parseInt(request.cookies.visits) || 0;
