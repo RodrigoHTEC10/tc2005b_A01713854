@@ -14,7 +14,7 @@ module.exports = class Question{
     }
 
     save(){
-        return db.execute('INSERT INTO questions(1, question, answer, label, NOW()) VALUES(?,?,?)',[this.question, this.answer, this.label]);
+        return db.execute('INSERT INTO questions(username_id, question, answer, label, created_at) VALUES(?,?,?,?,NOW())',[1,this.question, this.answer, this.label]);
     }
 
     static fetchAll(){

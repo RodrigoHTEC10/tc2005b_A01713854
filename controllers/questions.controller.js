@@ -147,3 +147,17 @@ exports.getQuestionsLab14 = (request,response,next)=>{
         response.redirect('/');
     });
 };
+
+exports.getQuestionsLab17 = (request,response,next)=>{
+    Question.fetch(request.params.question_id).then(([rows, fieldData])=>{
+        return response.render('questions.ejs',{
+            questions: rows,
+            title: "Laboratorio 17",
+            label: "lab17",
+            username: request.session.username || '',
+        });
+    }).catch((error)=>{
+        console.log(error);
+        response.redirect('/');
+    });
+};

@@ -13,7 +13,7 @@ module.exports = class Musical{
     }
 
     save(){
-        return db.execute('INSERT INTO musicals(username,name,image,NOW()) VALUES(?,?)', [this.name, this.image]);
+        return db.execute('INSERT INTO musicals(username_id,name,image,created_at) VALUES(?,?,?,NOW())', [1,this.name, this.image]);
     }
 
     static fetchAll(){

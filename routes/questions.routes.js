@@ -19,5 +19,6 @@ router.get('/lab06',questionsController.getQuestionsLab06);
 router.get('/lab11',questionsController.getQuestionsLab11);
 router.get('/lab12',questionsController.getQuestionsLab12);
 router.get('/lab14',questionsController.getQuestionsLab14);
+router.get('/lab17',questionsController.getQuestionsLab17);
 
 module.exports =router;
