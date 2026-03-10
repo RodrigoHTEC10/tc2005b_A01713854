@@ -7,11 +7,12 @@ Title: Previous Labs routes.
 const express = require('express');
 const router = express.Router();
 const prevLabsController = require('../controllers/previousLabs.controller');
+const isAuth = require('../util/is-auth');
 
-router.get('/lab01',prevLabsController.getLab01);
-router.get('/lab03',prevLabsController.getLab03);
-router.get('/lab04',prevLabsController.getLab04);
-router.get('/lab05',prevLabsController.getLab05);
-router.get('/lab06',prevLabsController.getLab06);
+router.get('/lab01',isAuth,prevLabsController.getLab01);
+router.get('/lab03',isAuth,prevLabsController.getLab03);
+router.get('/lab04',isAuth,prevLabsController.getLab04);
+router.get('/lab05',isAuth,prevLabsController.getLab05);
+router.get('/lab06',isAuth,prevLabsController.getLab06);
 
 module.exports = router;

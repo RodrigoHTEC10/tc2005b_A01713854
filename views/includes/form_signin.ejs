@@ -1,0 +1,61 @@
+<div class="block is-flex is-justify-content-center">
+    <form action="/users/signin" method="POST">
+
+        <div class="field">
+            <label for="name" class="label">Nombre</label>
+            <div class="control">
+            <input id="name" name="name" class="input" type="text" placeholder="e.g. Juan Hernandez" required>
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="username" class="label">Username</label>
+            <div class="control">
+            <input id="username" name="username" class="input" type="text" placeholder="e.g juanHernandez@gmail.com" required>
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="password" class="label">Password</label>
+            <div class="control">
+            <input id="password" name="password" class="input" type="password" placeholder="e.g. **********" required>
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="conf_password" class="label">Confirm password</label>
+            <div class="control">
+            <input id="conf_password" name="conf_password" class="input" type="password" placeholder="e.g. **********" required>
+            </div>
+        </div>
+
+
+        <div id="dont_match" style="display: none;"> 
+            <div class="notification block is-flex is-justify-content-center" style="border: 2px solid red;">
+                <button class="delete"></button>
+                Passwords do not match
+            </div>
+        </div>
+
+
+        <input class="button is-primary" type="submit" value="Save & Send">
+    </form>
+</div>
+
+<script>
+    const password_confirm = document.getElementById('conf_password');
+    const password = document.getElementById('password');
+    const dont_match = document.getElementById('dont_match');
+
+
+    function checkPasswords(){
+        if(password_confirm.value !== password.value){
+            dont_match.style.display = "block";
+        } else {
+            dont_match.style.display = "none";
+        }
+    }
+
+    password_confirm.onkeyup = checkPasswords;
+    password.onkeyup = checkPasswords;
+</script>

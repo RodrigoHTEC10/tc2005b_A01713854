@@ -7,9 +7,10 @@ Title: Musicals routes.
 const express = require('express');
 const router = express.Router();
 const musicalsController = require('../controllers/musicals.controller');
+const isAuth = require('../util/is-auth');
 
-router.get('/list', musicalsController.getMusicalsList);
-router.get('/form', musicalsController.getMusicalsForm);
-router.post('/form',musicalsController.postMusicalsForm);
+router.get('/list',isAuth, musicalsController.getMusicalsList);
+router.get('/form',isAuth, musicalsController.getMusicalsForm);
+router.post('/form',isAuth, musicalsController.postMusicalsForm);
 
 module.exports =router;

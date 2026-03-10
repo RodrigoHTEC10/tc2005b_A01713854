@@ -7,7 +7,8 @@ Title: Abilities routes.
 const express = require('express');
 const router = express.Router();
 const abilitiesController = require('../controllers/abilities.controller');
+const isAuth = require('../util/is-auth');
 
-router.get(`/list`, abilitiesController.getAbilitiesList);
+router.get(`/list`,isAuth, abilitiesController.getAbilitiesList);
 
 module.exports = router;

@@ -6,6 +6,7 @@ Title: Lab 11: Express - Main file.
 const express = require('express');
 const app = express();
 
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -24,6 +25,7 @@ app.use(session({
     saveUninitialized: false,   //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
 
+const isAuth = require('./util/is-auth.js');
 
 /*Instalacion del connect-flash*/
 const flash = require('connect-flash');
@@ -88,7 +90,7 @@ app.use('/prev', require('./routes/previousLabs.routes.js'));
 /* 
 Any other route
 */
-app.use('/all',(request, response, next)=>{
+app.use('/all',isAuth,(request, response, next)=>{
     
     Promise.all([
         Musical.fetchAll(),
