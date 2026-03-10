@@ -13,7 +13,7 @@ module.exports = class Question{
         this.label = q_label;
     }
 
-    save(){
+    async save(){
         return db.execute('INSERT INTO questions(username_id, question, answer, label, created_at) VALUES(?,?,?,?,NOW())',[1,this.question, this.answer, this.label]);
     }
 
@@ -32,5 +32,9 @@ module.exports = class Question{
         else{
             return this.fetchAll();
         }
+    }
+
+    static getQuestionsLab(label){
+        return db.execute('SELECT Q.question, Q.answer, Q.label FROM questions as Q WHERE label=?',[label]);
     }
 }

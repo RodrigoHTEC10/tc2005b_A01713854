@@ -43,6 +43,7 @@ exports.getLogin = (request, response, next)=>{
 exports.postLogin = (request, response, next)=>{
 
     User.fetchOne(request.body.username).then(([rows,fieldData])=>{
+        console.log(rows);
         if(rows.length<1){
             request.session.error = 'Usuario y/o password no coinciden';
             return response.redirect('users/login');
@@ -52,9 +53,23 @@ exports.postLogin = (request, response, next)=>{
                     console.log("Logged In");
                     request.session.isLoggedIn = true;
                     request.session.username = request.body.username;
-                    return request.session.save((error) => {
-                        return response.redirect("/all");
-                    });
+
+                    User.getPrivileges(request.body.username).then(([privileges, fieldData])=>{
+                        request.session.privileges = privileges;
+                        
+                        //* Testing console.log
+
+                        console.log(request.session.privileges);
+                        
+                        return request.session.save((error) => {
+                            return response.redirect("/all");
+                        });
+                        
+
+                    }).catch((error)=>{
+                        console.log(error);
+                        return response.redirect('/');
+                    })
                 } else {
                     request.session.error = 'Usuario y/o password no coinciden';
                     return response.redirect('/users/login');
@@ -62,6 +77,7 @@ exports.postLogin = (request, response, next)=>{
             })
             .catch((error)=>{
                 console.log(error);
+                return response.redirect('/');
             });
         };
     })

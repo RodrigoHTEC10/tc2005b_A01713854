@@ -12,7 +12,7 @@ module.exports = class Musical{
         this.image = m_image;
     }
 
-    save(){
+    async save(){
         return db.execute('INSERT INTO musicals(username_id,name,image,created_at) VALUES(?,?,?,NOW())', [1,this.name, this.image]);
     }
 

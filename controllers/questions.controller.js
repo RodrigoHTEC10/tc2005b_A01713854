@@ -39,137 +39,20 @@ exports.getQuestionsAll = (request,response,next)=>{
     });
 };
 
-exports.getQuestionsLab01 = (request,response,next)=>{
-    Question.fetch(request.params.question_id).then(([rows, fieldData])=>{
+exports.getQuestionsDynamically = (request,response,next)=>{
+    console.log(request.params.label);
+    let label = request.params.label;
+    Question.getQuestionsLab(label).then(([questions,fieldData])=>{
         return response.render('questions.ejs',{
-            questions: rows,
-            title: "Laboratorio 01",
-            label: "lab01",
+            questions: questions,
+            title: "Laboratorio "+label.substr(label.length - 2),
+            label: label,
             username: request.session.username || '',
             isLoggedIn: request.session.isLoggedIn || '',
         });
-    }).catch((error)=>{
+    })
+    .catch((error)=>{
         console.log(error);
         response.redirect('/');
-    });
-};
-
-exports.getQuestionsLab03 = (request,response,next)=>{
-    Question.fetch(request.params.question_id).then(([rows, fieldData])=>{
-        return response.render('questions.ejs',{
-            questions: rows,
-            title: "Laboratorio 03",
-            label: "lab03",
-            username: request.session.username || '',
-            isLoggedIn: request.session.isLoggedIn || '',
-        });
-    }).catch((error)=>{
-        console.log(error);
-        response.redirect('/');
-    });
-};
-
-exports.getQuestionsLab04 = (request,response,next)=>{
-    Question.fetch(request.params.question_id).then(([rows, fieldData])=>{
-        return response.render('questions.ejs',{
-            questions: rows,
-            title: "Laboratorio 04",
-            label: "lab04",
-            username: request.session.username || '',
-            isLoggedIn: request.session.isLoggedIn || '',
-        });
-    }).catch((error)=>{
-        console.log(error);
-        response.redirect('/');
-    });
-};
-
-exports.getQuestionsLab05 = (request,response,next)=>{
-    Question.fetch(request.params.question_id).then(([rows, fieldData])=>{
-        return response.render('questions.ejs',{
-            questions: rows,
-            title: "Laboratorio 05",
-            label: "lab05",
-            username: request.session.username || '',
-            isLoggedIn: request.session.isLoggedIn || '',
-        });
-    }).catch((error)=>{
-        console.log(error);
-        response.redirect('/');
-    });
-};
-
-exports.getQuestionsLab06 = (request,response,next)=>{
-    Question.fetch(request.params.question_id).then(([rows, fieldData])=>{
-        return response.render('questions.ejs',{
-            questions: rows,
-            title: "Laboratorio 06",
-            label: "lab06",
-            username: request.session.username || '',
-            isLoggedIn: request.session.isLoggedIn || '',
-        });
-    }).catch((error)=>{
-        console.log(error);
-        response.redirect('/');
-    });
-};
-
-exports.getQuestionsLab11 = (request,response,next)=>{
-    Question.fetch(request.params.question_id).then(([rows, fieldData])=>{
-        return response.render('questions.ejs',{
-            questions: rows,
-            title: "Laboratorio 11",
-            label: "lab11",
-            username: request.session.username || '',
-            isLoggedIn: request.session.isLoggedIn || '',
-        });
-    }).catch((error)=>{
-        console.log(error);
-        response.redirect('/');
-    });
-};
-
-exports.getQuestionsLab12 = (request,response,next)=>{
-    Question.fetch(request.params.question_id).then(([rows, fieldData])=>{
-        return response.render('questions.ejs',{
-            questions: rows,
-            title: "Laboratorio 12",
-            label: "lab12",
-            username: request.session.username || '',
-            isLoggedIn: request.session.isLoggedIn || '',
-        });
-    }).catch((error)=>{
-        console.log(error);
-        response.redirect('/');
-    });
-};
-
-exports.getQuestionsLab14 = (request,response,next)=>{
-    Question.fetch(request.params.question_id).then(([rows, fieldData])=>{
-        return response.render('questions.ejs',{
-            questions: rows,
-            title: "Laboratorio 14",
-            label: "lab14",
-            username: request.session.username || '',
-            isLoggedIn: request.session.isLoggedIn || '',
-        });
-    }).catch((error)=>{
-        console.log(error);
-        response.redirect('/');
-    });
-};
-
-exports.getQuestionsLab17 = (request,response,next)=>{
-    Question.fetch(request.params.question_id).then(([rows, fieldData])=>{
-        return response.render('questions.ejs',{
-            questions: rows,
-            title: "Laboratorio 17",
-            label: "lab17",
-            username: request.session.username || '',
-            isLoggedIn: request.session.isLoggedIn || '',
-        });
-    }).catch((error)=>{
-        console.log(error);
-        response.redirect('/');
-    });
-};
+    })
+}
