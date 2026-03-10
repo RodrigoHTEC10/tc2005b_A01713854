@@ -6,7 +6,7 @@ Title: Lab 11: Express - Main file.
 const express = require('express');
 const app = express();
 
-
+/*Establece el body parser. Permite leer facilmente del cuerpo de un form.*/
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+/* Establecer el motor grafico de la aplicacion web como ejs */
 app.set('view_engine','ejs'); //Establece el motor de visualizacion
 app.set('views','views');     //Establece el directorio del motor de visualizacion.
 
@@ -24,6 +26,12 @@ app.use(session({
     resave: false,              //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
     saveUninitialized: false,   //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
+
+/*Instalacion de csurf*/
+const csrf = require('csurf');
+const csrfProtection = csrf();
+app.use(csrfProtection); 
+
 
 const isAuth = require('./util/is-auth.js');
 
@@ -108,6 +116,7 @@ app.use('/all',isAuth,(request, response, next)=>{
             label:"all",
             username: request.session.username || '',
             success: request.flash('success'),
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     })
     .catch((error) => {

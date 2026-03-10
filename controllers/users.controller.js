@@ -8,6 +8,8 @@ const bcrypt = require('bcrypt');
 
 exports.getSignin=(request, response, next) => {
     response.render('signin.ejs', {
+        csrfToken: request.csrfToken(),
+        isLoggedIn: request.session.isLoggedIn || '',
         username: request.session.username || '',
     });
 }
@@ -31,7 +33,9 @@ exports.getLogin = (request, response, next)=>{
     const error = request.session.error || '';
     request.session.error='';
     response.render('login.ejs', {
+        csrfToken: request.csrfToken(),
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || '',
         error:error,
     });
 }

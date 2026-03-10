@@ -12,6 +12,8 @@
         <nav class="navbar is-light" role="navigation" aria-label="main navigation">
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
+
+            <% if(isLoggedIn != '') {%>
             <a class="navbar-item" href="/all">
                 Home
             </a>
@@ -37,6 +39,7 @@
             <a class="navbar-item" href="/questions/all">
                 Preguntas
             </a>
+            <% } %>
 
             </div>
 

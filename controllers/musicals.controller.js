@@ -17,6 +17,7 @@ exports.getMusicalsList = (request, response, next) => {
     Musical.fetch(request.params.musical_id).then(([rows,fieldData]) =>{
         return response.render('musicals.ejs',{
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
             musicals: rows,
         });
 
@@ -30,7 +31,9 @@ exports.getMusicalsList = (request, response, next) => {
 //get musicals/form
 exports.getMusicalsForm = (request,response,next)=>{
     response.render('form_musical.ejs', {
+        csrfToken: request.csrfToken(),
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || '',
     });
 };
 

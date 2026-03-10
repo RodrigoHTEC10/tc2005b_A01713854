@@ -1,24 +1,25 @@
     <form action="/questions/form" method="POST">
-    <div class="field">
-        <label for="question" class="label">Question</label>
-        <div class="control">
-        <input id="question" name="question" class="input" type="text" placeholder="Ej. ¿Que lenguaje se uso para hacer este form? ">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+        <div class="field">
+            <label for="question" class="label">Question</label>
+            <div class="control">
+            <input id="question" name="question" class="input" type="text" placeholder="Ej. ¿Que lenguaje se uso para hacer este form? ">
+            </div>
         </div>
-    </div>
 
-    <div class="field">
-        <label for="answer" class="label">Answer</label>
-        <div class="control">
-        <input id="answer" name="answer" class="input" type="text" placeholder=" JavaScript ">
+        <div class="field">
+            <label for="answer" class="label">Answer</label>
+            <div class="control">
+            <input id="answer" name="answer" class="input" type="text" placeholder=" JavaScript ">
+            </div>
         </div>
-    </div>
 
-    <div class="field">
-        <label for="label" class="label">Label</label>
-        <div class="control">
-        <input id="label" name="label" class="input" type="text" placeholder=" lab01 ">
+        <div class="field">
+            <label for="label" class="label">Label</label>
+            <div class="control">
+            <input id="label" name="label" class="input" type="text" placeholder=" lab01 ">
+            </div>
         </div>
-    </div>
 
-    <input class="button is-primary" type="submit" value="Save & Sent">
+        <input class="button is-primary" type="submit" value="Save & Sent">
     </form>

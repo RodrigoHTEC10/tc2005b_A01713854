@@ -7,7 +7,9 @@ const Question = require('../models/questions.model');
 
 exports.getQuestionsForm = (request,response,next)=>{
     response.render('form_question.ejs', {
+        csrfToken: request.csrfToken(),
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || '',
     });
 };
 
@@ -29,6 +31,7 @@ exports.getQuestionsAll = (request,response,next)=>{
             title: "Laboratorios",
             label: "all",
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     }).catch((error)=>{
         console.log(error);
@@ -43,6 +46,7 @@ exports.getQuestionsLab01 = (request,response,next)=>{
             title: "Laboratorio 01",
             label: "lab01",
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     }).catch((error)=>{
         console.log(error);
@@ -57,6 +61,7 @@ exports.getQuestionsLab03 = (request,response,next)=>{
             title: "Laboratorio 03",
             label: "lab03",
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     }).catch((error)=>{
         console.log(error);
@@ -71,6 +76,7 @@ exports.getQuestionsLab04 = (request,response,next)=>{
             title: "Laboratorio 04",
             label: "lab04",
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     }).catch((error)=>{
         console.log(error);
@@ -85,6 +91,7 @@ exports.getQuestionsLab05 = (request,response,next)=>{
             title: "Laboratorio 05",
             label: "lab05",
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     }).catch((error)=>{
         console.log(error);
@@ -99,6 +106,7 @@ exports.getQuestionsLab06 = (request,response,next)=>{
             title: "Laboratorio 06",
             label: "lab06",
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     }).catch((error)=>{
         console.log(error);
@@ -113,6 +121,7 @@ exports.getQuestionsLab11 = (request,response,next)=>{
             title: "Laboratorio 11",
             label: "lab11",
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     }).catch((error)=>{
         console.log(error);
@@ -127,6 +136,7 @@ exports.getQuestionsLab12 = (request,response,next)=>{
             title: "Laboratorio 12",
             label: "lab12",
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     }).catch((error)=>{
         console.log(error);
@@ -141,6 +151,7 @@ exports.getQuestionsLab14 = (request,response,next)=>{
             title: "Laboratorio 14",
             label: "lab14",
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     }).catch((error)=>{
         console.log(error);
@@ -155,6 +166,7 @@ exports.getQuestionsLab17 = (request,response,next)=>{
             title: "Laboratorio 17",
             label: "lab17",
             username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
         });
     }).catch((error)=>{
         console.log(error);
