@@ -117,6 +117,7 @@ app.use('/all',isAuth,(request, response, next)=>{
             username: request.session.username || '',
             success: request.flash('success'),
             isLoggedIn: request.session.isLoggedIn || '',
+            privileges:request.session.privileges || [],
         });
     })
     .catch((error) => {

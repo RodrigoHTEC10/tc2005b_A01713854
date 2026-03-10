@@ -1,11 +1,11 @@
 <div class="block is-flex is-justify-content-center">
 
-    <% if(error != '') { %>
-        <div class="notification is-danger">
+        <% if(error != '') { %>
+        <div class="notification block is-flex is-justify-content-center" style="border: 2px solid red;">
             <button class="delete"></button>
             <%= error %>
         </div>
-    <% } %>
+        <% } %>
 
     <form action="/users/login" method="POST">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>" >

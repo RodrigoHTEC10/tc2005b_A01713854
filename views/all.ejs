@@ -13,7 +13,27 @@
     </div>
 <% } %>
 
-<%- include('./includes/both_buttons.ejs') %>
+<% let create_musical = false; %>
+<% let create_question = false; %>
+
+<% for(let priv of privileges){ %>
+    <% console.log(priv.name); %>
+    <% if(priv.name == 'create-musical') {%>
+        <% create_musical=true; %>
+    <% } %> 
+    <% if(priv.name == 'create-question') {%>
+        <% create_question=true; %>       
+    <% } %>
+<% } %>
+
+
+<% if(create_musical && create_question){ %>
+    <%- include('./includes/both_buttons.ejs') %>
+<% } else if(create_musical){ %>
+    <%- include('./includes/button_form_musical.ejs') %>
+<% } else if(create_question){ %>
+    <%- include('./includes/button_form_question.ejs') %>
+<% } %>
 
 <%- include('./includes/interest.ejs') %>
 <%- include('./includes/abilities.ejs') %>

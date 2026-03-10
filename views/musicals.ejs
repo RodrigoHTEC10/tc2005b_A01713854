@@ -1,4 +1,11 @@
 <%- include('./includes/header.ejs') %>
-<%- include('./includes/button_form_musical.ejs') %>
+
+<!-- * Dinamic Appearance of Buttons based on privileges -->
+<% for(let priv of privileges){ %>
+    <% if(priv.name == 'create-musical') { %>
+        <%- include('./includes/button_form_musical.ejs') %>
+    <% } %>        
+<% } %>
+
 <%- include('./includes/musicals.ejs') %>
 <%- include('./includes/footer.ejs') %>

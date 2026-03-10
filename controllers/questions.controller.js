@@ -10,6 +10,7 @@ exports.getQuestionsForm = (request,response,next)=>{
         csrfToken: request.csrfToken(),
         username: request.session.username || '',
         isLoggedIn: request.session.isLoggedIn || '',
+        privileges:request.session.privileges || [],
     });
 };
 
@@ -32,6 +33,7 @@ exports.getQuestionsAll = (request,response,next)=>{
             label: "all",
             username: request.session.username || '',
             isLoggedIn: request.session.isLoggedIn || '',
+            privileges:request.session.privileges || [],
         });
     }).catch((error)=>{
         console.log(error);
@@ -49,6 +51,7 @@ exports.getQuestionsDynamically = (request,response,next)=>{
             label: label,
             username: request.session.username || '',
             isLoggedIn: request.session.isLoggedIn || '',
+            privileges:request.session.privileges || [],
         });
     })
     .catch((error)=>{

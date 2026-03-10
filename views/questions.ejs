@@ -1,4 +1,11 @@
 <%- include('./includes/header.ejs') %>
-<%- include('./includes/button_form_question.ejs') %>
+
+ <!-- * Dinamic Appearance of Buttons based on privileges -->
+<% for(let priv of privileges){ %>
+    <% if(priv.name == 'create-question') { %>
+        <%- include('./includes/button_form_question.ejs') %>
+    <% } %>        
+<% } %>
+
 <%- include('./includes/questions.ejs') %>
 <%- include('./includes/footer.ejs') %>

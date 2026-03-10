@@ -11,8 +11,8 @@ const isAuth = require('../util/is-auth');
 const visualQuestion = require('../util/privileges/visualize-questions');
 const createQuestion = require('../util/privileges/create-question');
 
-router.get('/form',isAuth,createQuestion,questionsController.getQuestionsForm);
-router.post('/form',isAuth,createQuestion,questionsController.postQuestionsForm);
+router.get('/form',isAuth,visualQuestion,createQuestion,questionsController.getQuestionsForm);
+router.post('/form',isAuth,visualQuestion,createQuestion,questionsController.postQuestionsForm);
 router.get('/all',isAuth,visualQuestion,questionsController.getQuestionsAll);
 router.get('/:label',isAuth,visualQuestion,questionsController.getQuestionsDynamically);
 

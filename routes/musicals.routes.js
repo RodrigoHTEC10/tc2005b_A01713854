@@ -12,7 +12,7 @@ const createMusical = require('../util/privileges/create-musical');
 const visualMusical = require('../util/privileges/visualize-musicals');
 
 router.get('/list',isAuth,visualMusical, musicalsController.getMusicalsList);
-router.get('/form',isAuth,createMusical, musicalsController.getMusicalsForm);
-router.post('/form',isAuth,createMusical, musicalsController.postMusicalsForm);
+router.get('/form',isAuth,visualMusical,createMusical, musicalsController.getMusicalsForm);
+router.post('/form',isAuth,visualMusical,createMusical, musicalsController.postMusicalsForm);
 
 module.exports =router;
