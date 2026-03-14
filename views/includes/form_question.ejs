@@ -1,25 +1,49 @@
-    <form action="/questions/form" method="POST">
+<% if(edition){%>
+<form action="/questions/edit" method="POST">
+<% } else {%>
+<form action="/questions/form" method="POST">
+<% } %>
+    
         <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+        
+        <% if(edition) { %>
+            <input type="hidden" name="question_id" value="<%= question.question_id %>">
+        <% } %>
+        
         <div class="field">
             <label for="question" class="label">Question</label>
             <div class="control">
-            <input id="question" name="question" class="input" type="text" placeholder="Ej. ¿Que lenguaje se uso para hacer este form? ">
+            <input id="question" name="question" class="input" type="text" placeholder="¿Que lenguaje se uso para hacer este form?"
+            <% if(edition) { %>
+                value="<%= question.question %>"
+            <% } %>
+            >
             </div>
         </div>
 
         <div class="field">
             <label for="answer" class="label">Answer</label>
             <div class="control">
-            <input id="answer" name="answer" class="input" type="text" placeholder=" JavaScript ">
+                <textarea class="textarea" id="answer" name="answer" placeholder="JavaScript"><% if(edition){ %><%=question.answer%><% } %></textarea>
             </div>
         </div>
 
         <div class="field">
             <label for="label" class="label">Label</label>
             <div class="control">
-            <input id="label" name="label" class="input" type="text" placeholder=" lab01 ">
+            <input id="label" name="label" class="input" type="text" placeholder="lab01 "
+            <% if(edition) { %>
+                value="<%= question.label %>"
+            <% } %>
+            >
             </div>
         </div>
 
-        <input class="button is-primary" type="submit" value="Save & Sent">
+        <div class="field is-grouped is-grouped-centered">
+            <% if(edition) { %>
+                <input class="button is-light" type="submit" value="Save">
+            <% } else { %>
+                <input class="button is-light" type="submit" value="Create">
+            <% } %>
+        </div>
     </form>

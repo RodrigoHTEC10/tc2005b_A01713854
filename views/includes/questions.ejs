@@ -2,7 +2,6 @@
     <section class="section">
         <div class="container content">
             <h2 class="subtitle has-text-centered">Preguntas <%= title %></h2>
-                <!--Q.1-->
 
                 <% for(let i = 0; i<questions.length; i++){ %>
                 <article class="block">
@@ -24,13 +23,11 @@
                                         </a>
                                     </p>
                                     <p class="control">
-                                        <a href="/questions/delete/<%= questions[i].question_id %>">
-                                        <button class="button" disabled>
+                                        <button class="button confirm-deletion" data-id="<%= questions[i].question_id %>">
                                             <span class="icon is-small">
                                                 <i class="fa-solid fa-trash"></i>
                                             </span>
                                         </button>
-                                        </a>
                                     </p>
                                 </div>
                             <% } %>
@@ -45,4 +42,57 @@
                 <br>
                 <% } %>
         </div>
+
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-background"></div>
+
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Confirmar eliminación</p>
+            </header>
+
+            <section class="modal-card-body">
+            ¿Seguro que quieres eliminar esta pregunta?
+            </section>
+
+            <footer class="modal-card-foot">
+            <button id="confirmDelete" class="button is-danger">
+                Eliminar
+            </button>
+            <button class="button close-modal">
+                Cancelar
+            </button>
+            </footer>
+        </div>
+    </div>
+
+
     </section>
+
+<script>
+    const modal = document.getElementById('deleteModal');
+
+    document.querySelectorAll(".confirm-deletion").forEach(button => {
+        button.addEventListener("click", function(){
+            console.log("I have heard you");
+            const questionId = this.dataset.id;
+            showDeletePopup(questionId);
+        });
+    });
+
+    document.querySelectorAll(".close-modal").forEach(button => {
+        button.addEventListener("click", function() {
+            modal.classList.remove('is-active');
+        });
+    });
+
+    function showDeletePopup(questionId){
+        modal.classList.add('is-active');
+        const confirmation = document.getElementById('confirmDelete');
+        confirmation.onclick = ()=> {
+            window.location.href = `/questions/delete/${questionId}`;
+        };
+    };
+
+</script>

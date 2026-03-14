@@ -3,10 +3,13 @@ Author: Rodrigo Alejandro Hurtado Cortes
 Date: March 2nd, 2026
 Title: Questions controller.
 */
+const { response } = require('express');
 const Question = require('../models/questions.model');
 
 exports.getQuestionsForm = (request,response,next)=>{
     response.render('form_question.ejs', {
+        question: '',
+        edition: false,
         csrfToken: request.csrfToken(),
         username: request.session.username || '',
         isLoggedIn: request.session.isLoggedIn || '',
@@ -42,7 +45,6 @@ exports.getQuestionsAll = (request,response,next)=>{
 };
 
 exports.getQuestionsDynamically = (request,response,next)=>{
-    console.log(request.params.label);
     let label = request.params.label;
     Question.getQuestionsLab(label).then(([questions,fieldData])=>{
         return response.render('questions.ejs',{
@@ -61,7 +63,6 @@ exports.getQuestionsDynamically = (request,response,next)=>{
 }
 
 exports.getQuestionByID = (request,response,next)=>{
-    console.log(request.params.question_id);
     let id = request.params.question_id;
     Question.fetchOne(id).then(([questions,fieldData])=>{
         return response.render('questions.ejs',{
@@ -78,3 +79,45 @@ exports.getQuestionByID = (request,response,next)=>{
         response.redirect('/');
     })
 }
+
+exports.getQuestionEditionForm = (request, response, next) =>{
+    let id = request.params.question_id;
+    Question.fetchOne(id).then(([questions,fieldData])=>{
+        console.log(questions[0]);
+        return response.render('form_question.ejs',{
+            csrfToken: request.csrfToken(),
+            edition: true,
+            question: questions[0],
+            username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
+            privileges:request.session.privileges || [],
+        });
+    })
+    .catch((error)=>{
+        console.log(error);
+        response.redirect('/');
+    })
+}
+
+
+exports.postQuestionEdition = (request,response,next)=>{
+    Question.editQuestion(request.body.question_id, request.body.question, request.body.answer, request.body.label)
+    .then(()=>{
+        response.redirect(303,'/questions/all');
+    })
+    .catch((error)=>{
+        console.log(error);
+        response.redirect('/');
+    })
+};
+
+exports.getDeleteQuestion = (request,response,next)=>{
+    Question.deleteQuestion(request.params.question_id)
+    .then(()=>{
+        response.redirect(303,'/questions/all');
+    })
+    .catch((error)=>{
+        console.log(error);
+        response.redirect('/');
+    })
+};

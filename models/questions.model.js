@@ -22,7 +22,7 @@ module.exports = class Question{
     }
 
     static fetchOne(question_id){
-            return db.execute('SELECT Q.question, Q.answer, Q.label FROM questions as Q WHERE question_id=?',[question_id]);
+            return db.execute('SELECT Q.question_id, Q.question, Q.answer, Q.label FROM questions as Q WHERE question_id=?',[question_id]);
     }
 
     static fetch(question_id){
@@ -36,5 +36,13 @@ module.exports = class Question{
 
     static getQuestionsLab(label){
         return db.execute('SELECT Q.question, Q.answer, Q.label FROM questions as Q WHERE label=?',[label]);
+    }
+
+    static editQuestion(question_id, question, answer, label){
+        return db.execute(`UPDATE questions SET question=?, answer=?, label=? WHERE question_id=?`,[question, answer, label, question_id]);
+    }
+
+    static deleteQuestion(question_id){
+        return db.execute('DELETE FROM questions WHERE question_id=?',[question_id]);
     }
 }
