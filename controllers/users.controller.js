@@ -46,7 +46,7 @@ exports.postLogin = (request, response, next)=>{
         console.log(rows);
         if(rows.length<1){
             request.session.error = 'Usuario y/o password no coinciden';
-            return response.redirect('users/login');
+            return response.redirect('/users/login');
         }else{
             bcrypt.compare(request.body.password, rows[0].password).then((doMatch)=>{
                 if(doMatch){
@@ -62,7 +62,7 @@ exports.postLogin = (request, response, next)=>{
                         console.log(request.session.privileges);
                         
                         return request.session.save((error) => {
-                            return response.redirect("/all");
+                            return response.redirect('/all');
                         });
                         
 

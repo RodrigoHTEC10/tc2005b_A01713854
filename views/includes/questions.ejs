@@ -8,15 +8,41 @@
                 <article class="block">
                     <header>
                         <strong>
-                            <%= questions[i].question %> 
+                            <a href="/questions/id/<%= questions[i].question_id%>"><%= questions[i].question %></a> 
                         </strong> <code><%= questions[i].label %></code>
+
+                        <% for(let priv of privileges){ %>
+                            <% if(priv.name == 'create-question') {%>
+                                <div class="field has-addons">
+                                    <p class="control">
+                                        <a href="/questions/edit/<%= questions[i].question_id %>">
+                                        <button class="button">
+                                            <span class="icon is-small">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </span>
+                                        </button>
+                                        </a>
+                                    </p>
+                                    <p class="control">
+                                        <a href="/questions/delete/<%= questions[i].question_id %>">
+                                        <button class="button" disabled>
+                                            <span class="icon is-small">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                        </button>
+                                        </a>
+                                    </p>
+                                </div>
+                            <% } %>
+                        <% } %>
+                                
+                    </header>
+
                     <div class="content">
                     <%- questions[i].answer %>
                     </div>
                 </article>
                 <br>
                 <% } %>
-
-            </div>
         </div>
     </section>

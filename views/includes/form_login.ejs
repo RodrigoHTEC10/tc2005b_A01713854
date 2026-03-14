@@ -7,23 +7,31 @@
 <% } %>
 
 <div class="block is-flex is-justify-content-center">
-
     <form action="/users/login" method="POST">
+        
         <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+        
         <div class="field">
-            <label for="username" class="label">Username</label>
-            <div class="control">
-            <input id="username" name="username" class="input" type="text" placeholder="e.g juanHernandez@gmail.com" required>
+            <div class="control has-icons-left">
+                <input id="username" name="username" class="input" type="text" placeholder="Username" required>
+                <span class="icon is-small is-left">
+                    <i class="fa-solid fa-circle-user"></i>
+                </span>
             </div>
         </div>
 
         <div class="field">
-            <label for="password" class="label">Password</label>
-            <div class="control">
-            <input id="password" name="password" class="input" type="password" placeholder="e.g. Contraseña" required>
+            <div class="control has-icons-left">
+                <input id="password" name="password" class="input" type="password" placeholder="Password" required>
+                <span class="icon is-small is-left">
+                    <i class="fa-solid fa-key"></i>
+                </span>
             </div>
         </div>
 
-        <input class="button is-primary" type="submit" value="Save & Sent">
+        <div class="field is-grouped is-grouped-centered">
+            <input class="button is-light" type="submit" value="Login">
+        </div>
+        
     </form>
 </div>

@@ -59,3 +59,22 @@ exports.getQuestionsDynamically = (request,response,next)=>{
         response.redirect('/');
     })
 }
+
+exports.getQuestionByID = (request,response,next)=>{
+    console.log(request.params.question_id);
+    let id = request.params.question_id;
+    Question.fetchOne(id).then(([questions,fieldData])=>{
+        return response.render('questions.ejs',{
+            questions: questions,
+            title: "Question No. "+id,
+            label:'',
+            username: request.session.username || '',
+            isLoggedIn: request.session.isLoggedIn || '',
+            privileges:request.session.privileges || [],
+        });
+    })
+    .catch((error)=>{
+        console.log(error);
+        response.redirect('/');
+    })
+}

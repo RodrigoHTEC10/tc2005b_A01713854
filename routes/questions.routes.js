@@ -14,6 +14,7 @@ const createQuestion = require('../util/privileges/create-question');
 router.get('/form',isAuth,visualQuestion,createQuestion,questionsController.getQuestionsForm);
 router.post('/form',isAuth,visualQuestion,createQuestion,questionsController.postQuestionsForm);
 router.get('/all',isAuth,visualQuestion,questionsController.getQuestionsAll);
+router.get('/id/:question_id',isAuth,visualQuestion,questionsController.getQuestionByID);
 router.get('/:label',isAuth,visualQuestion,questionsController.getQuestionsDynamically);
 
 module.exports =router;

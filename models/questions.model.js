@@ -18,16 +18,16 @@ module.exports = class Question{
     }
 
     static fetchAll(){
-        return db.execute('SELECT Q.question, Q.answer, Q.label FROM questions as Q');
+        return db.execute('SELECT Q.question_id, Q.question, Q.answer, Q.label FROM questions as Q');
     }
 
-    static fetchOne(musical_id){
-            return db.execute('SELECT Q.question, Q.answer, Q.label FROM questions as Q WHERE question_id=?',[musical_id]);
+    static fetchOne(question_id){
+            return db.execute('SELECT Q.question, Q.answer, Q.label FROM questions as Q WHERE question_id=?',[question_id]);
     }
 
-    static fetch(musical_id){
-        if(musical_id){
-            return this.fetchOne(musical_id);
+    static fetch(question_id){
+        if(question_id){
+            return this.fetchOne(question_id);
         }
         else{
             return this.fetchAll();

@@ -32,13 +32,11 @@ const csrf = require('csurf');
 const csrfProtection = csrf();
 app.use(csrfProtection); 
 
-
 const isAuth = require('./util/is-auth.js');
 
 /*Instalacion del connect-flash*/
 const flash = require('connect-flash');
 app.use(flash());
-
 
 /*Instalacion del cookie-parser*/
 const cookieParser = require('cookie-parser');
