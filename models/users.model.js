@@ -15,8 +15,8 @@ module.exports = class User{
         this.password = u_password;
     }
 
-    async save(){
-        bcrypt.hash(this.password, 12).then((password_cifrado)=>{
+    save(){
+        return bcrypt.hash(this.password, 12).then((password_cifrado)=>{
             return db.execute('INSERT INTO users(username, password, nombre) Values(?,?,?)',
                 [this.username,password_cifrado,this.name]);
         })
@@ -24,11 +24,10 @@ module.exports = class User{
             console.log(error);
             return response.redirect('/');
         });
-        console.log("All saved");
     }
 
     static getUsernameId(username){
-        return db.execute('SELECT username_id FROM users WHERE username=?',[username]);
+        return db.execute('SELECT users.username_id FROM users WHERE username=?',[username]);
     }
 
     static fetchOne(username){

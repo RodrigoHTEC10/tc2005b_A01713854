@@ -17,23 +17,25 @@ exports.getSignin=(request, response, next) => {
 exports.postSignin=(request, response, next) => {
     const usuario = new User(request.body.username, request.body.name, request.body.password);
     usuario.save().then(()=>{
-        User.getUsernameId(request.body.username).then(([username_id,fieldData])=>{
-            User.assingRole(username_id, 1).then(()=>{
-                return response.redirect('/users/login');
-
-            }).catch((error)=>{
-                console.log(error);
-                return response.redirect('/');
-            })
+        User.getUsernameId(request.body.username).then(([data, fieldData])=>{
+        let id = data[0].username_id;
+        User.assingRole(id, 2).then(()=>{
+            return response.redirect('/users/login');
         }).catch((error)=>{
             console.log(error);
             return response.redirect('/');
         });
-    })
-    .catch((error)=>{
+        })
+        .catch((error)=>{
+            console.log(error);
+            return response.redirect('/');
+        });
+    }).catch((error)=>{
         console.log(error);
         return response.redirect('/');
     });
+
+    
 };
 
 
@@ -61,18 +63,18 @@ exports.postLogin = (request, response, next)=>{
                     request.session.isLoggedIn = true;
                     request.session.username = request.body.username;
 
+                    // TODO: Optional feature: Color change with my girlfriend's nickname.
+                    // !Implement usage of private environment variables.
+                    if(request.session.username == 'nickavh_606'){
+                        request.session.isMyLove = true;
+                        request.session.colorCount = 0;
+                    }
                     User.getPrivileges(request.body.username).then(([privileges, fieldData])=>{
-                        request.session.privileges = privileges;
-                        
-                        //* Testing console.log
-
-                        console.log(request.session.privileges);
-                        
+                        request.session.privileges = privileges;                        
                         return request.session.save((error) => {
                             return response.redirect('/all');
                         });
                         
-
                     }).catch((error)=>{
                         console.log(error);
                         return response.redirect('/');
