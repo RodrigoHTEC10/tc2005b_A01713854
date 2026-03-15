@@ -8,8 +8,10 @@ const express = require('express');
 const router = express.Router();
 const interestController = require('../controllers/interests.controller');
 const isAuth = require('../util/is-auth');
+const specialUser = require('../util/special-user');
 
-router.get(`/text`,isAuth,interestController.getInterestText);
+
+router.get(`/text`,isAuth,specialUser,interestController.getInterestText);
 
 
 module.exports = router;

@@ -10,9 +10,11 @@ const musicalsController = require('../controllers/musicals.controller');
 const isAuth = require('../util/is-auth');
 const createMusical = require('../util/privileges/create-musical');
 const visualMusical = require('../util/privileges/visualize-musicals');
+const specialUser = require('../util/special-user');
 
-router.get('/list',isAuth,visualMusical, musicalsController.getMusicalsList);
-router.get('/form',isAuth,visualMusical,createMusical, musicalsController.getMusicalsForm);
-router.post('/form',isAuth,visualMusical,createMusical, musicalsController.postMusicalsForm);
+
+router.get('/list',isAuth,specialUser,visualMusical, musicalsController.getMusicalsList);
+router.get('/form',isAuth,specialUser,visualMusical,createMusical, musicalsController.getMusicalsForm);
+router.post('/form',isAuth,specialUser,visualMusical,createMusical, musicalsController.postMusicalsForm);
 
 module.exports =router;

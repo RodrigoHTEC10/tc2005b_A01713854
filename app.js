@@ -14,10 +14,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 /* Establecer el motor grafico de la aplicacion web como ejs */
-app.set('view_engine','ejs'); //Establece el motor de visualizacion
+app.set('view engine','ejs'); //Establece el motor de visualizacion
 app.set('views','views');     //Establece el directorio del motor de visualizacion.
+
+/*Instalacion del cookie-parser*/
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 
 /*Instalacion de express-session*/
 const session = require('express-session');
@@ -27,6 +30,9 @@ app.use(session({
     saveUninitialized: false,   //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
 
+/*Configuracion de Environment Variables*/
+require('dotenv').config();
+
 /*Instalacion de csurf*/
 const csrf = require('csurf');
 const csrfProtection = csrf();
@@ -34,13 +40,14 @@ app.use(csrfProtection);
 
 const isAuth = require('./util/is-auth.js');
 
+/*Uso de special-user middleware*/
+const specialUser = require('./util/special-user.js');
+
 /*Instalacion del connect-flash*/
 const flash = require('connect-flash');
 app.use(flash());
 
-/*Instalacion del cookie-parser*/
-const cookieParser = require('cookie-parser');
-app.use(cookieParser());
+
 
 /*Import of the database models*/
 const Musical = require('./models/musicals.model.js');
@@ -96,7 +103,7 @@ app.use('/prev', require('./routes/previousLabs.routes.js'));
 /* 
 Any other route
 */
-app.use('/all',isAuth,(request, response, next)=>{
+app.use('/all',isAuth,specialUser,(request, response, next)=>{
     
     Promise.all([
         Musical.fetchAll(),

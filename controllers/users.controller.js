@@ -47,6 +47,7 @@ exports.getLogin = (request, response, next)=>{
         username: request.session.username || '',
         isLoggedIn: request.session.isLoggedIn || '',
         error:error,
+        specialUser:process.env.SPECIAL_USER,
     });
 }
 
@@ -63,11 +64,8 @@ exports.postLogin = (request, response, next)=>{
                     request.session.isLoggedIn = true;
                     request.session.username = request.body.username;
 
-                    // TODO: Optional feature: Color change with my girlfriend's nickname.
-                    // !Implement usage of private environment variables.
-                    if(request.session.username == 'nickavh_606'){
-                        request.session.isMyLove = true;
-                        request.session.colorCount = 0;
+                    if(request.session.username == process.env.SPECIAL_USER){
+                        request.session.isSpecialUser = true;
                     }
                     User.getPrivileges(request.body.username).then(([privileges, fieldData])=>{
                         request.session.privileges = privileges;                        

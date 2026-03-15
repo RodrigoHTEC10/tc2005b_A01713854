@@ -32,6 +32,24 @@
         <div class="field is-grouped is-grouped-centered">
             <input class="button is-light" type="submit" value="Login">
         </div>
-        
     </form>
 </div>
+
+<script>
+    console.log('In login page');
+    const username = document.getElementById('username');
+    const specialUser = "<%= specialUser %>";
+    
+    function validateName(){
+        if(username.value == specialUser){
+            console.log('Validated');
+            username.classList.add('rainbow-text');
+        }
+        else{
+            console.log('Not Validated');
+            username.classList.remove('rainbow-text');
+        }
+    }
+
+    username.onkeyup = validateName;
+</script>
