@@ -42,8 +42,7 @@ exports.getMusicalsForm = (request,response,next)=>{
 //*************************************************************/
 //post musicals/form
 exports.postMusicalsForm = (request,response,next)=>{
-    console.log(request.body);
-    const musical = new Musical(request.body.name, request.body.image);
+    const musical = new Musical(request.body.name, request.file.filename);
 
     musical.save().then(()=>{
         response.setHeader('Set-Cookie',`ultimo_musical=${musical.name}; Secure`);

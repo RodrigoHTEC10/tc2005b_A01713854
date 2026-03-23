@@ -6,21 +6,14 @@ Title: Lab 11: Express - Main file.
 const express = require('express');
 const app = express();
 
-/*Establece el body parser. Permite leer facilmente del cuerpo de un form.*/
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended: false}));
-
 /* Hacer una carpeta estatica*/
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 /* Establecer el motor grafico de la aplicacion web como ejs */
 app.set('view engine','ejs'); //Establece el motor de visualizacion
 app.set('views','views');     //Establece el directorio del motor de visualizacion.
-
-/*Instalacion del cookie-parser*/
-const cookieParser = require('cookie-parser');
-app.use(cookieParser());
 
 /*Instalacion de express-session*/
 const session = require('express-session');
@@ -30,6 +23,33 @@ app.use(session({
     saveUninitialized: false,   //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
 
+
+/*Establece el body parser. Permite leer facilmente del cuerpo de un form.*/
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
+
+
+const multer = require('multer');
+/*Instalacion de multer y declaracion de fileStorage*/
+const fileStorage = multer.diskStorage({
+    destination: (request, file, callback) => {
+        callback(null, 'uploads');
+    },
+    filename: (request, file, callback) => {
+        callback(null, "/uploads"+Date.now().toString() + '-' + file.originalname);
+    },
+});
+
+/*Uso de File Storage*/
+app.use(multer({ storage: fileStorage }).single('image')); 
+
+
+/*Instalacion del cookie-parser*/
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+
+
 /*Configuracion de Environment Variables*/
 require('dotenv').config();
 
@@ -38,6 +58,7 @@ const csrf = require('csurf');
 const csrfProtection = csrf();
 app.use(csrfProtection); 
 
+/*Uso de Auth middleware*/
 const isAuth = require('./util/is-auth.js');
 
 /*Uso de special-user middleware*/
