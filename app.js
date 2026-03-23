@@ -40,8 +40,20 @@ const fileStorage = multer.diskStorage({
     },
 });
 
+
+const fileFilter = (request, file, callback) => {
+    if (file.mimetype == 'image/png' || 
+        file.mimetype == 'image/jpg' ||
+        file.mimetype == 'image/jpeg' ) {
+            callback(null, true);
+    } else {
+            callback(null, false);
+    }
+};
+
+
 /*Uso de File Storage*/
-app.use(multer({ storage: fileStorage }).single('image')); 
+app.use(multer({ storage: fileStorage, fileFilter:fileFilter }).single('image')); 
 
 
 /*Instalacion del cookie-parser*/
