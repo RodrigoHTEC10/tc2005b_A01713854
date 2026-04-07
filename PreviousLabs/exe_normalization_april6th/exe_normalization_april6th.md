@@ -171,12 +171,9 @@ PK->id_facturacion | fecha_inicio, fecha_final
 EntidadFederativa(id_entidad, nombre)
 PK->id_entidad
 
-Ciudad(id_ciudad, nombre ,tarifa)
+Ciudad(id_ciudad, id_entidad ,nombre)
 PK-> id_ciudad
 
-PuntoPartida(id_punto ,telefono, id_entidad, id_ciudad)
-PK->id_punto
-
-Servicio(id_servicio, id_cliente, id_origen (id_punto), id_destino(id_punto), duracion, datetime)
-PK->id_servicio
+Tarifas(id_tarifa, id_ciudad, id_ciudad, tarifa, duracion, datetime, id_cliente, telefono)
+PK->id_tarifa
 ```
