@@ -1,0 +1,70 @@
+@startuml
+
+[*] --> Corriendo
+Corriendo --> TrasladoIzq : Deslizar Izq
+Corriendo --> TrasladoDer : Deslizar Der
+Corriendo --> SaltoNormal : Deslizar Arriba
+Corriendo --> Rodar : Deslizar Abajo
+
+Corriendo --> Herido : Colision con obstaculo
+TrasladoIzq --> Herido : Colision con obstaculo
+TrasladoDer --> Herido : Colision con obstaculo
+SaltoNormal --> Herido : Colision con obstaculo
+Rodar --> Herido : Colision con obstaculo
+
+Herido-->Atrapado: Colision con obstaculo
+Herido --> TrasladoIzq : Deslizar Izq
+Herido --> TrasladoDer : Deslizar Der
+Herido --> SaltoNormal : Deslizar Arriba
+Herido --> Rodar : Deslizar Abajo
+Herido --> Corriendo: X segundos sin colision
+
+Atrapado --> Corriendo: Uso de llave | Ver anuncio
+
+Corriendo --> Surfeando: Doble click
+Surfeando --> SurfeandoTrasladoIzq : Deslizar Izq
+Surfeando --> SurfeandoTrasladoDer : Deslizar Der
+Surfeando --> SurfeandoSalto : Deslizar Arriba
+Surfeando --> SurfeandoAgacharse : Deslizar Abajo
+Surfeando --> Corriendo : Colision con obstaculo / Tiempo de patineta == 0
+
+Corriendo --> BotasCorriendo: Tomar "Botas Saltarinas" boost
+BotasCorriendo --> BotasTrasladoIzq : Deslizar Izq
+BotasCorriendo --> BotasTrasladoDer : Deslizar Der
+BotasCorriendo --> BotasSalto : Deslizar Arriba
+BotasCorriendo --> BotasRodar : Deslizar Abajo
+
+BotasCorriendo --> Herido : Colision con obstaculo
+BotasTrasladoIzq --> Herido : Colision con obstaculo
+BotasTrasladoDer --> Herido : Colision con obstaculo
+BotasSalto --> Herido : Colision con obstaculo
+BotasRodar --> Herido : Colision con obstaculo
+
+BotasCorriendo --> Corriendo : Tiempo de botas == 0
+
+Corriendo --> ImanCorriendo: Tomar "Iman" boost
+ImanCorriendo --> ImanTrasladoIzq : Deslizar Izq
+ImanCorriendo --> ImanTrasladoDer : Deslizar Der
+ImanCorriendo --> ImanSalto : Deslizar Arriba
+ImanCorriendo --> ImanRodar : Deslizar Abajo
+
+ImanCorriendo --> Herido : Colision con obstaculo
+ImanTrasladoIzq --> Herido : Colision con obstaculo
+ImanTrasladoDer --> Herido : Colision con obstaculo
+ImanSalto --> Herido : Colision con obstaculo
+ImanRodar --> Herido : Colision con obstaculo
+
+ImanCorriendo --> Corriendo : Tiempo de iman == 0
+
+Corriendo-->Volando: Tomar "Jetpack" boost
+Volando --> VolandoTrasladoIzq : Deslizar Izq
+Volando --> VolandoTrasladoDer : Deslizar Der
+Volando --> Corriendo: Tiempo de jetpack == 0
+
+
+Corriendo --> Pogostick: Tomar "Pogostick" boost
+Pogostick --> PogostickTrasladoIzq : Deslizar Izq
+Pogostick --> PogostickTrasladoDer : Deslizar Der
+Pogostick --> Corriendo: Tiempo de pogostick == 0
+
+@enduml
