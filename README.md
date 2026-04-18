@@ -98,9 +98,13 @@ To consult any Administrator functionallity use:
 ## Application of Laboratories in the Unitas_System project
 - Lab 24. AJAX. Referenced commit: [https://github.com/Berthou05/LimboSoftwareDevelopment_Change.org/commit/6369ff61637c5cd2f06eed2ef0f301c70075891e](https://github.com/Berthou05/LimboSoftwareDevelopment_Change.org/commit/6369ff61637c5cd2f06eed2ef0f301c70075891e)
 
+- Lab 25. Transactions. Integrated into Main branch.
 
+- Lab 26. Implementation of Web services. References commit: [https://github.com/Berthou05/LimboSoftwareDevelopment_Change.org/commit/91f76e315157c4034e4ac74098fbc23b0e5b6396](https://github.com/Berthou05/LimboSoftwareDevelopment_Change.org/commit/91f76e315157c4034e4ac74098fbc23b0e5b6396)
 
-## References
+- Lab 28. Triggers. Integrated into Main branch.
+
+ # References
 As some questions are answered after each Laboratory (which can be consulted in the following routes: /all, /questions/all, questions/[lab##]), the references of them are presented below.
 
 - Array. (s/f). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

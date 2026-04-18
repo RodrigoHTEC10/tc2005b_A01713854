@@ -1,0 +1,85 @@
+<%- include('./includes/header.ejs') %>
+
+<section class="section">
+    <div class="container content">
+        <h2 class="subtitle has-text-centered">Registro de Actividad</h2>
+
+        <% if(records && records.length > 0) { %>
+
+        <% 
+        function getStyle(action){
+            switch(action){
+            case 'New User registered':
+                return { color: 'is-success', icon: 'fa-user-plus' };
+            case 'New question registered':
+                return { color: 'is-info', icon: 'fa-circle-question' };
+            case 'Question deleted':
+                return { color: 'is-danger', icon: 'fa-trash' };
+            case 'Question edited':
+                return { color: 'is-warning', icon: 'fa-pen' };
+            default:
+                return { color: 'is-light', icon: 'fa-circle' };
+            }
+        }
+        %>
+
+        <% for(let record of records){ 
+            const style = getStyle(record.action);
+        %>
+
+            <article class="block" style="border: 1px solid #fff; border-radius: 6px; padding: 1rem;">
+
+            <div class="is-flex is-justify-content-space-between is-align-items-center">
+
+                <!-- Left section -->
+                <div class="is-flex is-align-items-center" style="gap: 12px;">
+
+                <!-- Icon -->
+                <span class="icon <%= style.color %>">
+                    <i class="fa-solid <%= style.icon %>"></i>
+                </span>
+
+                <!-- Text -->
+                <div>
+                    <p>
+                    <span class="tag <%= style.color %> is-light">
+                        <%= record.action %>
+                    </span>
+                    </p>
+
+                    <p>
+                    <strong><%= record.name %></strong>
+                    </p>
+
+                    <p class="is-size-7 has-text-grey">
+                    Por <strong><%= record.user %></strong>
+                    </p>
+                </div>
+
+                </div>
+
+                <!-- Time -->
+                <div class="has-text-right">
+                <p class="is-size-7 has-text-grey">
+                    <%= record.time %>
+                </p>
+                </div>
+
+            </div>
+
+            </article>
+
+        <% } %>
+
+        <% } else { %>
+
+        <div class="notification is-warning has-text-centered">
+            No hay registros disponibles
+        </div>
+
+        <% } %>
+
+    </div>
+</section>
+
+<%- include('./includes/footer.ejs') %>

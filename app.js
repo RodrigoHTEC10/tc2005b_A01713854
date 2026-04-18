@@ -122,6 +122,11 @@ Available routes:
 */
 app.use('/abilities', require('./routes/abilities.routes.js'));
 
+/*
+Available routes:
+/record/all
+*/
+app.use('/record', require('./routes/record.routes.js'));
 
 /*
 Available routes:
