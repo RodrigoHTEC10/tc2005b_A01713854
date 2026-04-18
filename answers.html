@@ -65,3 +65,43 @@
     <li>Limites y restricciones en el servicio</li>
     <li>Siempre existe la posibilidad que se descontinue el servicio</li>
 </ul>
+
+<!-- Lab 28-->
+
+<!-- ¿Qué utilidad tiene un trigger (ventajas)? -->
+<p>Un trigger es un bloque de codigo dentro del gestor de base de datos el cual se activa de manera automatica antes o despues de la realizacion de una acción o intervención a una tabla en base de datos. Sus principales ventajas son:</p>
+<ul>
+    <li>Permiten integrar logica de negocios de forma automática</li>
+    <li>Consistencia entre tablas</li>
+    <li>Seguridad al mantener todo desde base de datos</li>
+    <li>Independencia de la aplicación.</li>
+</ul>
+<!-- ¿Tipos de triggers? -->
+
+<p>La clasificación de los triggers depende de como se evaluen o agrupen:</p>
+<ol>
+    <li>1. Tiempo de ejecución
+        <ul>
+            <li>BEFORE: Se ejecuta antes de que ocurra el evento.</li>
+            <li>AFTER: Se ejecuta despues del evento</li>
+        </ul>
+    </li>
+    <li>2. Evento disparador
+        <ul>
+            <li>INSERT: Se inserto una tupla dentro de una tabla.</li>
+            <li>UPDATE: Se actualizo un campo de una tupla o la tupla completa.</li>
+            <li>DELETE: Se elimino una tupla de una tabla.</li>
+            <li>TRUNCATE: Se vacia una tabla.</li>
+        </ul>
+    </li>
+</ol>
+
+<!-- ¿En que casos NO son de utilidad? -->
+<p>Los triggers no son utiles en los siguientes casos:</p>
+<ul>
+    <li>Cuando se hacen operaciones grandes de datos.</li>
+    <li>Cuando la logica del negocio detras del registro es compleja</li>
+    <li>Depuración y pruebas</li>
+    <li>Si la activación de un trigger puede activar otro que ejecute un ciclo infinito.</li>
+    <li>Falta de transparencia</li>
+</ul>
