@@ -269,6 +269,10 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`username_id`),
   ADD UNIQUE KEY `username` (`username`);
 
+
+
+
+
 --
 -- AUTO_INCREMENT for dumped tables
 --
@@ -302,6 +306,7 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `users`
   MODIFY `username_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
 
 --
 -- Constraints for dumped tables
@@ -337,3 +342,71 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `action`
+--
+
+CREATE TABLE `action` (
+  `action_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+
+--
+-- Indexes for table `action`
+--
+ALTER TABLE `action`
+  ADD PRIMARY KEY (`action_id`);
+
+--
+-- AUTO_INCREMENT for table `action`
+--
+ALTER TABLE `action`
+  MODIFY `action_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+
+INSERT INTO action(name) VALUES
+('New User registered'),
+('New question registered'),
+('Question deleted'),
+('Quesion edited');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table record
+--
+
+CREATE TABLE `record` (
+  `record_id` int(11) NOT NULL,
+  `action_id` int(11) NOT NULL,
+  `username_id` int(11) DEFAULT NULL,
+  `name` varchar(200) NOT NULL,
+  `created_at`  datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+
+--
+-- Indexes for table `record`
+--
+ALTER TABLE `record`
+  ADD PRIMARY KEY (`record_id`),
+  ADD KEY `action_id` (`action_id`),
+  ADD KEY `username_id` (`username_id`);
+
+--
+-- AUTO_INCREMENT for table `record`
+--
+ALTER TABLE `record`
+  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
+
+--
+-- AUTO_INCREMENT for table `record`
+--
+
+ALTER TABLE `record`
+  ADD CONSTRAINT `record_ibfk_1` FOREIGN KEY (`action_id`) REFERENCES `action` (`action_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `record_ibfk_2` FOREIGN KEY (`username_id`) REFERENCES `users` (`username_id`) ON DELETE CASCADE ON UPDATE CASCADE;

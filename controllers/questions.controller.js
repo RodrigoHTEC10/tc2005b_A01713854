@@ -18,7 +18,6 @@ exports.getQuestionsForm = (request,response,next)=>{
 };
 
 exports.postQuestionsForm = (request,response,next)=>{
-    console.log(request.body);
     const question = new Question(request.body.question, request.body.answer, request.body.label);
     question.save().then(()=>{
         response.redirect(303,'/questions/all');
@@ -47,7 +46,6 @@ exports.getQuestionsAll = (request,response,next)=>{
 exports.getQuestionsDynamically = (request,response,next)=>{
     let label = request.params.label;
     Question.getQuestionsLab(label).then(([questions,fieldData])=>{
-        console.log(`QUESTIONS: ${questions[0].length}`);
         return response.render('questions.ejs',{
             questions: questions[0],
             alt_text: questions[0].length>0 ? null : 'This lab does not have any question',
@@ -85,7 +83,6 @@ exports.getQuestionByID = (request,response,next)=>{
 exports.getQuestionEditionForm = (request, response, next) =>{
     let id = request.params.question_id;
     Question.fetchOne(id).then(([questions,fieldData])=>{
-        console.log(questions[0]);
         return response.render('form_question.ejs',{
             csrfToken: request.csrfToken(),
             edition: true,

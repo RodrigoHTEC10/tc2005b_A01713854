@@ -12,8 +12,6 @@ document - es el DOM. Todos los eventos que se mencionan son aquellos disponible
 //console.log(document);
 
 const personal_data = document.getElementById("personal_data");
-console.log(personal_data);
-
 
 const before_click = '<p><strong>Datos de contacto:</strong></p><div class="element"><p><strong>Nombre:</strong> Rodrigo Alejandro Hurtado Cortés</p></div><div class="element"><p><strong> Matricula:</strong> A01713854</p></div><div class="element"><p><strong>Correo electrónico escolar:</strong> a01713854@tec.mx</p></div><div class="element"><p id="last_email"><strong>Correo electrónico personal:</strong> hurtadorodrigo00@gmail.com</p></div>';
 

@@ -39,14 +39,12 @@ exports.getLogin = (request, response, next)=>{
 
 exports.postLogin = (request, response, next)=>{
     User.fetchOne(request.body.username).then(([rows,fieldData])=>{
-        console.log(rows);
         if(rows.length<1){
             request.session.error = 'Usuario y/o password no coinciden';
             return response.redirect('/users/login');
         }else{
             bcrypt.compare(request.body.password, rows[0].password).then((doMatch)=>{
                 if(doMatch){
-                    console.log("Logged In");
                     request.session.isLoggedIn = true;
                     request.session.username = request.body.username;
 

@@ -7,7 +7,6 @@ module.exports = (request, response, next) => {
             
         }
     }
-    console.log(continuar);
     if (continuar == true) {
         request.session.error = "Funcionalidad fuera de los privilegios del Usuario.";
         return response.redirect('/all');

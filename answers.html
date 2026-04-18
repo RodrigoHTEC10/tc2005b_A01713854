@@ -1,0 +1,67 @@
+<!--Lab 24-->
+<!-- ¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications? -->
+<p>Una Rich Internet Application es una aplicación web que ofrece caracteristicas y una experiencia de usuario similar a la de las aplicaciones de escritorio tradicionales completamente ejecutadas desde un navegador.</p>
+<p>Entre sus características principales se encuentran:</p>
+<ul>
+    <li>Responden en tiempo real a las acciones del usuario</li>
+    <li>Actualiza el contenido de forma dinámica y parcial.</li>
+    <li>Posee una interfaz pulcra y limpia.</li>
+</ul>
+<p>AJAX permite dentro de estas aplicaciones comunicación asincrona con el servidor, permitiendo el envio y la recepcion de datos sin perder control de ejecusión ni requerir una recarga completa de la página; actualización parcial del DOM; una mejor experiencia de usuario y separación entre la presentación y la lógica detras del msimo.</p>
+
+<!-- ¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor? -->
+
+<p>El uso de AJAX genera vulnerabilidades debido a la apertura de diversos canales de comunicación entre el servidor y el cliente, algunos de estos son:</p>
+<ul>
+    <li>Cross-Site-Scripting: Datos maliciosos son injectados directos en el navegador y ejecutados como codigo de JS.</li>
+    <li>Cross-Site Request Forgery: Cuando un sitio malicioso engaña al navegador para realizar peticiones no autorizadas a un sitio con sesión iniciada.</li>
+    <li>SQL Injection: Manipulacion de la base de datos a traves de parametros sin sanitizar enviados a base de datos.</li>
+    <li>Exposición de APIs</li>
+    <li>Man-in-the-Middle: Un intermediario puede interceptar y modificar datos en tránsito.</li>
+</ul>
+<p>Las validaciones de seguridad deben ser siempre realzadas en el <strong>servidor</strong> y <strong>tambien en el cliente.</strong> Esto se debe manejar asi, ya que aunque se regulen las restricciones en frontend, es posible desabilitar el JS dentro del mismo, lo que permite sobrepasar la primer linea de seguridad. Al tener verificaciones, tanto en el servidor como en el cliente, añadimos una capa de seguridad adicional para usuarios comunes.</p>
+
+<!-- ¿Qué es JSON? -->
+
+<p>JSON (JavaScript Object Notation) es un formato ligero de intercambio de datos estructurado jerarquico que es fácil de leer tanto para el humano como la computadora.</p>
+<p>Su estructura se compone de <code>clave: valor</code> entre llaves <code>{ }</code></p>
+<code>
+{
+  "nombre": "Ana",
+  "edad": 25,
+  "activo": true
+}
+</code>
+<p>A traves de este es posible enviar:</p>
+<ul>
+    <li>String</li>
+    <li>Int</li>
+    <li>Float</li>
+    <li>Boolean</li>
+    <li>null</li>
+    <li>Object</li>
+    <li>Array</li>
+</ul>
+
+<!--Lab 26-->
+<!--¿Qué ventajas y desventajas tiene la integración de tus aplicaciones web con servicios web desarrollados por terceros?-->
+
+<p>Ventajas:</p>
+<ul>
+    <li>Ahorro de tiempo y recursos al emplear funcionalidades ya probadas</li>
+    <li>Reducción de costos (Especialistas o arquitectura necesaria)</li>
+    <li>Calidad y confiabilidad</li>
+    <li>Actualizaciones automáticas</li>
+    <li>Escalabilidad</li>
+    <li>Seguridad especializada</li>
+</ul>
+<p>Desventajas:</p>
+<ul>
+    <li>Dependencia de un servicio que no se controla</li>
+    <li>Riesgos de seguridad y privacidad</li>
+    <li>Costos variables e impredescibles debido a la influencia del uso y consumo del cliente</li>
+    <li>Falta de control</li>
+    <li>Latencia adicional</li>
+    <li>Limites y restricciones en el servicio</li>
+    <li>Siempre existe la posibilidad que se descontinue el servicio</li>
+</ul>
