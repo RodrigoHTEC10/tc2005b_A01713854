@@ -94,6 +94,12 @@ To consult any Administrator functionallity use:
 - /questions/edit/:id (from 1-37) (Admin)
 - /questions/delete/:id (from 1-37) (Admin)
 
+
+## Application of Laboratories in the Unitas_System project
+- Lab 24. AJAX. Referenced commit: [https://github.com/Berthou05/LimboSoftwareDevelopment_Change.org/commit/6369ff61637c5cd2f06eed2ef0f301c70075891e](https://github.com/Berthou05/LimboSoftwareDevelopment_Change.org/commit/6369ff61637c5cd2f06eed2ef0f301c70075891e)
+
+
+
 ## References
 As some questions are answered after each Laboratory (which can be consulted in the following routes: /all, /questions/all, questions/[lab##]), the references of them are presented below.
 

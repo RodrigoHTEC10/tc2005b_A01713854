@@ -42,4 +42,15 @@ module.exports = class User{
         return db.execute('INSERT INTO otorga(username_id, role_id) VALUES (?,?)',[username_id,role_id]);
     }
 
+    async getSignIn(){
+        return bcrypt.hash(this.password, 12).then((password_cifrado)=>{
+            return db.execute('CALL signIn(?, ?, ?)',
+                [this.username,this.name, password_cifrado]);
+        })
+        .catch((error)=>{
+            console.log(error);
+            return response.redirect('/');
+        });
+    }
+
 }

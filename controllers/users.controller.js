@@ -16,26 +16,12 @@ exports.getSignin=(request, response, next) => {
 
 exports.postSignin=(request, response, next) => {
     const usuario = new User(request.body.username, request.body.name, request.body.password);
-    usuario.save().then(()=>{
-        User.getUsernameId(request.body.username).then(([data, fieldData])=>{
-        let id = data[0].username_id;
-        User.assingRole(id, 2).then(()=>{
+    usuario.getSignIn().then(()=>{
             return response.redirect('/users/login');
-        }).catch((error)=>{
-            console.log(error);
-            return response.redirect('/');
-        });
-        })
-        .catch((error)=>{
-            console.log(error);
-            return response.redirect('/');
-        });
     }).catch((error)=>{
         console.log(error);
         return response.redirect('/');
-    });
-
-    
+    });    
 };
 
 
