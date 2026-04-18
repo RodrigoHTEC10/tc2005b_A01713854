@@ -82,6 +82,6 @@ exports.postLogin = (request, response, next)=>{
 
 exports.getLogout = (request, response, next)=>{
     request.session.destroy(() => {
-        return response.redirect('/all'); //Este código se ejecuta cuando la sesión se elimina.
+        return response.redirect('/all');
     });
 }

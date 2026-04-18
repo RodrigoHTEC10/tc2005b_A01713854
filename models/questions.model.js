@@ -35,7 +35,7 @@ module.exports = class Question{
     }
 
     static getQuestionsLab(label){
-        return db.execute('SELECT Q.question, Q.answer, Q.label FROM questions as Q WHERE label=?',[label]);
+        return db.execute('CALL getLabel(?)',[label]);
     }
 
     static editQuestion(question_id, question, answer, label){

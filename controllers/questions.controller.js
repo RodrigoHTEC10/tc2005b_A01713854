@@ -47,8 +47,10 @@ exports.getQuestionsAll = (request,response,next)=>{
 exports.getQuestionsDynamically = (request,response,next)=>{
     let label = request.params.label;
     Question.getQuestionsLab(label).then(([questions,fieldData])=>{
+        console.log(`QUESTIONS: ${questions[0].length}`);
         return response.render('questions.ejs',{
-            questions: questions,
+            questions: questions[0],
+            alt_text: questions[0].length>0 ? null : 'This lab does not have any question',
             title: "Laboratorio "+label.substr(label.length - 2),
             label: label,
             username: request.session.username || '',

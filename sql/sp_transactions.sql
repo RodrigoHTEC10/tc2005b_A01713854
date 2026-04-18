@@ -41,3 +41,12 @@ BEGIN
 END;
 
 
+CREATE PROCEDURE getLabel(
+    IN p_label varchar(10)
+)
+BEGIN
+    SELECT Q.question, Q.answer, Q.label
+    FROM questions as Q
+    WHERE label=p_label;
+END;
+
