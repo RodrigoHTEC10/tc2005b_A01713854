@@ -6,6 +6,10 @@
 
 **Date**: March 15th, 2026
 
+### Course notes: 
+
+[Notes in Notion](https://plant-sun-342.notion.site/Software-Construction-Decision-Making-300b4d9ac5fc803a8c88f69acfe5318f)
+
 ## Description
 
 The current repository is the compilation of the competences demostration of knowledge acquired from the class Software Construction & Decision Making.
